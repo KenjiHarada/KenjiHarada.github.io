@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>Swendsen-Wang アルゴリズムと Wolff アルゴリズム</title>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<link rel="stylesheet" href="my-style.css" media="screen">
+<script type="text/javascript" src="Ising.js" charset="UTF-8"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+
+<body onload="draw();">
+<div id="layout">
+
+<!-- *Main part -->
+<div id="rightwindow">
+<!-- **Log part-->
+<div id="logo-small">
+<h1>イジングモデルのモンテカルロシミュレーション：
+Swendsen-Wang と Wolff アルゴリズム</h1>
+</div>
+
+<div id="main">
+<!-- **Body part -->
+
+<figure>
+<canvas align=center width="436px" height="436px" id="Ising"></canvas>
+<figcaption>
+<p>
+［二次元正方格子のイジングモデル］
+</p>
+<p>
+各格子点にある局所磁化の向きは黄と青の２色で表示されている。システムサイズは\(100 \times 100\)。１クリックで、メトロポリスやSwendsen-Wangの方法なら100MCS分、Wolffのアルゴリズムなら100ステップ分、システムの状態が更新される。また、クリック時のポインタの垂直座標でパラメータ\(z (\equiv \exp(2J/T)- 1)\)が、水平座標でアルゴリズムが再設定される。アルゴリズムは、ポインターが正方格子の左側ならメトロポリス、右側ならWolff、真ん中ならSwendsen-Wangの方法が選択される。
+</p>
+</figcaption>
+</figure>
+
+<p>温度などの環境が変わったとき、相互作用をする非常に多くの要素からなるシステムは、巨視的なレベルでみてミクロなレベルの法則を破るような状態に移行することがあります。</p>
+
+<p>たとえば、熱い金属を冷やすと自発的に磁化が出現します。つまり、各原子のもつ小さな磁化が特定の方向にそろった状態になります。ミクロなレベルの法則では、各原子の持つ小さな磁化は特定の方向を好むわけではないので、このような状態の出現は巨視的な数の小さな金属原子があつまることでおこる現象です。</p>
+
+
+<p>イジングモデルでは、各原子が格子点にあるとし、おのおのの原子の磁化が北や南のような正反対の二つの状態しかとらないとしたモデルです。また、温度（\(T\)）がさがると隣接する原子の磁化は同じ方向に向く傾向が強まるとします。しかし、特にどちらかの方向を好むわけではありません。</p>
+
+<p>このような単純なモデルですが、ある温度で急に全体がそろいだすと言う現象が確認できます。これは最初にいった自発磁化の出現に対応しています。イジングモデルはこのような性質を表現する最も簡単なモデルであるであるため、多くの研究がなされ、新しいアルゴリズムを考えるときの基本的なモデルケースとしてもよく用いられます。</p>
+
+
+<p>上記のデモンストレーションでは、二次元正方格子のイジングモデルの状態が温度を変えるとどのように変化するかをみることができます。パラメータ\(z\)が\(\sqrt{2}\)よりも大きな場合、同色の大きな塊が急激に出現します。これが自発磁化に対応します。</p>
+
+<p>ある特定の温度での状態を生成するのに、ここでは３つのアルゴリズムを用いました。<strong> Swendsen-Wang</strong>や
+<strong>Wolff</strong>のアルゴリズムは小さなステップで非常にさまざまな状態をサンプリングできることが確認できるとおもいます。このようなアルゴ
+リズムが、最近のモンテカルロシミュレーションでは使われています。</p>
+
+<hr>
+$Id: monte-ja.html 137 2013-06-30 16:31:18Z kenji $
+<!-- **Body end -->
+</div>
+</div>
+
+
+<!-- *Navigator part -->
+<div id="leftwindow">
+<img src="image/harada-face.png" alt="My face photo">
+<ul>
+  <li class="menu-jump">
+  <a href="monte-en.html">To English</a>
+  </li>
+  <li class="menu">
+  <a href="index-ja.html">ホーム</a>
+  </li>
+  <li class="menu">
+  <a href="study-ja.html">研究</a>
+  </li>
+  <li class="menu">
+  <a href="education-ja.html">教育</a>
+  </li>
+  <li class="menu">
+  <a href="misc-ja.html">その他</a>
+  </li>
+  <li class="menu">
+  <a href="address-ja.html">連絡先</a>
+  </li>
+</ul>
+<img src="image/harada-name.png" alt="My name stamp" width=45%>
+</div>
+
+</div>
+</body>
+</html>

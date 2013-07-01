@@ -1,0 +1,4 @@
+#AuthType Basic
+#AuthName "By usercheck"
+#AuthUserFile /hostinghome1/z59382/etc/harada_htpasswd
+#require valid-user

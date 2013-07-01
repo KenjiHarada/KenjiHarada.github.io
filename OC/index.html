@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>オンラインコース：数値計算演習「モンテカルロ法」（原田健自）</title>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+<link rel="stylesheet" media="all" href="epub.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+</head>
+<body>
+<section>
+<hgroup>
+<h1 id="titlehead"><div class="bigger">オンラインコース：数値計算演習</div>「モンテカルロ法」<br>
+<div style="font-size:36px;margin: 0 0 0 36px;">原田 健自</div></h1>
+<p style="font-size:10px;text-align:right;"> Photo:Dice by <a href='http://www.flickr.com/photos/swissbones/527606297/' target='_blank'>Jonny Watt</a></p>
+<h2>I. はじめに</h2>
+<p class="indent">
+  対象を確率的事象としてモデル化をする事は有力なアプローチの一つである. <em>モンテカルロ法</em>はこのようなアプローチに向いた数値計算手法である. 本コースではモンテカルロ法の基礎（特に<em>マルコフ連鎖モンテカルロ法</em>）について情報を提供する. </p>
+
+<p class="indent">本資料（２０１３年７月１日版）は担当している演習科目の内容をベースに作成した. 本コースはモンテカルロ法の基礎をオンライン（HTML5対応ブラウザ）で学習するために必要十分なものを目指している. オンライン教材の特色を生かし, ブラウザーでの実演も交えている. ただし, モンテカルロ法に関して網羅的なものではないことを最初に述べておく. 特に, 応用例には個人的な研究（多体系の物理）と結びつきの強い題材（パーコレーション）を取り上げた. </p>
+
+<p class="indent">内容の理解のチェックをどうすればよいのかは思案中で, 暫定的に実際の演習で用いた問題をそのまま掲載してみた. ちなみに掲載した演習問題（４問）の難易度の幅は広い. おそらく問題1と問題2は易しく, 問題3から問題4へとだんだん難しいと感じるのではないかと思う. 問題4は計算時間も多少かかる可能性がある. 
+</p>
+
+<h3>では, 最初の<a href="section_mc.html">II.</a> 期待値のモンテカルロ計算へ</h3>
+
+<div class="index">
+<h1>［目次］</h1>
+<h2><a href="section_mc.html#sec:mc" id="link2">II.</a> 期待値のモンテカルロ計算</h2>
+<h3><a href="section_mc.html#sec:pi">II.A.</a> 乱数による円周率の計算（<a href="section_mc.html#demo_pi">実演</a>）（<a href="section_mc.html#sec:pi:p1">問題1</a>）</h3>
+<h2><a href="section_mcmc.html#sec:mcmc" id="link3">III.</a> マルコフ連鎖モンテカルロ法</h2>
+<h3><a href="section_mcmc.html#sec:mcmc:A">III.A.</a> マルコフ過程とその状態の出現頻度の分布</h3>
+<h3><a href="section_mcmc.html#sec:mcmc:B">III.B.</a> メトロポリスの方法</h3>
+<h4><a href="section_mcmc.html#sec:mcmc:B:1">III.B.1</a> メトロポリス法の手順（<a href="section_mcmc.html#sec:mcmc:p2">問題2</a>）</h4>
+<h3><a href="section_mcmc.html#sec:mcmc:C">III.C.</a> マルコフ連鎖モンテカルロ法で注意すべき点</h3>
+<h2><a href="section_percolation.html#sec:p" id="link4">IV.</a> パーコレーション（浸透）</h2>
+<h3><a href="section_percolation.html#sec:p:A">IV.A.</a> クラスター同定</h3>
+<h4><a href="section_percolation.html#sec:p:A:1">IV.A.1</a> 同定アルゴリズム（<a href="section_percolation.html#demo_p">実演</a>）</h3>
+<h3><a href="section_percolation.html#sec:p:B">IV.B.</a> 相転移（<a href="section_percolation.html#sec:p:p3">問題3</a>）</h3>
+<h3><a href="section_percolation.html#sec:p:C">IV.C.</a> 人同士のコミュニケーション網</h3>
+<h3><a href="section_percolation.html#sec:p:D">IV.D.</a> モンテカルロシミュレーション</h3>
+<h4><a href="section_percolation.html#sec:p:D:1">IV.D.1</a> 状態変数\(S\)のマルコフ連鎖モンテカルロ法（<a href="section_percolation.html#demo_ising">実演</a>）（<a href="section_percolation.html#sec:p:p4">問題4</a>）</h4>
+<h2>参考文献</h2>
+<div class="bibliography">
+<ol>
+<li id="ref1">
+伏見 正則：ＵＰ応用数学選書１２「乱数」, 1989, 東京大学出版.
+<li id="ref2"> 伊庭 幸人, 種村 正美：計算統計2 マルコフ連鎖モンテカルロ法とその周辺 (統計科学のフロンティア 12), 2005, 岩波書店.
+<li id="ref3">D.スタウファー, A.アハロニー：パーコレーションの基本原理 (物理学叢書) , 2001, 吉岡書店. 
+<li id="ref4">R. H. Swendsen and J.-S. Wang: Phys. Rev. Lett. Vol.58, pp.86 (1987).
+</ol>
+</div>
+</div>
+</hgroup>
+
+</body>
+<footer>
+  <p><small>&copy;2013 <a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html">原田健自</a>.</small></p>
+</footer>
+</html>

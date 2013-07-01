@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>オンラインコース：数値計算演習「モンテカルロ法」（原田健自）</title>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<link rel="stylesheet" media="all" href="epub.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+</head>
+<header>
+<p>
+<a href="index.html#link3">[目次]</a>, 
+前の<a href="section_mc.html">［II. 期待値のモンテカルロ計算］</a>, 
+次の<a href="section_percolation.html">［IV. パーコレーション（浸透）］</a>
+</p>
+</header>
+<body>
+<section>
+<h2 id="sec:mcmc">III. マルコフ連鎖モンテカルロ法</h2>
+<p class="indent">
+与えられた確率分布\(P(X)\)に従うようにサンプルを作成する方法には, 直接的な方法と<em>マルコフ過程</em>を用いるものがよく使われる.
+</p>
+
+<p class="indent">与えられた確率分布が指数分布やガウス分布などの低次元の確率分布の場合は, 一様分布を用いて直接的にサンプルを作成することができる. 具体的には,<em>逆関数法</em>や<em>棄却法</em>を用いる（詳細は<a href="index.html#ref1">参考文献[1]</a>を参照）. 一方, このような単純な確率分布でない場合によく用いられるのが, <em>マルコフ連鎖モンテカルロ法</em>（<a href="index.html#ref2">参考文献[2]</a>）である. </p>
+
+<h3 id="sec:mcmc:A">III.A. マルコフ過程とその状態の出現頻度の分布</h3>
+<p class="indent">
+確率過程は状態列を生成する確率モデルで, マルコフ過程は過去の有限ステップの状態に依存して未来の状態が確率的に決定される確率過程として定義される. 最もシンプルなマルコフ過程の例は, 過去１ステップ分だけに依存する場合である. このようなマルコフ過程では, 現在の状態\(X(t)\)に対し未来の状態が\(X(t+1)\)である確率を遷移確率\(P(X(t) \to X(t+1))\)によって定義できる. 
+</p>
+
+<p class="indent">
+定義より遷移確率\(P(X \to Y)\)は次の性質を満たす. 
+</p>
+\begin{equation}
+{}^\forall X,\quad  \sum_Y  P(X \to Y) = \sum_Y P(Y \to X) = 1.
+\end{equation}
+<p>状態空間の要素である各状態に番号をつけて\(X_i\)と書く事にして, 遷移確率\(P\)から次の遷移行列\(T\)を定義すると便利である: \(T_{ij}\equiv P(X_j \to X_i).\) 遷移行列\(T\)は定義より成分が非負で任意の各行または各列の和が1になっていなければならない. この場合, 線形代数学のペロン・フロベニウスの定理より, 遷移行列に従うマルコフ過程の状態の出現頻度は１つの確率分布\(W_T\)に収束することが証明できる.</p>
+
+<p class="indent">
+マルコフ過程の定常分布\(W_T\)からベクトル\((\mathbf{v}_T)_i \equiv W_T(X_i)\)を定義すると次式を満たす. </p>
+<div id="III2">
+\begin{equation}
+  \mathbf{v}_T = T \mathbf{v}_T.
+\end{equation}
+</div>
+<p>つまり, ベクトル\(\mathbf{v}_T\)は非負で遷移行列\(T\)の固有値１の固有ベクトルである. <a href=#III2>(2)</a>式を書き換えると, 次式（<em>釣り合い条件</em>）を満たすマルコフ過程の遷移確率を用れば, 与えられた確率分布\(W\)に従うサンプル列が確率的に生成されることがわかる:</p>
+
+<div id="III3">
+\begin{equation}
+  {}^\forall X, \quad W(X) = \sum_{Y} P(Y \to X) W(Y).
+\end{equation}
+</div>
+
+<p class="indent">
+<a href="III3">(3)</a>式が釣り合い条件と呼ばれる理由は, 右辺が状態\(X\)に入ってくる割合, 左辺が状態\(X\)から出て行く割合を表すからである（\(\sum_{Y} P(X \to Y) = 1\)より）. もし, 状態の出現頻度がこの釣り合いを破っていても, 負のフィードバックが働き, 釣り合い条件（<a href="III3">(3)</a>式）が成立するような頻度に自動的に戻ってくる. 例えば, 状態\(X\)が出現しすぎているということは, <a href="III3">(3)</a>式で確率分布\(W\)を頻度に置き換えた時に左辺が大きいということになっている. そのような時は出て行く割合の方が大きくなるので, 最終的に釣り合いがとれる方向に状態\(X\)の頻度が減少して行く. 
+</p>
+
+
+<h3 id="sec:mcmc:B">III.B. メトロポリスの方法</h3>
+<p class="indent">
+釣り合い条件<a href=#III3>(3)</a>式を満たす遷移確率は一つだけではない. 実際, さまざまな手法が提案されている. 代表的なものが<em>メトロポリス(Metropolis)法</em>や<em>熱浴(Heat-bath)法</em>である<a href=#fn1 id="r1">[1]</a>. ここでは一般的で使いやすいメトロポリスの方法だけを説明する.</p>
+
+
+<h4 id="sec:mcmc:B:1">III.B.1 メトロポリス法の手順</h4>
+<dl>
+<dt>手順1.</dt>
+<dd>初期状態\(X(0)\)を与え, 以下の手順で状態列を作成.</dd>
+<dt>手順2.</dt>
+<dd>現状態を\(X(t)\)とし, 次状態候補\(X'\)を確率分布\(T(X(t),X')\)に従って作成. ただし, 簡単化の為, 確率分布\(T(X,Y)\)は対称と仮定する: \(T(X,Y) = T(Y, X).\)</dd>
+<dt>手順3.</dt>
+<dd>次状態候補\(X'\)を確率\(\min\left[1, \frac{W(X')}{W(X(t))}\right]\)で次の状態（\(X(t+1)\equiv X'\)）とし, そうでなければ, 現在の状態\(X(t)\)を次の状態（\(X(t+1) \equiv X(t)\)）とする<a href=#fn2 id="r2">[2]</a>. 
+</dd>
+<dt>手順4.</dt>
+<dd> 手順2に戻る. </dd>
+</dl>
+
+<section id="sec:mcmc:p2">
+<div class="problem">
+<h4>問題２</h4>
+<p>
+(1)メトロポリス法の遷移確率が次の<em>詳細釣り合い条件</em>を満たす事を証明せよ. 
+</p>
+<div id="III4">
+  \begin{equation}
+    \label{eq:dbc}
+    P(X \to Y) W(X) = P(Y \to X) W(Y).
+  \end{equation}
+</div>
+<p>
+(2)遷移確率が詳細釣り合い条件（<a href=#III4>(4)</a>式）を満たす場合は, 釣り合い条件（<a href=#III3>(3)</a>式）が成立する事を証明せよ. 
+</p>
+<p>
+(3)\(4\)状態\(A,B,C,D\)の確率を次式とする確率モデルを考える:\(P(A)=1/4, P(B)=1/3, P(C)=1/4, P(D)=1/6\). この確率分布を出現頻度として再現する確率過程をメトロポリス法で実現せよ. そして, \(10000\)サンプルを作成し, \(4\)状態の出現頻度の遷移をプロットせよ. ただし, 次状態候補の選択確率は\(T(X,Y)=1/4 \ ({}^\forall X, {}^\forall Y)\)とし, 初期状態\(X(0)=A\)とする.
+</p>
+</div>
+</section>
+
+<h3 id="sec:mcmc:C">III.C. マルコフ連鎖モンテカルロ法で注意すべき点</h3>
+<p class="indent">
+マルコフ過程を用いてサンプルを生成するとき, 各サンプルは過去のサンプルに依存して確率的に生成されてきたので, 当然, サンプル同士に統計的な相関がある. 通常, 有限個しかサンプルは生成できないので, 相関が強い場合は, 実質的な独立なサンプル数が少なくなる. <a href="section_mc.html#II3">II.(3)</a>式の分散の分母は統計的に独立なサンプル数なので, モンテカルロ計算の精度が相関が強くなると悪くなる. その為, 相関の強さを確認しながら計算を進めることが必要である. もちろん, 相関を弱める手法の研究も進んでいるが, それらについてはここでは述べない<a href=#fn3 id="r3">[3]</a>. </p>
+</section>
+
+<section>
+<div class="footnote">
+<p id="fn1"><a href="#r1">[1]</a> 
+この名称は物理学で使われるもので, 例えば, 統計学ではメトロポリス・ヘイスティングス法やギブスサンプラーとそれぞれ呼ばれる.
+</p>
+<p id="fn2"><a href="#r2">[2]</a> 
+確率分布の比だけしか必要ないのもメトロポリス法の特徴である. 
+</p>
+<p id="fn3"><a href="#r3">[3]</a> 
+一般的にはレプリカ交換法などのアンサンブルを拡張するタイプの方法がいくつか提案されている（<a href="index.html#ref2">参考文献[2]</a>参照）.
+</p>
+</div>
+</section>
+
+<h3>次の<a href="section_percolation.html">IV.</a> パーコレーション（浸透）へ</h3>
+</body>
+<footer>
+  <p><small>&copy;2013 <a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html">原田健自</a>.</small></p>
+</footer>
+</html>

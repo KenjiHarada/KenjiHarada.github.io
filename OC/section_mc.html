@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>オンラインコース：数値計算演習「モンテカルロ法」（原田健自）</title>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<script type="text/javascript" src="mc_pi.js" charset="UTF-8"></script>
+<link rel="stylesheet" media="all" href="epub.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+</head>
+<header>
+<p>
+<a href="index.html#link2">[目次]</a>, 
+次の<a href="section_mcmc.html">［III. マルコフ連鎖モンテカルロ法］</a>
+</p>
+</header>
+<body onload="draw('mc_pi');">
+<section>
+<h2 id="sec:mc">II. 期待値のモンテカルロ計算</h2>
+<p class="indent">
+対象の状態が\(X\)となる確率\(P(X)\)を与えられている場合の出力\(f\)の期待値\(\langle f(X) \rangle\)を求めたい事は多い<a href=#fn1 id="r1">[1]</a>:
+</p>
+\begin{equation}
+  \langle f(X) \rangle \equiv \sum_X f(X) P(X) ~ \mbox{又は} ~ \int dX\ f(X) P(X).
+\end{equation}
+<p>ここで, 後者は状態変数\(X\)が連続変数だった場合を表す. </p>
+
+<p class="indent">全状態数が少ない場合は全ての\(X\)について\(f(X) P(X)\)を足し上げる事で計算することができるが, \(X\)の成分数が大きい多重和となっている場合, そのような全列挙による計算は困難である. 連続変数の場合は積分の多重度が大きくなると同様なことが起きる. 例えば, \(D\)重積分の場合, それぞれの積分区間を\(K\)個ずつに分割すると積分領域は\(K^D\)個の積分要素に分割される. これは多重度\(D\)に対して指数関数的に大きくなるため, その全列挙は困難である. 
+</p>
+
+<p class="indent">
+全列挙が困難な場合, 期待値を確率\(P(X)\)に従って生成されたサンプル集団\(\{X_t\}\)の平均として近似的に求める計算手法を, <em>重み付きモンテカルロ法</em>と呼ぶ<a href=#fn2 id="r2">[2]</a>:</p>
+\begin{equation}
+\langle
+f(X) \rangle \approx \frac{1}{M}\sum_{t=1, \dots, M} f(X_t).
+\end{equation}
+<div class="photo">
+<img src="http://farm1.staticflickr.com/40/94680805_cd483658a2.jpg" width="400" alt='Monte Carlo'><br>Photo:Monte Carlo By <a href='http://www.flickr.com/photos/herry/94680805/' target='_blank'>Herry Lawford</a></div>
+<p>サンプル値平均が真の期待値に収束することは, 確率・統計で習う<em>中心極限定理</em>の簡単な応用として示す事ができる. つまり, 重み付きモンテカルロ法の平均値が, サンプル数\(M\)が大きい極限で, 次の平均と分散をもつガウス分布に収束することがわかる. </p>
+<div id="II3">
+\begin{equation}
+\mbox{平均}\ \langle f(X) \rangle, ~ \mbox{分散}\
+\frac{1}{M}\left[\langle f^2(X)\rangle - \langle f(X)\rangle^2\right]
+\end{equation}
+</div>
+<p>この結果からモンテカルロ法の精度はサンプル数が大きくなっても急速には小さくならないが, その精度が状態空間の広さ（積分の多重度）に直接的にはよらないことがわかる. このことより, 逆にそれらが大きな場合には, 確率的な計算手法であるモンテカルロ法の方が適している. </p>
+
+<p class="indent"><a href=#II3>(3)</a>式のガウス分布の分散のルートがモンテカルロ法の精度を意味するが, <a href=#II3>(3)</a>式自身の評価は通常できない. そこで,（独立な）モンテカルロ計算の平均値の集合\(\{\bar{f}_i\}\)から, 近似的に分散を推定することで精度の評価を行うことがしばしば行われる. その場合, 期待値の推定値とその精度は次式で与えられる.</p>
+<div id="II4">
+\begin{align}
+  &\mbox{推定値}\ \bar{\bar{f}} \equiv \frac{\sum_i \bar{f}_i}{N_M},\nonumber\\
+  &\mbox{精度} \equiv \sqrt{\frac{\sum_i \left(\bar{f}_i - \bar{\bar{f}}\right)^2}{N_M(N_M-1)}},
+\end{align}
+</div>
+<p>ここで, \(N_M\)は独立なモンテカルロ計算\(\{\bar{f}_i\}\)の回数である. </p>
+
+<section>
+<h3 id="sec:pi">II.A. 乱数による円周率の計算</h3>
+<p class="indent">以下の円周率を表す積分公式(arctanの定義)を用いて, 円周率をモンテカルロ法で求める事を考える. </p>
+<div id="II5">
+\begin{equation}
+  \pi = \int_0^1 dx \ \frac{4}{1+x^2}.
+\end{equation}
+</div>
+<p>いま, 状態変数を区間\([0,1]\)に属する１次元実数\(X\)と考える. そして, 確率密度を\(P(X)=1\)とすれば, 円周率を\(\pi = \langle 4/(1+X^2) \rangle\)のように期待値と見なすことができ, モンテカルロ法によって期待値（円周率）を評価する事ができる. しかし, 区間\([0,1]\)の一様分布に従うサンプル列\(\{X_t\}\)はどのように生成するのだろうか？</p>
+
+<p class="indent">ある区間にでたらめ（一様）に値をとる数を乱数と呼ぶ. 乱数同士は定義より独立であるが, ルールに基づいて乱数を作成するとそのような事は原理的にはできない. しかし, 実際上, ほぼ独立に見えるような<em>擬似乱数</em>の作り方がいくつか提案されている. 例えば, C言語関数<a href="http://ja.wikipedia.org/wiki/Xorshift">xor128</a>は, 区間\([0, 2^{32}-1]\)の疑似乱数を作成する<a href=#fn3 id="r3">[3]</a>. この擬似乱数を区間の長さ(\(2^{32}\))で割る事で, 区間\([0,1]\)の一様分布に従う疑似確率変数を作成することができる. つまり, 区間\([0,1]\)の一様分布に従うサンプルを作成する手法が見つかったわけである. </p>
+
+</section>
+
+<section>
+<div class="footnote">
+<p id="fn1"><a href="#r1">[1]</a> f(X)は状態が\(X\)の時の対象からの出力値. \(\langle \cdot \rangle\)は統計物理での期待値を表す記号である.
+  </p>
+<p id="fn2"><a href="#r2">[2]</a>確率に基づく方法であるため, カジノで有名な都市にちなんだ名前が付いている. 
+</p>
+<p id="fn3"><a href="#r3">[3]</a>本コードはunsigned longが４バイトであるC言語処理系を前提にしている. また, x, y, z, wは種と呼ばれる. ここでは適当な初期値を設定してある.
+</p>
+</div>
+</section>
+<div class="photo">
+<img src="http://farm9.staticflickr.com/8381/8561590798_46bd0efdd5_q.jpg" width="150" height="150" alt="pi"><br>Photo:pi by <a href="http://www.flickr.com/photos/29233640@N07/8561590798/" title="pi by Robert Couse-Baker, on Flickr">Robert Couse-Baker</a></div>
+
+<section id="sec:pi:p1">
+<div class="problem">
+<h4>問題１</h4>
+<p>
+(1)円周率を求める為に<a href=#II5>(5)</a>式の右辺のモンテカルロ計算を行う. サンプル数は\(10, 10^3, 10^5, 10^7\)とした独立な計算を10回おこなうことで, <a href=#II4>(4)</a>式から各サンプル数での推定値とその誤差を報告せよ. </p>
+<p>(2)前問の結果と<a href=#II3>(3)</a>式と比較し, <a href=#II4>(4)</a>式の妥当性を検証せよ. </p>
+</div>
+</section>
+
+<figure id="demo_pi">
+<canvas align=center width="420" height="420" id="mc_pi"></canvas>
+<figcaption><p>［円周率を表す<a href=#II5>(5)</a>式のモンテカルロ法によるサンプル平均値の様子］</p>
+  <p>（クリックするとサンプル数が変化する）</p>
+<p>短冊はサンプル値の場所に描かれ, その面積はサンプル平均への寄与分を表す. 
+  従って, 短冊の総面積がサンプル平均値になっている. </p></figcaption>
+</figure>
+
+</section>
+
+<h3>次の<a href="section_mcmc.html">III.</a> マルコフ連鎖モンテカルロ法へ</h3>
+</body>
+
+<footer>
+  <p><small>&copy;2013 <a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html">原田健自</a>.</small></p>
+</footer>
+</html>
