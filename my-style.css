@@ -144,7 +144,11 @@ html, body{
 #paper li { margin: 16px 0px; }
 #paper em { margin: 0px 8px; color: green;}
 
-p { text-indent:16px; }
+/*
+ p { text-indent:16px; }
+*/
+ p { text-indent:0; }
+
 
 h1 { font-size: 24px; }
 h2 {
