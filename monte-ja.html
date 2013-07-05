@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Swendsen-Wang アルゴリズムと Wolff アルゴリズム</title>
+<title>イジングモデルのモンテカルロシミュレーション：メトロポリス(Metropolis)、Swendsen-Wang と Wolff アルゴリズム</title>
 <script type="text/javascript"
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
@@ -25,7 +25,7 @@ MathJax.Hub.Config({
 <!-- **Log part-->
 <div id="logo-small">
 <h1>イジングモデルのモンテカルロシミュレーション：
-Swendsen-Wang と Wolff アルゴリズム</h1>
+メトロポリス(Metropolis)、Swendsen-Wang と Wolff アルゴリズム</h1>
 </div>
 
 <div id="main">
@@ -55,12 +55,9 @@ Swendsen-Wang と Wolff アルゴリズム</h1>
 
 <p>上記のデモンストレーションでは、二次元正方格子のイジングモデルの状態が温度を変えるとどのように変化するかをみることができます。パラメータ\(z\)が\(\sqrt{2}\)よりも大きな場合、同色の大きな塊が急激に出現します。これが自発磁化に対応します。</p>
 
-<p>ある特定の温度での状態を生成するのに、ここでは３つのアルゴリズムを用いました。<strong> Swendsen-Wang</strong>や
-<strong>Wolff</strong>のアルゴリズムは小さなステップで非常にさまざまな状態をサンプリングできることが確認できるとおもいます。このようなアルゴ
-リズムが、最近のモンテカルロシミュレーションでは使われています。</p>
-
+<p>ある特定の温度での状態を生成するのに、ここでは<em>マルコフ連鎖モンテカルロ法</em>の３つのアルゴリズム（<em>メトロポリス(Metropolis)</em>、<em>Swendsen-Wang</em>、<em>Wolff</em>の方法）を用いました。Swendsen-WangやWolffのアルゴリズムは小さなステップで非常にさまざまな状態をサンプリングできることが確認できるとおもいます。このようなアルゴリズムが、最近のイジングモデルのモンテカルロシミュレーションでは使われています。マルコフ連鎖モンテカルロ法やメトロポリス(Metropolis)の方法については、<a href="OC/index.html"><em>オンラインコース</em>：数値計算演習「モンテカルロ法」</a>をご覧下さい。</p>
 <hr>
-$Id: monte-ja.html 137 2013-06-30 16:31:18Z kenji $
+$Id: monte-ja.html 154 2013-07-05 11:28:17Z kenji $
 <!-- **Body end -->
 </div>
 </div>
