@@ -208,7 +208,7 @@ h4 {
     background-color: white;
     border-radius:8px;
     color: black;
-    font-size:48px;
+    font-size:64px;
     text-shadow: -2px -2px 3px white,
     -2px 2px 3px white,
     2px -2px 3px white,
@@ -256,6 +256,16 @@ table {
     margin-bottom: 8px;
 }
 
+.link a {
+    text-decoration: none;
+}
+
+.link a:hover {
+    font-style: italic;
+    text-shadow: 2px 2px 3px black;
+    text-decoration: none;
+}
+
 table th {
     border:1px black solid;
     padding: 8px;
@@ -285,8 +295,8 @@ table caption {
         margin:0 16px;
         padding:0;
         border:0;
-        color:blue;
-        background: #FFFF00;
+        color:black;
+        background: #CCC;
 }
 
 
@@ -306,6 +316,20 @@ table caption {
         color:black;
         background:0;
         margin: 0 72px;
+}
+
+.index a {
+    text-decoration: none;
+    color: black;
+}
+
+.index a:hover {
+    font-style: italic;
+    text-shadow: -2px 2px 3px #AAA,
+    2px -2px 3px #AAA,
+    -2px -2px 3px #AAA,
+    2px 2px 3px #AAA;
+    text-decoration: none;
 }
 
 .index {

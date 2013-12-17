@@ -7,6 +7,12 @@
 <link rel="stylesheet" href="my-style.css" media="screen">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Kenji Harada</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
 </head>
 
 <body>
@@ -28,6 +34,85 @@
 
 <h2>News</h2>
 <dl>
+  <dt>December 2013</dt>
+  <dd>
+    <dl>
+      <dt>Article
+        "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N"
+      </dt>
+      <dd>
+        Physical Review B <strong> 88 </strong> (2013) 220408(R).
+        <br>DOI: <a href="http://hdl.handle.net/10.1103/PhysRevB.88.220408">10.1103/PhysRevB.88.220408</a>
+        <br>Preprint: <a href="http://arxiv.org/abs/1307.0501">arXiv:1307.0501v2</a>
+      </dd>
+      <div id="main_sub">
+        <dd>
+          ABSTRACT:   To examine the validity of the scenario of the deconfined critical
+  phenomena, we carry out a quantum Monte Carlo simulation for the
+  SU($N$) generalization of the Heisenberg model with four-body and
+  six-body interactions.  The quantum phase transition between the
+  SU($N$) N\'eel and valence-bond solid phases is characterized for
+  $N=2,3,$ and $4$ on the square and honeycomb lattices.  While
+  finite-size scaling analysis works well up to the maximum lattice
+  size ($L=256$) and indicates the continuous nature of the phase
+  transition, a clear systematic change towards the first-order
+  transition is observed in the estimates of the critical exponent $y
+  \equiv 1/\nu$ as the system size increases.  We also confirm the
+  relevance of a squared valence-bond solid field $\Psi^2$ for the SU(3)
+  model.
+        </dd>
+      </div>
+      <dt>Article (preprint)
+        "Symmetry-protected topological order and negative-sign problem for SO(N) bilinear-biquadratic chains"
+      </dt>
+      <dd>Author:
+        Kouichi Okunishi and Kenji Harada
+      </dd>
+      <div id="main_sub">
+        <dd>
+          ABSTRACT: Using a generalized Jordan-Wigner transformation combined with the defining representation of the SO(N) spin, we map the SO(N) bilinear-biquadratic(BLBQ) spin chain into the N-color bosonic particle model. We find that, when the Jordan-Wigner transformation disentangles the symmetry-protected topological entanglement, this bosonic model becomes negative-sign free in the context of quantum Monte-Carlo simulation. For the SO(3) case, moreover, Kennedy-Tasaki's transformation for the S=1 BLBQ chain, which is also a topological disentangler, derives the same bosonic model through the dimer-R bases. We present temperature dependence of energy, entropy and string order parameter for the SO(N=3, 4, 5) BLBQ chains by the world-line Monte-Carlo simulation for the N-color bosonic particle model.
+        </dd>
+      </div>
+      <dd>
+        Preprint: <a href="http://arxiv.org/abs/1312.2643">arXiv:1312.2643</a>
+      </dd>
+      <dt>
+        Talk "Deconfined quantum criticality in SU(N) Heisenberg models: Finite size scaling analysis based on Bayesian inference"
+      </dt>
+      <dd>
+        Dec 2 - Dec 5,
+        <a href ="http://phys.cts.ntu.edu.tw/workshop/2013/1202TTNW/">
+          Taipei Tensor Network Workshop 2013
+        </a>,
+        National Taiwan University, Taipei, Taiwan.
+      </dd>
+    </dl>
+  </dd>
+  <dt>October 2013</dt>
+  <dd>
+    <dl>
+      <dt>
+      <a href="http://www.cms-initiative.jp/ja/events/cmsi_host/cmsi-20131021e">
+        CMSI International Symposium 2013<br>
+        "Extending the power of computational materials sciences with K-computer"
+      </a>
+      </dt>
+      <dd>
+        Date: October 21st, Mon. - 22nd, Tue.,<br>
+        Venue: Ito International Research Center in the University of Tokyo, Hongo Campus in Tokyo, Japan.
+      </dd>
+      <dt>
+      <a href="http://www.cms-initiative.jp/ja/events/cmsi_host/201310-kobe-workshop">
+      Satellite Meeting 2013 in Kobe<br>
+      "CMSI Kobe International Workshop 2013: Recent Progress in Tensor Network Algorithms"
+      </a>
+      </dt>
+      <dd>
+        Date: October 16th, Wed. - 18th, Fri.,<br>
+        Venue: RIKEN Advanced Institute for Computational Science, Kobe, Japan.
+      </dd>
+    </dl>
+  </dd>
   <dt>July 2013</dt>
   <dd>
     <dl>
@@ -55,24 +140,6 @@
       <dd>
         Preprint: <a href="http://arxiv.org/abs/1307.0501">arXiv:1307.0501</a>
       </dd>
-      <div id="main_sub">
-        <dd>
-          ABSTRACT: To examine the validity of the scenario of the deconfined critical
-  phenomena, we carry out quantum Monte Carlo simulation for the
-  SU(N) generalization of the Heisenberg model with four-body and
-  six-body interactions.  The quantum phase transition between the
-  SU(N) N\'eel and valence-bond solid phases is characterized for
-  N=2, 3, and 4 on the square and honeycomb lattices.  While
-  finite-size scaling analysis works well up to the maximum lattice
-  size (L=256) and indicates the continuous nature of the
-  phase transition, a clear systematic change is observed in the
-  estimates of the critical exponent $y \equiv 1/\nu$ as the system
-  size increases.  The scaling-dimension of the squared valence-bond
-  solid field $\Psi^2$ is also estimated for the SU(3) model with the
-  assumption of the criticality. It suggests the relevance of $\Psi^2$ at the
-  deconfined-critical fixed point.
-        </dd>
-      </div>
       <dt>Article (preprint)
         "Parallelized Quantum Monte Carlo Algorithm with Non-local Worm Update"
       </dt>
@@ -345,7 +412,7 @@ classical model except for J1=J2.
 </dl>
 
 <hr>
-$Id: index-en.html 150 2013-07-03 06:24:41Z kenji $
+$Id: index-en.html 170 2013-12-15 15:57:34Z kenji $
 <!-- **Body end -->
 </div>
 </div>
