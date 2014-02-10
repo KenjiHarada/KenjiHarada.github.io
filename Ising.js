@@ -1,10 +1,10 @@
-// (c) 2013 Kenji Harada.
-var width = 430;
+// (c) 2014 Kenji Harada.
+var width = 444;
 var wh = 10;
 function draw_as(ctx, as, L){
-    var area = width - 3*wh;
+    var area = width - 6*wh;
     var pw = area/L;
-    var base = 3*wh;
+    var base = 5*wh;
     var np = 0;
     for(var i = 0; i < L*L; ++i)
         np+=as[i];
@@ -41,16 +41,16 @@ function round(num, n) {
 }
 
 function draw_status(ctx, z, alg){
-    var base = 3*wh;
+    var base = 5*wh;
     ctx.fillStyle="black";
-    ctx.font = "14px 'Helvetica'";
-    ctx.clearRect(base, width-3*wh, width-base, 3*wh);
+    ctx.font = "18px 'Helvetica'";
+    ctx.clearRect(base, width-6*wh, width-base, 8*wh);
     var w = "(Metropolis' method)";
     if(alg == 1)
         w = "(Swendsen-Wang algorithm)";
     else if(alg == 2)
         w = "(Wolff algorithm)";
-    ctx.fillText("z="+round(z,5) + " " + w, base, width-wh, width-base, 2*wh);
+    ctx.fillText("z="+round(z,5) + " " + w, base, width-3*wh, width-base, 4*wh);
     ctx.stroke();
 }
 
@@ -102,7 +102,7 @@ function draw(){
     if (canvas == null)
         return false;
     var ctx = canvas.getContext('2d');
-    var L=100;
+    var L=96;
 
     var as = new Array(L*L);
     var ar = new Array(L*L);
@@ -115,7 +115,7 @@ function draw(){
     var mouse = { x:null, y:null };
     var t = 0;
     var timer;
-    var delay = 1;
+    var delay = 100;
     var num = 100;
     var ave = 0;
     var z = Math.sqrt(2);

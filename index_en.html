@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,12 +17,6 @@
         <![endif]-->
 
     <script type="text/javascript" src="Ising_home.js" charset="UTF-8"></script>
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-    </script>
-    <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
-    </script>
   </head>
   <body onload="draw();">
 
@@ -35,15 +29,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><em>"More Is Different"</em></a>
+          <a class="navbar-brand" href="index_en.html"><em>"More Is Different"</em></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="study.html">Study</a></li>
-            <li><a href="education.html">Education</a></li>
+            <li class="active"><a href="index_en.html">Home</a></li>
+            <li><a href="study_en.html">Study</a></li>
+            <li><a href="education_en.html">Education</a></li>
             <li><a href="#about">About</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -63,7 +57,7 @@
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title"><a name="news">ニュース</a></h3>
+              <h3 class="panel-title"><a href="news">News</a></h3>
             </div>
             <div class="panel-body">
               <div class="panel-group" id="accordion">
@@ -115,18 +109,19 @@
               <h3 class="panel-title">Toolkit of Bayesian Scaling Analysis</h3>
             </div>
             <div class="panel-body">
-              臨界現象のスケーリング解析にベイズ推定の手法を導入した新しいアルゴリズムの実装。
-              <a href="BSA_demo.html" class="btn btn-success">Demo</a>
+              Reference application codes of a new scaling analysis method of critical phenomena based on Bayesian inference.<br>
+              <a href="BSA_demo_en.html" class="btn btn-success">Demo</a>
               <a href="http://kenjiharada.github.io/BSA/" class="btn btn-info">More details</a>
             </div>
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">オンラインで学ぶモンテカルロ法</h3>
+              <h3 class="panel-title">Demonstration</h3>
             </div>
             <div class="panel-body">
-              モンテカルロ法（マルコフ過程を用いた手法も含む）の基本的な事柄についての解説。<br>
-              <a href="OC/index.html" class="btn btn-info">More details</a>
+              Monte Carlo simulation of the Ising model:
+              Metropolis, Swendsen-Wang, and Wolff algorithms
+              <a href="monte_en.html" class="btn btn-success">More details</a>
             </div>
           </div>
         </div>
@@ -134,28 +129,30 @@
     </div>
 
     <hr>
-
     <div class="container">
       <address>
         <a name="about">
-        <strong>原田健自</strong>
+        <strong>Kenji Harada</strong>
         </a>
         <span class="glyphicon glyphicon-transfer"></span>
-        <strong>Kenji Harada</strong>
-        (<a href="index_en.html">English Page</a>)<br>
+        <strong>原田健自</strong>
+        (<a href="index.html">Japanese Page</a>)<br>
         <span class="glyphicon glyphicon-envelope">
           <a href="mailto:harada@acs.i.kyoto-u.ac.jp">
             harada@acs.i.kyoto-u.ac.jp
           </a>
         </span><br>
         <span class="glyphicon glyphicon-user">
-          京都市左京区吉田本町　京都大学吉田キャンパス　総合研究８号棟４１５号室
-          <a href="http://www.kyoto-u.ac.jp/ja/access/campus/map6r_y.htm" class="label label-info">Map (No.59)</a>
+          Room 415, Reseach Bldg. No.8, Yoshida Campus, Kyoto University, Kyoto, 606-8501, Japan.
+          <a href="http://www.kyoto-u.ac.jp/en/access/campus/main.htm" class="label label-info">Map (No.59)</a>
         </span><br>
         <span class="glyphicon glyphicon-tower">
+          Assistant Professor,
           <a href="http://www.i.kyoto-u.ac.jp/">
-            京都大学大学院情報学研究科
-          </a>助教</span>
+            Graduate School of Informatics, Kyoto University,
+          </a>
+          Japan.
+          </span>
       </address>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

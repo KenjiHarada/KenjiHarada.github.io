@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monte Carlo simulation of the Ising model:
+      Metropolis, Swendsen-Wang, and Wolff algorithms</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" src="Ising.js" charset="UTF-8"></script>
+  </head>
+  <body onload="draw();">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index_en.html"><em>"More Is Different"</em></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="index_en.html">Home</a></li>
+            <li><a href="study_en.html">Study</a></li>
+            <li><a href="education_en.html">Education</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <h1>Monte Carlo simulation of the Ising model:
+        Metropolis, Swendsen-Wang, and Wolff algorithms</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <canvas align=center width="444px" height="444px" id="Ising"></canvas>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Ising model on a square lattice</h3>
+            </div>
+            <div class="panel-body">
+                We plot the local magnetization (up or down) as a color block in the
+square lattice.  Here, the system size is \(L=96\). We update the
+spin configuration with one click for 100 MCS in the case of
+Metropolis or Swendsen-Wang algorithm and 100 steps in the case of
+Wolff algorithm.  The vertical position of the clicked pointer
+controls the value of parameter \(z (\equiv \exp(2J/T) - 1)\). The
+horizontal position also selects the Monte Carlo algorithm.  The left,
+center, and right cases are Metropolis, Swendsen-Wang, and Wolff
+algorithms, respectively.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+<p>When environment, such as temperature, changes, the system which
+consists of many interacting elements may shift to the state where the
+law of a micro level is broken.</p>
+
+<p>For example, if a hot metal is cooled, the magnetization will
+appear spontaneously. Then, the local magnetization of each atom
+points to the specific direction. Since the small magnetization of
+each atom does not necessary like a specific direction with the law of
+a micro level, the spontaneous magnetization is a specific character
+for many atoms which interact each other.</p>
+
+<p>In the Ising model, each atom is in a lattice site and the
+magnetization takes only two opposite states like north or south. And
+each atom only interacts with the nearest neighbor sites so that the
+direction of their magnetizations become equal when the temperature
+falls. However, the direction of either is not necessarily
+preferred.</p>
+
+<p>Although it is in fact a simple model, the phenomenon that the whole
+atoms take a same direction occurs at a certain temperature. This
+corresponds to the appearance of the spontaneous magnetization.
+Thus, the Ising model is very well researched as a
+fundamental model in such the phenomenon.</p>
+
+<p>In the present demonstration, we can see the state of the Ising model
+on the two-dimensional square lattice at a temperature \(T\).
+At low temperature (\(z \ge \sqrt{2}\)), the big island appears rapidly.
+It corresponds to the spontaneous magnetization.</p>
+
+<p>In this <em>Markov Chain Monte Carlo (MCMC)</em> simulation, we can change algorithms (<em>Metropolis</em>, <em>Swendsen-Wang</em>, and <em>Wolff</em> ) which generates the
+states. Especially Swendsen-Wang or Wolff algorithm can sample various states at a small
+step. These algorithms are often used in the recent MCMC
+simulations of Ising model.</p>
+
+<hr>
+    <div class="container">
+      <address>
+        <a name="about">
+        <strong>Kenji Harada</strong>
+        </a>
+        <span class="glyphicon glyphicon-transfer"></span>
+        <strong>原田健自</strong>
+        (<a href="index.html">Japanese Page</a>)<br>
+        <span class="glyphicon glyphicon-envelope">
+          <a href="mailto:harada@acs.i.kyoto-u.ac.jp">
+            harada@acs.i.kyoto-u.ac.jp
+          </a>
+        </span><br>
+        <span class="glyphicon glyphicon-user">
+          Room 415, Reseach Bldg. No.8, Yoshida Campus, Kyoto University, Kyoto, 606-8501, Japan.
+          <a href="http://www.kyoto-u.ac.jp/en/access/campus/main.htm" class="label label-info">Map (No.59)</a>
+        </span><br>
+        <span class="glyphicon glyphicon-tower">
+          Assistant Professor,
+          <a href="http://www.i.kyoto-u.ac.jp/">
+            Graduate School of Informatics, Kyoto University,
+          </a>
+          Japan.
+          </span>
+      </address>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

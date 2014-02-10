@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>イジングモデルのモンテカルロシミュレーション：メトロポリス(Metropolis), Swendsen-Wang, Wolff アルゴリズム</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" src="Ising.js" charset="UTF-8"></script>
+  </head>
+  <body onload="draw();">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><em>"More Is Different"</em></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="study.html">Study</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <h1>イジングモデルのモンテカルロシミュレーション：
+          メトロポリス(Metropolis), Swendsen-Wang, Wolff アルゴリズム</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <canvas align=center width="444px" height="444px" id="Ising"></canvas>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">二次元正方格子のイジングモデル</h3>
+            </div>
+            <div class="panel-body">
+各格子点にある局所磁化の向きは黄と青の２色で表示されている。システムサイズは\(96 \times 96\)。１クリックで、メトロポリスやSwendsen-Wangの方法なら100MCS分、Wolffのアルゴリズムなら100ステップ分、システムの状態が更新される。また、クリック時のポインタの垂直座標でパラメータ\(z (\equiv \exp(2J/T)- 1)\)が、水平座標でアルゴリズムが再設定される。アルゴリズムは、ポインターが正方格子の左側ならメトロポリス、右側ならWolff、真ん中ならSwendsen-Wangの方法が選択される。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+<p>温度などの環境が変わったとき、相互作用をする非常に多くの要素からなるシステムは、巨視的なレベルでみてミクロなレベルの法則を破るような状態に移行することがあります。</p>
+
+<p>たとえば、熱い金属を冷やすと自発的に磁化が出現します。つまり、各原子のもつ小さな磁化が特定の方向にそろった状態になります。ミクロなレベルの法則では、各原子の持つ小さな磁化は特定の方向を好むわけではないので、このような状態の出現は巨視的な数の小さな金属原子があつまることでおこる現象です。</p>
+
+
+<p>イジングモデルでは、各原子が格子点にあるとし、おのおのの原子の磁化が北や南のような正反対の二つの状態しかとらないとしたモデルです。また、温度（\(T\)）がさがると隣接する原子の磁化は同じ方向に向く傾向が強まるとします。しかし、特にどちらかの方向を好むわけではありません。</p>
+
+<p>このような単純なモデルですが、ある温度で急に全体がそろいだすと言う現象が確認できます。これは最初にいった自発磁化の出現に対応しています。イジングモデルはこのような性質を表現する最も簡単なモデルであるであるため、多くの研究がなされ、新しいアルゴリズムを考えるときの基本的なモデルケースとしてもよく用いられます。</p>
+
+
+<p>上記のデモンストレーションでは、二次元正方格子のイジングモデルの状態が温度を変えるとどのように変化するかをみることができます。パラメータ\(z\)が\(\sqrt{2}\)よりも大きな場合、同色の大きな塊が急激に出現します。これが自発磁化に対応します。</p>
+
+<p>ある特定の温度での状態を生成するのに、ここでは<em>マルコフ連鎖モンテカルロ法</em>の３つのアルゴリズム（<em>メトロポリス(Metropolis)</em>、<em>Swendsen-Wang</em>、<em>Wolff</em>の方法）を用いました。Swendsen-WangやWolffのアルゴリズムは小さなステップで非常にさまざまな状態をサンプリングできることが確認できるとおもいます。このようなアルゴリズムが、最近のイジングモデルのモンテカルロシミュレーションでは使われています。マルコフ連鎖モンテカルロ法やメトロポリス(Metropolis)の方法については、<a href="OC/index.html"><strong>"オンラインで学ぶモンテカルロ法"</strong></a>をご覧下さい。</p>
+<hr>
+
+    <div class="container">
+      <address>
+        <a name="about">
+        <strong>原田健自</strong>
+        </a>
+        <span class="glyphicon glyphicon-transfer"></span>
+        <strong>Kenji Harada</strong>
+        (<a href="index_en.html">English Page</a>)<br>
+        <span class="glyphicon glyphicon-envelope">
+          <a href="mailto:harada@acs.i.kyoto-u.ac.jp">
+            harada@acs.i.kyoto-u.ac.jp
+          </a>
+        </span><br>
+        <span class="glyphicon glyphicon-user">
+          京都市左京区吉田本町　京都大学吉田キャンパス　総合研究８号棟４１５号室
+          <a href="http://www.kyoto-u.ac.jp/ja/access/campus/map6r_y.htm" class="label label-info">Map (No.59)</a>
+        </span><br>
+        <span class="glyphicon glyphicon-tower">
+          <a href="http://www.i.kyoto-u.ac.jp/">
+            京都大学大学院情報学研究科
+          </a>助教</span>
+      </address>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
