@@ -1,1 +1,15 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule Monte-eg.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte_en.html [R=301,L]
+RewriteRule index-ja.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html [R=301,L]
+RewriteRule index-en.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index_en.html [R=301,L]
+RewriteRule monte-ja.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte.html [R=301,L]
+RewriteRule monte-en.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte_en.html [R=301,L]
+</IfModule>
+Redirect 301 Monte-eg.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte_en.html
+Redirect 301 index-ja.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html
+Redirect 301 index-en.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index_en.html
+Redirect 301 monte-ja.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte.html
+Redirect 301 monte-en.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte_en.html
+
 ErrorDocument 404 /~harada/not_found.html

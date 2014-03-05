@@ -1,272 +1,331 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>オンラインコース：数値計算演習「モンテカルロ法」（原田健自）</title>
-<script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script>
-<script type="text/javascript" src="percolation.js" charset="UTF-8"></script>
-<link rel="stylesheet" media="all" href="epub.css"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>オンラインで学ぶ「モンテカルロ法」</title>
 
-</head>
-<header>
-<p>
-<a href="index.html#link4">[目次]</a>, 
-前の<a href="section_mcmc.html">［IV. マルコフ連鎖モンテカルロ法］</a>
-</p>
-</header>
-<body onload="draw();">
-<section>
-  <h2 id="sec:p">IV. パーコレーション（浸透）</h2>
-<p class="indent">パーコレーション(浸透)（<a href="index.html#ref3">参考文献[3]</a>）というのは, 例えば, 水が砂粒の隙間を通って逆側に伝わるような現象をさす言葉である. これは, 水だけでなく, 信号, 森林火災, 伝染病, 噂など, 伝搬していくものを含む現象で重要な概念である. </p>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-<h3 id="sec:p:A">IV.A. クラスタ同定</h3>
-<p class="indent">
-まず, 集合を考え, 集合の要素同士に連結という関係を定義する. 連結されている要素の固まりをクラスターと呼ぶ. ここで, 連結しているということを伝搬すると置き換えれば, 領域全体にわたるクラスターが存在するとき浸透が起きていると定義できる. 従って, そのようなクラスター同定は重要な処理である. しかし, 要素同士が直接的に連結されていなくても, 他の要素同士を介して連結している場合があるため, クラスター同定はなかなか難しい. 以下にシンプルなアルゴリズムを紹介する<a href=#fn1 id="r1">[1]</a>. 
-</p>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-<h4 id="sec:p:A:1">IV.A.1. 同定アルゴリズム</h4>
-<p class="indent">
-要素に\(i=0,\cdots,(N-1)\)の番号をつけ, サイズ\(N\)で初期値\(-1\)の配列Lを用意する<a href="#fn2" id="r2">[2]</a>. 各要素\(i\)の属するクラスターのクラスター番号を次の手続きで定義する. 
-<dl>
-  <dt>手順1.</dt>
-  <dd>変数rの初期値をiとする. </dd>
-  <dt>手順2.</dt>
-  <dd>もし, L[r]=-1ならば, rをクラスター番号とする. 違えば, 変数rにL[r]を代入し, この手順の繰り返す. </dd>
-</dl>
-従って, 配列Lの初期値では全ての要素は独立なクラスターとなっている. </p>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } } });
+    </script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+    </script>
+    <script type="text/javascript" src="percolation.js" charset="UTF-8"></script>
+  </head>
+  <body onload="draw();">
+    <ul class="pagination">
+      <li><a href="section_mcmc.html">&laquo;</a></li>
+      <li><a href="index.html">はじめに</a></li>
+      <li><a href="section_mc.html">期待値のモンテカルロ計算</a></li>
+      <li><a href="section_mcmc.html">マルコフ連鎖モンテカルロ法</a></li>
+      <li class="active"><a href="section_percolation.html">パーコレーション（浸透）</a></li>
+      <li><a href="summary.html">おわりに</a></li>
+      <li><a href="summary.html">&raquo;</a></li>
+    </ul>
 
-<p class="indent">もし, ２つの要素が連結している場合, 配列Lを以下の手順で更新する. 
-<dl>
-  <dt>手順1.</dt>
-  <dd>それぞれの要素のクラスター番号r, r'を計算する. </dd>
-  <dt>手順2.</dt>
-<dd>クラスター番号が同じであれば何もしないが, 二つのクラスター番号が違えば, L[r'] = rとする. </dd>
-</dl>
-</p>
+    <div class="container">
+      <div class="row">
+        <h1 id="sec:p">パーコレーション（浸透）</h1>
+        <p>パーコレーション(浸透)（<a href="index.html#ref3">参考文献[3]</a>）というのは、例えば、水が砂粒の隙間を通って逆側に伝わるような現象をさす言葉である。これは、水だけでなく、信号、森林火災、伝染病、噂など、伝搬していくものを含む現象で重要な概念である。</p>
 
-<figure id="demo_p">
-<canvas align=center width="400" height="220" id="percolate"></canvas>
-<figcaption><p style="text-align:center;">［同定アルゴリズムの振る舞い］</p>
-  <p>クラスター番号のグリッドでクリックされた場所のブロック同士が連結される. 配列Lのグリッドをクリックすると初期化する. </p>
-</figcaption>
-</figure>
+        <h2 id="sec:p:A">クラスタ同定</h2>
+        <p>
+          まず、集合を考え、集合の要素同士に連結という関係を定義する。連結されている要素の固まりをクラスターと呼ぶ。ここで、連結しているということを伝搬すると置き換えれば、領域全体にわたるクラスターが存在するとき浸透が起きていると定義できる。従って、そのようなクラスター同定は重要な処理である。しかし、要素同士が直接的に連結されていなくても、他の要素同士を介して連結している場合があるため、クラスター同定はなかなか難しい。以下にシンプルなアルゴリズムを紹介する<a href=#fn1 id="r1">[1]</a>。
+        </p>
 
-<h3 id="sec:p:B">IV.B. 相転移</h3>
-<p class="indent">
-一般的に要素数が無限大の極限（<em>熱力学的極限</em>）では, 連結をコントロールするパラメータ空間のある領域では, 浸透がおきる確率（<em>浸透確率</em>）が0に収束し, 別の領域では1に収束することが知られている. この２つの領域はH\({}_2\)Oの液体相や気体相のようなもので, これらの相境界で起きる事は<em>相転移現象</em>の一種であると考えられている.
-</p>
+        <h3 id="sec:p:A:1">同定アルゴリズム</h3>
+        <p>
+          要素に\(i=0,\cdots,(N-1)\)の番号をつけ、サイズ\(N\)で初期値\(-1\)の配列Lを用意する<a href="#fn2" id="r2">[2]</a>。各要素\(i\)の属するクラスターのクラスター番号を次の手続きで定義する。
+          <dl>
+            <dt>手順1.</dt>
+            <dd>変数rの初期値をiとする。</dd>
+            <dt>手順2.</dt>
+            <dd>もし、L[r]=-1ならば、rをクラスター番号とする。違えば、変数rにL[r]を代入し、この手順の繰り返す。</dd>
+          </dl>
+          従って、配列Lの初期値では全ての要素は独立なクラスターとなっている。</p>
 
-<p class="indent">浸透相と非浸透相の境界点（ぎりぎり浸透が起きる点）でのパラメータの値を<em>浸透閾値</em>という. その周辺でさまざまな量に特異性が現れる事が知られている. 例えば, コントロールパラメータが１次元（\(z\)）の場合, 浸透クラスターの要素数の全要素数に占める割合\(m\)は次のような振る舞いをする場合が多い. </p>
-\begin{equation}
-  \lim_{L \to \infty} m(z) = 
-  \begin{cases}
-    0 & (z < z_c)\\
-    \propto (z-z_c)^\beta & (z \ge z_c)
-  \end{cases}
-\end{equation}
-<p>指数\(\beta\)は特異性を表す<em>臨界指数</em>と呼ばれるもので, 全く異なる（連続）相転移現象にも同じ臨界指数値が現れる. このようにパーコレーション現象にはシステムの詳細によらないという<em>普遍性</em>があり多くの現象の理解に役立っている. </p>
+        <p>もし、２つの要素が連結している場合、配列Lを以下の手順で更新する。
+          <dl>
+            <dt>手順1.</dt>
+            <dd>それぞれの要素のクラスター番号r、r'を計算する。</dd>
+            <dt>手順2.</dt>
+            <dd>クラスター番号が同じであれば何もしないが、二つのクラスター番号が違えば、L[r'] = rとする。</dd>
+          </dl>
+        </p>
+      </div>
 
-<section id="sec:p:p3">
-<div class="problem">
-<h4>問題3</h4>
-<p>
-  ドーナツ形状の表面に貼付けたグリッドを考える（<a href="#fig1">図1</a>参照）. グリッドの格子点の座標を\((x,y) \ [ 0 \le x, y \le (L-1)]\)とすると, ドーナツ形状より格子点\((L,y)\)は\((0,y)\)と, \((x,L)\)は\((x,0)\)と同一点になる（<em>周期的境界条件</em>）. さらに各格子点\((x,y)\)とその上下左右にある一つの格子点を連結することをその格子点間にボンドを置くと表現することにする. 
-</p>
-<p>
-  (1)システムサイズ\(L=16\)で各々のボンドをランダムに（確率1/2で）置いた場合の浸透確率\(p\)（浸透がおきる確率）を, サンプル数\(10^4\)のモンテカルロ計算から求めよ. ここでは, あるクラスターがシステムの分断面\((x,y)=(0, \cdot)\)と\((x,y)=(L/2, \cdot)\)に同時に接触している場合を浸透していると定義する. 
-</p>
-<p>
-  (2) 浸透しているクラスターに含まれる格子点の数\(M\)の割合（\(M/L^2\)）の変化をシステムサイズ\(L=16, 32, 64\)と変えて, サンプル数を\(10^4\)としたモンテカルロ計算より求めよ. 
-</p>
-</div>
-</section>
+      <div class="row">
+        <div class="col-md-6">
+        <figure id="demo_p">
+          <canvas align=center width="400" height="220" id="percolate"></canvas>
+          <figcaption><p>［同定アルゴリズムの振る舞い］</p>
+            <p>クラスター番号のグリッドでクリックされた場所のブロック同士が連結される。配列Lのグリッドをクリックすると初期化する。</p>
+          </figcaption>
+        </figure>
+        </div>
+      </div>
 
-<figure id="fig1">
-  <div><img src="torus.jpg" style="width:436px;border-radius:32px;" alt="Torus"></div>
-  <figcaption><p style="text-align:center;">図1. ドーナツ形状（トーラス）の表面に<br>貼付けたグリッド. </p></figcaption>
-</figure>
+      <div class="row">
+        <h2 id="sec:p:B">相転移</h2>
+        <p>
+          一般的に要素数が無限大の極限（<em>熱力学的極限</em>）では、連結をコントロールするパラメータ空間のある領域では、浸透がおきる確率（<em>浸透確率</em>）が0に収束し、別の領域では1に収束することが知られている。この２つの領域はH\({}_2\)Oの液体相や気体相のようなもので、これらの相境界で起きる事は<em>相転移現象</em>の一種であると考えられている.
+        </p>
 
-<h3 id="sec:p:C">IV.C. 人同士のコミュニケーション網</h3>
-  <p class="indent">ここでは仮想的に以下の仮定に基づく世界を考える. </p>
-<dl>
-<dt>仮定1</dt>
-<dd>各人の住んでいる場所はドーナツ形状に張り付いたグリッドの上に配置されている. </dd>
-<dt>仮定2</dt>
-<dd>人同士の直接的コミュニケーションは上下左右の隣接する場所に住んでいる４人としかとれない.</dd>
-<dt id="a1">仮定3</dt>
-<dd>各々はA思想かアンチA思想のどちらかに傾倒しており, A思想とアンチA思想の人同士は直接的コミュニケーションを確立する事はない. </dd>
-</dl>
-
-<p class="indent">この世界の状態を表すことを考える. まず, 各人（場所\(\mathbf{r}\)に住む）の思想を表す状態変数を\(s(\mathbf{r})\)とする: \(s(\mathbf{r})=0\)でA思想, \(s(\mathbf{r})=1\)でアンチA思想に傾倒. そして, 隣接する人同士（場所\(\mathbf{r}\)と\(\mathbf{r'}\)）の直接的コミュニケーションの状態を表す変数\(g(\mathbf{r}, \mathbf{r'})\)を定義する:値1と0でそれぞれ, 確立, 非確立を表す.</p>
-
-<p class="indent">
-隣接する人同士では, 次の４つの状態が取りうる: （同じ思想かどうか）× （直接的コミュニケーションが確立しているかどうか）. <a href="#a1">仮定3</a>より, 異なる思想間で直接的コミュニーションが確立するような状態の実現可能性は0である. 異なる思想が出現する可能性を1とした場合, 残り２つの状態の相対的な実現可能性を定義するには二つパラメータが必要であるが, ここでは簡単の為に, 同じ思想間同士で直接的コミュニケーションが確立していない場合の実現可能性を1, 確立している場合の実現可能性を\(z\)（活動度と以下呼ぶ）とする. まとめると<a href="#tab1">表1</a>のように1パラメータ\(z\)だけで特徴付けられる確率モデルになる. </p>
-<table id="tab:1">
-  <caption>表1. 隣接する人同士の状態の実現可能性</caption>
-  <tr style="border:1px black solid;">
-    <th style="border:1px black solid;"></th>
-    <th>同じ思想</th>
-    <th>異なる思想</th>
-  </tr>
-  <tr>
-    <th style="border:1px black solid;">直接的コミュニケーションが確立</th>
-    <th>z</th>
-    <th>0</th>
-  </tr>
-  <tr>
-    <th style="border:1px black solid;">直接的コミュニケーションが非確立</th>
-    <th>1</th>
-    <th>1</th>
-  </tr>
-</table>
-<p>
-するとシステム全体の状態\(S\equiv\{s(\cdot)\}, G\equiv\{g(\cdot, \cdot)\}\)が出現する可能性\(W(S, G)\)は次のようになる. </p>
-<div id="eq:weight">
-\begin{equation}
-  W(S,G) \equiv \prod_{\langle \mathbf{r}\mathbf{r'}\rangle} \left[\left\{z \ \delta_{s(\mathbf{r}),s(\mathbf{r'})}\right\}^{g(\mathbf{r}, \mathbf{r'})}\right].
-\end{equation}
-</div>
-<p>ここで, \(\mathbf{r}\)と\(\mathbf{r'}\)は隣接している場所のペアを意味し, \(\prod_{\langle \mathbf{r}\mathbf{r'} \rangle}\)は隣接する場所のペア全ての積を取る事を意味する. さらに, \(\delta_{s,s'}\)は, \(s\)と\(s'\)が等しい場合に1, それ以外では0とする（クロネッカーのデルタ）.</p>
-
-<p class="indent">このモデルで知りたい事は, 世界を一周するようなコミュニケーション網はどれくらいの確率で存在するのかという点とする. 世界一周するコミュニケーション網の存在は, 変数\(g(\mathbf{r}, \mathbf{r'})\)が値1の所に地点\(\mathbf{r}\)と地点\(\mathbf{r'}\)を結ぶボンドを置いたときに, ボンドだけをたどって端から端まで（今の場合は一周）できるかで定義されるので, 活動度\(z\)をコントロールパラメータとするパーコレーションの問題と言える<a href="#fn3" id="r3">[3]</a>.</p>
-
-<h3 id="sec:p:D">IV.D. モンテカルロシミュレーション</h3>
-<p class="indent">活動度\(z\)を与えたときの各システムサイズにおける浸透確率や浸透しているネットワーク網に含まれている人数の割合の期待値を数値的に求めたいとする. モンテカルロ法で求める場合は, 重み<a href="eq:weight">(2)</a>式に従って, サンプル状態\((S,G)\)を複数作成して, 次の量の平均を計算すればよい:</p>
-<dl>
-  <dt>浸透確率</dt>
-  <dd>\(g=1\)で結ばれている人の集合をクラスターとし, 浸透クラスターをシステムの分断面\((x,y)=(0, \cdot)\)と\((x,y)=(L/2, \cdot)\)に同時に接触しているクラスターと定義する. その時, 浸透確率は次の関数\(f_p\)の期待値である. 
-      \begin{equation}
-        f_p(G) \equiv 
+        <p>浸透相と非浸透相の境界点（ぎりぎり浸透が起きる点）でのパラメータの値を<em>浸透閾値</em>という。その周辺でさまざまな量に特異性が現れる事が知られている。例えば、コントロールパラメータが１次元（\(z\)）の場合、浸透クラスターの要素数の全要素数に占める割合\(m\)は次のような振る舞いをする場合が多い。</p>
+        \begin{equation}
+        \lim_{L \to \infty} m(z) = 
         \begin{cases}
-          1 & (\mbox{浸透クラスターがある})\\
-          0 & (\mbox{浸透クラスターがない})
-        \end{cases}.
-      \end{equation}
-  </dd>
-  <dt>浸透クラスターに含まれる人数の割合</dt>
-  <dd>次の量の期待値で定義する. 
-      \begin{equation}
-        m(S,G) \equiv \frac{\mbox{浸透クラスターに含まれる人数}}{\mbox{総人数}}.
-      \end{equation}
-  </dd>
-</dl>
+        0 & (z < z_c)\\
+        \propto (z-z_c)^\beta & (z \ge z_c)
+        \end{cases}
+        \end{equation}
 
-<p class="indent">出現頻度が<a href="eq:weight">(2)</a>式に従うサンプル状態は一様分布から直接的に作るのは非常に困難であるため, マルコフ過程を用いる事にする. しかし, <a href="eq:weight">(2)</a>式では, クロネッカーのデルタが含まれており, \(g=1\)で結ばれた２点での状態変数\(s\)は同じ値にならないと重みが0になる. つまり, 重みが0にならない為に強い拘束条件がついており, このままではメトロポリス法による状態\(S\)の部分的な変更になじまない<a href="#fn4" id="r4">[4]</a>. そこで次のような周辺尤度\(W(S)\)を重みとした手法を考える.</p>
+        <p>指数\(\beta\)は特異性を表す<em>臨界指数</em>と呼ばれるもので、全く異なる（連続）相転移現象にも同じ臨界指数値が現れる。このようにパーコレーション現象にはシステムの詳細によらないという<em>普遍性</em>があり多くの現象の理解に役立っている。
+        </p>
 
-<p class="indent"><a href="eq:weight">(2)</a>式から状態\(S\)の周辺尤度（重み）を次のように定義することができる<a href="#fn5" id="r5">[5]</a>. </p>
-<a name="eq:ws">
-\begin{equation}
-  W(S) \equiv \sum_G W(S,G) = \prod_{\langle \mathbf{r}\mathbf{r'}\rangle} \left\{z \ \delta_{s(\mathbf{r}),s(\mathbf{r'})} + 1\right\}.
-\end{equation}
-</a>
+        <section id="sec:p:p3">
+          <h2>問題3</h2>
+          <p>
+            ドーナツ形状の表面に貼付けたグリッドを考える（<a href="#fig1">図1</a>参照）。グリッドの格子点の座標を\((x,y) \ [ 0 \le x、y \le (L-1)]\)とすると、ドーナツ形状より格子点\((L,y)\)は\((0,y)\)と、\((x,L)\)は\((x,0)\)と同一点になる（<em>周期的境界条件</em>）。さらに各格子点\((x,y)\)とその上下左右にある一つの格子点を連結することをその格子点間にボンドを置くと表現することにする。
+          </p>
+          <p>
+            (1)システムサイズ\(L=16\)で各々のボンドをランダムに（確率1/2で）置いた場合の浸透確率\(p\)（浸透がおきる確率）を、サンプル数\(10^4\)のモンテカルロ計算から求めよ。ここでは、あるクラスターがシステムの分断面\((x,y)=(0、\cdot)\)と\((x,y)=(L/2、\cdot)\)に同時に接触している場合を浸透していると定義する。
+          </p>
+          <p>
+            (2) 浸透しているクラスターに含まれる格子点の数\(M\)の割合（\(M/L^2\)）の変化をシステムサイズ\(L=16、32、64\)と変えて、サンプル数を\(10^4\)としたモンテカルロ計算より求めよ。
+          </p>
+        </section>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <figure id="fig1">
+            <div><img src="torus.jpg" style="width:436px;border-radius:32px;" alt="Torus"></div>
+            <figcaption><p>図1. ドーナツ形状（トーラス）の表面に貼付けたグリッド。</p></figcaption>
+          </figure>
+        </div>
+      </div>
 
-<p class="indent">さらに状態変数\(S\)が与えられた時の状態変数\(G\)の条件付き確率は次のようになる. </p>
-<a name="eq:pc">
-\begin{eqnarray}
-  &&P(G|S) \equiv \frac{W(S,G)}{W(S)} = \prod_{\langle \mathbf{r}\mathbf{r'}\rangle}
-  P(g(\mathbf{r}, \mathbf{r'})|s(\mathbf{r}),s(\mathbf{r'})), \nonumber\\
-  &&P(g|s, s') \equiv 
-  \begin{cases}
-    \frac{1}{z\delta_{s,s'} + 1} & (g=0)\\
-    1-\frac{1}{z\delta_{s,s'} + 1} & (g=1)
-  \end{cases}
-\end{eqnarray}
-</a>
-<p>これらをふまえて, 次の手順で状態\((S,G)\)を作成する. </p>
-<dl>
-  <dt>手順1.</dt>
-  <dd>メトロポリス法を用いて状態変数\(S\)のサンプル列を重み<a href=#eq:ws>(5)</a>式に従い作成する.</dd>
-  <dt>手順2.</dt>
-  <dd>各\(S\)に対して, 毎回, 状態変数\(G\)を条件付き確率<a href=#eq:pc>(6)</a>式で作成する:
-  変数\(g(\mathbf{r}, \mathbf{r'})\)それぞれは独立に条件付き確率\(P(g(\mathbf{r},\mathbf{r'})|s(\mathbf{r}), s(\mathbf{r'}))\)に従い作成する. </dd>
-</dl>
+      <div class="row">
+        <h2 id="sec:p:C">人同士のコミュニケーション網</h2>
+        <p>ここでは仮想的に以下の仮定に基づく世界を考える。</p>
+        <dl>
+          <dt>仮定1</dt>
+          <dd>各人の住んでいる場所はドーナツ形状に張り付いたグリッドの上に配置されている。</dd>
+          <dt>仮定2</dt>
+          <dd>人同士の直接的コミュニケーションは上下左右の隣接する場所に住んでいる４人としかとれない.</dd>
+          <dt id="a1">仮定3</dt>
+          <dd>各々はA思想かアンチA思想のどちらかに傾倒しており、A思想とアンチA思想の人同士は直接的コミュニケーションを確立する事はない。</dd>
+        </dl>
 
-<h4 id="sec:p:D:1">IV.D.1. 状態変数\(S\)のマルコフ連鎖モンテカルロ法</h4>
-以下の手順（1 Monte Carlo Sweep(MCS)と呼ぶ）で次の状態\(S(t+1)\)を確率的に作成する. 
-<dl>
-  <dt>手順1.</dt>
-  <dd>ランダムに格子点（人）を１つ選ぶ. </dd>
-  <dt>手順2.</dt>
-  <dd>選んだ格子点の状態変数\(s\)をフリップしたものを次状態候補\(s'\)とする. フリップとは, \(s=0\)なら\(1\)に, またはその逆の操作を意味する. </dd>
-  <dt>手順3.</dt>
-  <dd>区間[0,1]の一様乱数\(r\)を作成し, もし, 
-\begin{equation}
-r \le \min\left[1, \frac{W(\cdots, s', \cdots)}{W(\cdots, s, \cdots)}\right]
-\end{equation}
-ならば\(s\)をフリップする. それ以外は何もしない. </dd>
-  <dt>手順4.</dt>
-  <dd>以上の手順を総格子点数の回数だけ行う.</dd> 
-</dl>
+        <p>この世界の状態を表すことを考える。まず、各人（場所\(\mathbf{r}\)に住む）の思想を表す状態変数を\(s(\mathbf{r})\)とする: \(s(\mathbf{r})=0\)でA思想、\(s(\mathbf{r})=1\)でアンチA思想に傾倒。そして、隣接する人同士（場所\(\mathbf{r}\)と\(\mathbf{r'}\)）の直接的コミュニケーションの状態を表す変数\(g(\mathbf{r}、\mathbf{r'})\)を定義する:値1と0でそれぞれ、確立、非確立を表す.</p>
 
-<section>
-<div class="footnote">
-<p id="fn1"><a href="#r1">[1]</a> 
-クラスタサイズの大小比較やパスの圧縮等はしていないため最速なアルゴリズムではない. 
-</p>
-<p id="fn2"><a href="#r2">[2]</a> 
-C言語のように配列のインデックスは\(0\)から\((N-1)\)までのレンジとする. 
-</p>
-<p id="fn3"><a href="#r3">[3]</a> 
-専門的には, 格子点も関係しているので, 格子点をサイトと呼び, 全体ではボンド・サイトパーコレーション問題と呼ばれる. 
-</p>
-<p id="fn4"><a href="#r4">[4]</a> 
-実は<a href="eq:weight">(2)</a>式に基づく非常に巧妙なマルコフ過程が存在し, それを用いると劇的に効率がよくなることが知られている. そのようなアルゴリズムをクラスターアルゴリズム（<a href="index.html#ref4">参考文献[4]</a>）と呼ぶ.
-</p>
-<p id="fn5"><a href="#r5">[5]</a> 
-これはイジングモデル. もっと一般的には2状態ポッツモデルの重みと同じ形になっている
-</p>
-</div>
-</section>
+        <p>
+          隣接する人同士では、次の４つの状態が取りうる: （同じ思想かどうか）× （直接的コミュニケーションが確立しているかどうか）。<a href="#a1">仮定3</a>より、異なる思想間で直接的コミュニーションが確立するような状態の実現可能性は0である。異なる思想が出現する可能性を1とした場合、残り２つの状態の相対的な実現可能性を定義するには二つパラメータが必要であるが、ここでは簡単の為に、同じ思想間同士で直接的コミュニケーションが確立していない場合の実現可能性を1、確立している場合の実現可能性を\(z\)（活動度と以下呼ぶ）とする。まとめると<a href="#tab1">表1</a>のように1パラメータ\(z\)だけで特徴付けられる確率モデルになる。</p>
+        <table id="tab:1" class="table table-bordered">
+          <caption>表1. 隣接する人同士の状態の実現可能性</caption>
+          <tr>
+            <th></th>
+            <th>同じ思想</th>
+            <th>異なる思想</th>
+          </tr>
+          <tr>
+            <th>直接的コミュニケーションが確立</th>
+            <th>z</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>直接的コミュニケーションが非確立</th>
+            <th>1</th>
+            <th>1</th>
+          </tr>
+        </table>
+        <p>
+          するとシステム全体の状態\(S\equiv\{s(\cdot)\}、G\equiv\{g(\cdot、\cdot)\}\)が出現する可能性\(W(S、G)\)は次のようになる。</p>
+        <div id="eq:weight">
+          \begin{equation}
+          W(S,G) \equiv \prod_{\langle \mathbf{r}\mathbf{r'}\rangle} \left[\left\{z \ \delta_{s(\mathbf{r}),s(\mathbf{r'})}\right\}^{g(\mathbf{r}、\mathbf{r'})}\right].
+          \end{equation}
+        </div>
+        <p>ここで、\(\mathbf{r}\)と\(\mathbf{r'}\)は隣接している場所のペアを意味し、\(\prod_{\langle \mathbf{r}\mathbf{r'} \rangle}\)は隣接する場所のペア全ての積を取る事を意味する。さらに、\(\delta_{s,s'}\)は、\(s\)と\(s'\)が等しい場合に1、それ以外では0とする（クロネッカーのデルタ）.</p>
 
-<section id="sec:p:p4">
-<div class="problem">
-  <h4>問題4</h4>
-  <p>
-  考察するパーコレーションモデルの状態の重みは<a href="eq:weight">(2)</a>式とし, システムサイズは\(L\times L\)とする. 
-  </p>
-  <p>
-  (1)マルコフ連鎖モンテカルロ法のサンプル列の相関を見る為に, 初期状態の影響が消える様子をグラフを用いて示せ. 観察する量は隣接する人が同じ状態である確率\(E\):
-  <a name="eq:E">
-  \begin{equation}
-    E(S) \equiv \frac{1}{2L^2} \sum_{\langle \mathbf{r} \mathbf{r'} \rangle} \delta_{s(\mathbf{r}),s(\mathbf{r'})} .
-  \end{equation}
-  </a>
-  ただし, 活動度は\(z=\sqrt{2}\), システムサイズは\(L=48\)とし, 初期状態\(S(t=0)\)は完全にランダムなものとする.
-  </p>
-<p>
-(2)２つの量（\(f_p(G)\)と\(m(S,G)\)）の期待値について, 活動度とシステムサイズへの依存性をモンテカルロ法により求めて報告せよ. 
-ただし, 活動度は区間\((1.2, 1.5]\)内に均等に\(12\)点以上, システムサイズは\(L=12, 16, 24, 32, 48\)とし, 各モンテカルロ計算でのサンプリング数は\(10^5\)MCS以上（例: \(10^4\)MCSを\(10\)セット）とする. また, 初期値の影響が残らないように, 別途の\(10^3\)MCSを最初に行い, 平均値の計算にはそれを含めない事. 
-</p>
-<p>
-(3)上の計算結果に基づき, システムサイズが大きくなった極限での浸透確率と浸透クラスターに含まれる人数の割合の振る舞いを予測せよ. 
-</p>
-</div>
-</section>
+        <p>このモデルで知りたい事は、世界を一周するようなコミュニケーション網はどれくらいの確率で存在するのかという点とする。世界一周するコミュニケーション網の存在は、変数\(g(\mathbf{r}、\mathbf{r'})\)が値1の所に地点\(\mathbf{r}\)と地点\(\mathbf{r'}\)を結ぶボンドを置いたときに、ボンドだけをたどって端から端まで（今の場合は一周）できるかで定義されるので、活動度\(z\)をコントロールパラメータとするパーコレーションの問題と言える<a href="#fn3" id="r3">[3]</a>.</p>
+      </div>
 
-<figure id="demo_ising">
-<canvas align=center width="400" height="400" id="ising"></canvas>
-<figcaption><p style="text-align:center;">［イジングモデル（<a href="#eq:ws">(5)</a>式）のメトロポリス法によるモンテカルロシミュレーション］</p>
-<p>
-画面クリックにより\(z\)値の再設定と100MCSを行う. 
-上部グリッドに状態\(s(r)\)（システムサイズは32 x 32）を２色で, 更に, その下に\(z\)の設定値と\(E\)（<a href="#eq:E">(8)</a>式）の期待値（100MCS）を表示. 
-新しい\(z\)値はクリック時のポインターの水平座標で決定され, その対応関係は一番下のメーターバーの赤部分で表示. 
-</p>
-</figcaption>
-</figure>
-</section>
+      <div class="row">
+        <h2 id="sec:p:D">モンテカルロシミュレーション</h2>
+        <p>活動度\(z\)を与えたときの各システムサイズにおける浸透確率や浸透しているネットワーク網に含まれている人数の割合の期待値を数値的に求めたいとする。モンテカルロ法で求める場合は、重み<a href="eq:weight">(2)</a>式に従って、サンプル状態\((S,G)\)を複数作成して、次の量の平均を計算すればよい:</p>
+        <dl>
+          <dt>浸透確率</dt>
+          <dd>\(g=1\)で結ばれている人の集合をクラスターとし、浸透クラスターをシステムの分断面\((x,y)=(0、\cdot)\)と\((x,y)=(L/2、\cdot)\)に同時に接触しているクラスターと定義する。その時、浸透確率は次の関数\(f_p\)の期待値である。
+            \begin{equation}
+            f_p(G) \equiv 
+            \begin{cases}
+            1 & (\mbox{浸透クラスターがある})\\
+            0 & (\mbox{浸透クラスターがない})
+            \end{cases}.
+            \end{equation}
+          </dd>
+          <dt>浸透クラスターに含まれる人数の割合</dt>
+          <dd>次の量の期待値で定義する。
+            \begin{equation}
+            m(S,G) \equiv \frac{\mbox{浸透クラスターに含まれる人数}}{\mbox{総人数}}.
+            \end{equation}
+          </dd>
+        </dl>
 
-<div class="link"><a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html">
-    <h3 align=center>コース修了！</h3></a></div>
-</body>
-<footer>
-  <p><small>&copy;2013 <a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html">原田健自</a>.</small></p>
-</footer>
+        <p>出現頻度が<a href="eq:weight">(2)</a>式に従うサンプル状態は一様分布から直接的に作るのは非常に困難であるため、マルコフ過程を用いる事にする。しかし、<a href="eq:weight">(2)</a>式では、クロネッカーのデルタが含まれており、\(g=1\)で結ばれた２点での状態変数\(s\)は同じ値にならないと重みが0になる。つまり、重みが0にならない為に強い拘束条件がついており、このままではメトロポリス法による状態\(S\)の部分的な変更になじまない<a href="#fn4" id="r4">[4]</a>。そこで次のような周辺尤度\(W(S)\)を重みとした手法を考える.</p>
+
+        <p><a href="eq:weight">(2)</a>式から状態\(S\)の周辺尤度（重み）を次のように定義することができる<a href="#fn5" id="r5">[5]</a>。</p>
+        <a name="eq:ws"></a>
+          \begin{equation}
+          W(S) \equiv \sum_G W(S,G) = \prod_{\langle \mathbf{r}\mathbf{r'}\rangle} \left\{z \ \delta_{s(\mathbf{r}),s(\mathbf{r'})} + 1\right\}.
+          \end{equation}
+
+        <p>さらに状態変数\(S\)が与えられた時の状態変数\(G\)の条件付き確率は次のようになる。</p>
+        <a name="eq:pc"></a>
+          \begin{eqnarray}
+          &&P(G|S) \equiv \frac{W(S,G)}{W(S)} = \prod_{\langle \mathbf{r}\mathbf{r'}\rangle}
+          P(g(\mathbf{r}、\mathbf{r'})|s(\mathbf{r}),s(\mathbf{r'})), \nonumber\\
+          &&P(g|s、s') \equiv 
+          \begin{cases}
+          \frac{1}{z\delta_{s,s'} + 1} & (g=0)\\
+          1-\frac{1}{z\delta_{s,s'} + 1} & (g=1)
+          \end{cases}
+          \end{eqnarray}
+        <p>これらをふまえて、次の手順で状態\((S,G)\)を作成する。</p>
+        <dl>
+          <dt>手順1.</dt>
+          <dd>メトロポリス法を用いて状態変数\(S\)のサンプル列を重み<a href=#eq:ws>(5)</a>式に従い作成する.</dd>
+          <dt>手順2.</dt>
+          <dd>各\(S\)に対して、毎回、状態変数\(G\)を条件付き確率<a href=#eq:pc>(6)</a>式で作成する:
+            変数\(g(\mathbf{r}、\mathbf{r'})\)それぞれは独立に条件付き確率\(P(g(\mathbf{r},\mathbf{r'})|s(\mathbf{r})、s(\mathbf{r'}))\)に従い作成する。</dd>
+        </dl>
+
+        <h3 id="sec:p:D:1">状態変数\(S\)のマルコフ連鎖モンテカルロ法</h3>
+        以下の手順（1 Monte Carlo Sweep(MCS)と呼ぶ）で次の状態\(S(t+1)\)を確率的に作成する。
+        <dl>
+          <dt>手順1.</dt>
+          <dd>ランダムに格子点（人）を１つ選ぶ。</dd>
+          <dt>手順2.</dt>
+          <dd>選んだ格子点の状態変数\(s\)をフリップしたものを次状態候補\(s'\)とする。フリップとは、\(s=0\)なら\(1\)に、またはその逆の操作を意味する。</dd>
+          <dt>手順3.</dt>
+          <dd>区間[0,1]の一様乱数\(r\)を作成し、もし、
+            \begin{equation}
+            r \le \min\left[1、\frac{W(\cdots、s'、\cdots)}{W(\cdots、s、\cdots)}\right]
+            \end{equation}
+            ならば\(s\)をフリップする。それ以外は何もしない。</dd>
+          <dt>手順4.</dt>
+          <dd>以上の手順を総格子点数の回数だけ行う.</dd> 
+        </dl>
+
+        <section id="sec:p:p4">
+          <h2>問題4</h2>
+          <p>
+            考察するパーコレーションモデルの状態の重みは<a href="eq:weight">(2)</a>式とし、システムサイズは\(L\times L\)とする。
+          </p>
+          <p>
+            (1) マルコフ連鎖モンテカルロ法のサンプル列の相関を見る為に、初期状態の影響が消える様子をグラフを用いて示せ。観察する量は隣接する人が同じ状態である確率\(E\):
+            <a name="eq:E"></a>
+              \begin{equation}
+              E(S) \equiv \frac{1}{2L^2} \sum_{\langle \mathbf{r} \mathbf{r'} \rangle} \delta_{s(\mathbf{r}),s(\mathbf{r'})} .
+              \end{equation}
+            ただし、活動度は\(z=\sqrt{2}\)、システムサイズは\(L=48\)とし、初期状態\(S(t=0)\)は完全にランダムなものとする.
+          </p>
+          <p>
+            (2) ２つの量（\(f_p(G)\)と\(m(S,G)\)）の期待値について、活動度とシステムサイズへの依存性をモンテカルロ法により求めて報告せよ。
+            ただし、活動度は区間\((1.2、1.5]\)内に均等に\(12\)点以上、システムサイズは\(L=12、16、24、32、48\)とし、各モンテカルロ計算でのサンプリング数は\(10^5\)MCS以上（例: \(10^4\)MCSを\(10\)セット）とする。また、初期値の影響が残らないように、別途の\(10^3\)MCSを最初に行い、平均値の計算にはそれを含めない事。
+          </p>
+          <p>
+            (3) 上の計算結果に基づき、システムサイズが大きくなった極限での浸透確率と浸透クラスターに含まれる人数の割合の振る舞いを予測せよ。
+          </p>
+        </section>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <figure id="demo_ising">
+            <canvas align=center width="400" height="400" id="ising"></canvas>
+            <figcaption><p>［イジングモデル（<a href="#eq:ws">(5)</a>式）のメトロポリス法によるモンテカルロシミュレーション］</p>
+              <p>
+                画面クリックにより\(z\)値の再設定と100MCSを行う。
+                上部グリッドに状態\(s(r)\)（システムサイズは32 x 32）を２色で、更に、その下に\(z\)の設定値と\(E\)（<a href="#eq:E">(8)</a>式）の期待値（100MCS）を表示。
+                新しい\(z\)値はクリック時のポインターの水平座標で決定され、その対応関係は一番下のメーターバーの赤部分で表示。
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="row">
+        <small>
+          <p id="fn1"><a href="#r1">[1]</a> 
+            クラスタサイズの大小比較やパスの圧縮等はしていないため最速なアルゴリズムではない。
+          </p>
+          <p id="fn2"><a href="#r2">[2]</a> 
+            C言語のように配列のインデックスは\(0\)から\((N-1)\)までのレンジとする。
+          </p>
+          <p id="fn3"><a href="#r3">[3]</a> 
+            専門的には、格子点も関係しているので、格子点をサイトと呼び、全体ではボンド・サイトパーコレーション問題と呼ばれる。
+          </p>
+          <p id="fn4"><a href="#r4">[4]</a> 
+            実は<a href="eq:weight">(2)</a>式に基づく非常に巧妙なマルコフ過程が存在し、それを用いると劇的に効率がよくなることが知られている。そのようなアルゴリズムをクラスターアルゴリズム（<a href="index.html#ref4">参考文献[4]</a>）と呼ぶ.
+          </p>
+          <p id="fn5"><a href="#r5">[5]</a> 
+            これはイジングモデル。もっと一般的には2状態ポッツモデルの重みと同じ形になっている
+          </p>
+        </small>
+      </div>
+    </div>
+
+    <ul class="pagination">
+      <li><a href="section_mcmc.html">&laquo;</a></li>
+      <li><a href="index.html">はじめに</a></li>
+      <li><a href="section_mc.html">期待値のモンテカルロ計算</a></li>
+      <li><a href="section_mcmc.html">マルコフ連鎖モンテカルロ法</a></li>
+      <li class="active"><a href="section_percolation.html">パーコレーション（浸透）</a></li>
+      <li><a href="summary.html">おわりに</a></li>
+      <li><a href="summary.html">&raquo;</a></li>
+    </ul>
+
+    <hr>
+    <div class="container">
+      <address>
+        <a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html">
+        <strong>原田健自</strong>
+        </a>
+        <span class="glyphicon glyphicon-transfer"></span>
+        <a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index_en.html"><strong>Kenji Harada</strong></a><br>
+        <span class="glyphicon glyphicon-envelope">
+          <a href="mailto:harada@acs.i.kyoto-u.ac.jp">
+            harada@acs.i.kyoto-u.ac.jp
+          </a>
+        </span><br>
+        <span class="glyphicon glyphicon-user">
+          京都市左京区吉田本町　京都大学吉田キャンパス　総合研究８号棟４１５号室
+          <a href="http://www.kyoto-u.ac.jp/ja/access/campus/map6r_y.htm" class="label label-info">Map (No.59)</a>
+        </span><br>
+        <span class="glyphicon glyphicon-tower">
+          <a href="http://www.i.kyoto-u.ac.jp/">
+            京都大学大学院情報学研究科
+          </a>助教</span>
+      </address>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
 </html>

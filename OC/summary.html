@@ -25,26 +25,28 @@
     </script>
   </head>
   <body>
-    <div class="jumbotron">
-      <h1><small>オンラインで学ぶ</small>「モンテカルロ法」</h1>
-      <p>
-        モンテカルロ法は、自然現象から、社会現象、はては、ゲーム等、さまざまな分野のシミュレーションに用いられる確率的数値計算法。
-        本ページでは、モンテカルロ法の基礎（<em>マルコフ連鎖モンテカルロ法</em>も含む）についてオンラインによる学習機会を提供する。
-        <small>ただし、著者の専門（統計物理）に近いところから素材を選んでいる。</small>
-      </p>
-    </div>
-
     <ul class="pagination">
-      <li class="disabled"><a href="index.html">&laquo;</a></li>
-      <li class="active"><a href="index.html">はじめに</a></li>
+      <li><a href="section_percolation.html">&laquo;</a></li>
+      <li><a href="index.html">はじめに</a></li>
       <li><a href="section_mc.html">期待値のモンテカルロ計算</a></li>
       <li><a href="section_mcmc.html">マルコフ連鎖モンテカルロ法</a></li>
       <li><a href="section_percolation.html">パーコレーション（浸透）</a></li>
-      <li><a href="summary.html">おわりに</a></li>
-      <li><a href="section_mc.html">&raquo;</a></li>
+      <li class="active"><a href="summary.html">おわりに</a></li>
+      <li class="disabled"><a href="#">&raquo;</a></li>
     </ul>
 
     <div class="container">
+      <h1>おわりに</h1>
+      <p>
+      本ページは数値計算演習のための資料に基づいて作成されているため、数値計算手法としてのモンテカルロ法のさまざまな性質については、
+      証明などはせず、簡単に紹介しただけになっている。収束性などについて詳しく知りたい場合は<a href="#ref3">参考文献[2]</a>等を参考にされたい。
+      </p>
+      <p>
+      また、準備の関係上、取り上げなかったアルゴリズムももちろん多々ある。特に、マルコフ過程モンテカルロ法に関して、
+      連続変数でサンプル空間が定義されている場合のハイブリッドモンテカルロ法、サンプリングが困難な場合に
+      よく用いられる拡張アンサンブル法（レプリカ交換等）を取り上げなかった。これらについて、またの機会に取り上げる予定である。
+      </p>
+
     <h2>参考文献</h2>
     <ol>
       <li id="ref1">
@@ -54,6 +56,7 @@
       <li id="ref4"><a href="http://link.aps.org/doi/10.1103/PhysRevLett.58.86">R. H. Swendsen and J.-S. Wang: Phys. Rev. Lett. Vol.58, pp.86 (1987).</a>
     </ol>
     </div>
+
     <hr>
     <div class="container">
       <address>
