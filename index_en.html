@@ -17,6 +17,12 @@
         <![endif]-->
 
     <script type="text/javascript" src="Ising_home.js" charset="UTF-8"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+    </script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+    </script>
   </head>
   <body onload="draw();">
 
@@ -75,12 +81,37 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                        <h5><span class="label label-info">11 Mar 2014</span></h5>
+                        Paper "Parallelized quantum Monte Carlo algorithm with non-local worm update" was accepted in Physical Review Letters.
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p><span class="label label-default">PREPRINT</span> <a href="http://arxiv.org/abs/1307.0328">arXiv:1307.0328</a><br>
+<span class="label label-default">AUTHOR</span> Akiko Masaki-Kato, Takafumi Suzuki, Kenji Harada, Synge Todo, Naoki Kawashima<br>
+<span class="label label-default">ABSTRACT</span>
+Based on the worm algorithm in the path-integral representation, we propose a general quantum Monte Carlo algorithm suitable for parallelizing on a distributed-memory computer by domain decomposition.  Of particular importance is its application to large lattice systems of bosons and spins.  A large number of worms are introduced and its population is controlled by a fictitious transverse field.  For a benchmark, we study the size-dependence of the Bose-condensation order parameter of the hardcore Bose-Hubbard model with $L\times L\times \beta t = 10240\times 10240\times 16$, using 3200 computing cores, which shows good parallelization efficiency.</p>
+
+                    </div>
+                  </div>
+                </div>
+                
+                
+                
+                
+                
+                <!-- 2 -->
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
                         <h5><span class="label label-info">06 Mar 2014</span></h5>
                         Talk "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N" S27.00013 in APS March Meeting 2014, Denver, Colorado, USA.
                       </a>
                     </h4>
                   </div>
-                  <div id="collapse2" class="panel-collapse collapse">
+                  <div id="collapse3" class="panel-collapse collapse">
                     <div class="panel-body">
                       <p>From 3 March 2014 to 7 March 2014,
 <ul>
@@ -102,17 +133,17 @@
                 
                 
                 
-                <!-- 2 -->
+                <!-- 3 -->
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
                         <h5><span class="label label-info">13 Feb 2014</span></h5>
                         Toolkit BSA was announced in the MateriApps site.
                       </a>
                     </h4>
                   </div>
-                  <div id="collapse3" class="panel-collapse collapse">
+                  <div id="collapse4" class="panel-collapse collapse">
                     <div class="panel-body">
                       <p><a href="http://kenjiharada.github.io/BSA/">Toolkit BSA</a> is a reference code of a new method for scaling analysis
 of critical phenomena. Using Bayesian inference, we automatically
@@ -127,17 +158,17 @@ the <a href="http://ma.cms-initiative.jp/en/application-list/bsa-1?set_language=
                 
                 
                 
-                <!-- 3 -->
+                <!-- 4 -->
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
                         <h5><span class="label label-info">13 Dec 2013</span></h5>
-                        Paper "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N" was published.
+                        Paper "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N" was published in Physical Review B: Rapid Communications.
                       </a>
                     </h4>
                   </div>
-                  <div id="collapse4" class="panel-collapse collapse">
+                  <div id="collapse5" class="panel-collapse collapse">
                     <div class="panel-body">
                       <p><span class="label label-default">REFERENCE</span> Physical Review B <strong> 88 </strong> (2013) 220408(R).<br>
 <span class="label label-default">DOI</span> <a href="http://hdl.handle.net/10.1103/PhysRevB.88.220408">10.1103/PhysRevB.88.220408</a><br>
@@ -145,18 +176,7 @@ the <a href="http://ma.cms-initiative.jp/en/application-list/bsa-1?set_language=
 <span class="label label-default">AUTHOR</span>
 Kenji Harada, Takafumi Suzuki, Tsuyoshi Okubo, Haruhiko Matsuo, Jie Lou, Hiroshi Watanabe, Synge Todo, and Naoki Kawashima<br>
 <span class="label label-default">ABSTRACT</span>
-To examine the validity of the scenario of the deconfined critical
-phenomena, we carry out a quantum Monte Carlo simulation for the
-SU($N$) generalization of the Heisenberg model with four-body and
-six-body interactions. The quantum phase transition between the
-SU($N$) N\&#39;eel and valence-bond solid phases is characterized for
-$N=2,3,$ and $4$ on the square and honeycomb lattices. While
-finite-size scaling analysis works well up to the maximum lattice size
-($L=256$) and indicates the continuous nature of the phase transition,
-a clear systematic change towards the first-order transition is
-observed in the estimates of the critical exponent $y \equiv 1/\nu$ as
-the system size increases. We also confirm the relevance of a squared
-valence-bond solid field $\Psi^2$ for the SU(3) model.</p>
+To examine the validity of the scenario of the deconfined critical phenomena, we carry out a quantum Monte Carlo simulation for the SU($N$) generalization of the Heisenberg model with four-body and six-body interactions. The quantum phase transition between the SU($N$) N\&#39;eel and valence-bond solid phases is characterized for $N=2,3,$ and $4$ on the square and honeycomb lattices. While finite-size scaling analysis works well up to the maximum lattice size ($L=256$) and indicates the continuous nature of the phase transition, a clear systematic change towards the first-order transition is observed in the estimates of the critical exponent $y \equiv 1/\nu$ as the system size increases. We also confirm the relevance of a squared valence-bond solid field $\Psi^2$ for the SU(3) model.</p>
 
                     </div>
                   </div>
@@ -165,31 +185,6 @@ valence-bond solid field $\Psi^2$ for the SU(3) model.</p>
                 
                 
                 
-                
-                
-                
-                
-                
-                <!-- 4 -->
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-                        <h5><span class="label label-info">10 Dec 2013</span></h5>
-                        Paper "Symmetry-protected topological order and negative-sign problem for SO(N) bilinear-biquadratic chains" was submitted.
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapse5" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <p><span class="label label-default">PREPRINT</span> <a href="http://arxiv.org/abs/1312.2643">arXiv:1312.2643</a><br>
-<span class="label label-default">AUTHOR</span> Kouichi Okunishi and Kenji Harada<br>
-<span class="label label-default">ABSTRACT</span>
-Using a generalized Jordan-Wigner transformation combined with the defining representation of the SO(N) spin, we map the SO(N) bilinear-biquadratic(BLBQ) spin chain into the N-color bosonic particle model. We find that, when the Jordan-Wigner transformation disentangles the symmetry-protected topological entanglement, this bosonic model becomes negative-sign free in the context of quantum Monte-Carlo simulation. For the SO(3) case, moreover, Kennedy-Tasaki&#39;s transformation for the S=1 BLBQ chain, which is also a topological disentangler, derives the same bosonic model through the dimer-R bases. We present temperature dependence of energy, entropy and string order parameter for the SO(N=3, 4, 5) BLBQ chains by the world-line Monte-Carlo simulation for the N-color bosonic particle model.</p>
-
-                    </div>
-                  </div>
-                </div>
                 
                 
                 
@@ -233,19 +228,23 @@ Using a generalized Jordan-Wigner transformation combined with the defining repr
               <h3 class="panel-title">Toolkit of Bayesian Scaling Analysis</h3>
             </div>
             <div class="panel-body">
-              Reference application codes of a new scaling analysis method of critical phenomena based on Bayesian inference.<br>
+              <p>
+                Reference application codes of a new scaling analysis method of critical phenomena based on Bayesian inference.
+              </p>
               <a href="BSA_demo_en.html" class="btn btn-success">Demo</a>
               <a href="http://kenjiharada.github.io/BSA/" class="btn btn-info">Learn More</a>
             </div>
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Demonstration</h3>
+              <h3 class="panel-title">Demonstrations</h3>
             </div>
             <div class="panel-body">
-              Monte Carlo simulation of the Ising model:
-              Metropolis, Swendsen-Wang, and Wolff algorithms
-              <a href="monte_en.html" class="btn btn-success">Learn More</a>
+              <p>
+                Monte Carlo simulations of the Ising model:
+                Metropolis, Swendsen-Wang, and Wolff algorithms
+              </p>
+              <a href="monte_en.html" class="btn btn-info">Learn More</a>
             </div>
           </div>
         </div>
