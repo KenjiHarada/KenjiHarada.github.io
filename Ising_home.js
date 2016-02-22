@@ -1,26 +1,25 @@
 // (c) 2014 Kenji Harada.
-var width = 444;
+var width = 936;
 
 function draw() {
     draw_ising();
 }
 
-function draw_as(ctx, as, L){
-    var wh = 30;
-    var area = width - 2*wh;
-    var pw = area/L;
-    var base = wh;
+function draw_as(ctx, as, LX, LY){
+    var area = width;
+    var pw = area/LX;
+    var base = 0;
     var np = 0;
-    for(var i = 0; i < L*L; ++i)
+    for(var i = 0; i < LX*LY; ++i)
         np+=as[i];
-    if(np > L*L/2){
+    if(np > LX*LY/2){
         ctx.fillStyle="#fff";
         ctx.fillRect(base, base, area, area);
         ctx.fillStyle="#ccc";
-        for(var i = 0; i < L*L; ++i){
+        for(var i = 0; i < LX*LY; ++i){
             if(as[i] == 0){
-                var x = i % L;
-                var y = Math.floor(i / L);
+                var x = i % LX;
+                var y = Math.floor(i / LX);
                 ctx.fillRect(base+x*pw, base+y*pw, pw, pw);
             }
         }
@@ -29,10 +28,10 @@ function draw_as(ctx, as, L){
         ctx.fillStyle="#ccc";
         ctx.fillRect(base, base, area, area);
         ctx.fillStyle="#fff";
-        for(var i = 0; i < L*L; ++i){
+        for(var i = 0; i < LX*LY; ++i){
             if(as[i] == 1){
-                var x = i % L;
-                var y = Math.floor(i / L);
+                var x = i % LX;
+                var y = Math.floor(i / LX);
                 ctx.fillRect(base+x*pw, base+y*pw, pw, pw);
             }
         }
@@ -46,10 +45,11 @@ function draw_ising(){
     if (canvas == null)
         return false;
     var ctx = canvas.getContext('2d');
-    var L=64;
+    var LX=104;
+    var LY=50;
 
-    var as = new Array(L*L);
-    for(var i=0; i < L*L;++i){
+    var as = new Array(LX*LY);
+    for(var i=0; i < LX*LY;++i){
         as[i]=Math.floor(Math.random()*2);
     }
 
@@ -75,21 +75,21 @@ function draw_ising(){
     var loop = function(){
         t++;
         var e = 0;
-        for(var nt=0; nt < L*L;++nt){
-            var i = Math.floor(Math.random()*L*L);
-            var x = i % L;
-            var y = Math.floor((i - x)/L);
+        for(var nt=0; nt < LX*LY;++nt){
+            var i = Math.floor(Math.random()*LY*LX);
+            var x = i % LX;
+            var y = Math.floor((i - x)/LX);
             var ne = 0;
-            if(as[i] == as[(x+1)%L+y*L]) ne++;
-            if(as[i] == as[(x-1+L)%L+y*L]) ne++;
-            if(as[i] == as[x+((y+1)%L)*L]) ne++;
-            if(as[i] == as[x+((y-1+L)%L)*L]) ne++;
+            if(as[i] == as[(x+1)%LX+y*LX]) ne++;
+            if(as[i] == as[(x-1+LX)%LX+y*LX]) ne++;
+            if(as[i] == as[x+((y+1)%LY)*LX]) ne++;
+            if(as[i] == as[x+((y-1+LY)%LY)*LX]) ne++;
             e += ne;
             if(Math.random() <= Math.pow(z+1e0, 4-2*ne))
                 as[i] = 1 - as[i];
         }
-        ave += e/2/2/L/L;
-        draw_as(ctx, as, L);
+        ave += e/2/2/LX/LY;
+        draw_as(ctx, as, LX, LY);
         if(t < num){
             timer = setTimeout(loop, delay);
         }else{
