@@ -1,4 +1,4 @@
 $(function() {
-    $("#footer").load("http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/html/footer.html");
-    $("#footer_en").load("http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/html/footer_en.html");
+    $("#footer").load("http://kenjiharada.github/html/footer.html");
+    $("#footer_en").load("http://kenjiharada.github/html/footer_en.html");
 });
