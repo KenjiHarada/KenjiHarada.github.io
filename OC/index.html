@@ -7,7 +7,7 @@
     <title>オンラインで学ぶ「モンテカルロ法」</title>
 
     <!-- Bootstrap -->
-    <link href="../css/bootstrap_oc.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,12 +27,16 @@
   </head>
   <body>
     <div class="jumbotron">
-      <h1><small>オンラインで学ぶ</small>「モンテカルロ法」</h1>
-      <p>
-        モンテカルロ法は、自然現象から、社会現象、はては、ゲーム等、さまざまな分野のシミュレーションに用いられる確率的数値計算法。
-        本ページでは、モンテカルロ法の基礎（<em>マルコフ連鎖モンテカルロ法</em>も含む）についてオンラインによる学習機会を提供する。
-        <small>ただし、著者の専門（統計物理）に近いところから素材を選んでいる。</small>
-      </p>
+      <div class="container">
+	<div class="row">
+	  <h1><small>オンラインで学ぶ</small>「モンテカルロ法」</h1>
+	  <p>
+            モンテカルロ法は、自然現象から、社会現象、はては、ゲーム等、さまざまな分野のシミュレーションに用いられる確率的数値計算法。
+            本ページでは、モンテカルロ法の基礎（<em>マルコフ連鎖モンテカルロ法</em>も含む）についてオンラインによる学習機会を提供する。
+            <small>ただし、著者の専門（統計物理）に近いところから素材を選んでいる。</small>
+	  </p>
+	</div>
+      </div>
     </div>
 
     <ul class="pagination">
@@ -55,33 +59,12 @@
       <li id="ref4"><a href="http://link.aps.org/doi/10.1103/PhysRevLett.58.86">R. H. Swendsen and J.-S. Wang: Phys. Rev. Lett. Vol.58, pp.86 (1987).</a>
     </ol>
     </div>
-    <hr>
-    <div class="container">
-      <address>
-        <a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html">
-        <strong>原田健自</strong>
-        </a>
-        <span class="glyphicon glyphicon-transfer"></span>
-        <a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index_en.html"><strong>Kenji Harada</strong></a><br>
-        <span class="glyphicon glyphicon-envelope">
-          <a href="mailto:harada@acs.i.kyoto-u.ac.jp">
-            harada@acs.i.kyoto-u.ac.jp
-          </a>
-        </span><br>
-        <span class="glyphicon glyphicon-user">
-          京都市左京区吉田本町　京都大学吉田キャンパス　総合研究8号館317号室
-          <a href="http://www.kyoto-u.ac.jp/ja/access/campus/map6r_y.htm" class="label label-info">Map (No.59)</a>
-        </span><br>
-        <span class="glyphicon glyphicon-tower">
-          <a href="http://www.i.kyoto-u.ac.jp/">
-            京都大学大学院情報学研究科
-          </a>助教</span>
-      </address>
-    </div>
 
+    <div id="footer"></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/insert_html.js"></script>
   </body>
 </html>

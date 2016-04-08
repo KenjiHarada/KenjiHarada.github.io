@@ -7,7 +7,7 @@
     <title>「数値積分法」</title>
 
     <!-- Bootstrap -->
-    <link href="../css/bootstrap_oc.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,16 +27,20 @@
   </head>
   <body>
     <div class="jumbotron">
-      <h1>「数値積分法」</h1>
-      <p>定積分を数値的に評価する方法を数値積分と呼ぶ。一般的に積分の多重度が低い場合（４以下）と高い場合では、精度を維持するにはまったく異なる手法を用いる必要がある。</p>
-      <p>
-        低い多重度の定積分の場合、積分区間内の被積分関数値を組み合わせる事で定積分を近似的に計算する。例えば、一重定積分では、
-      \begin{equation}
-      I = \int_a^b f(x) dx \approx \sum_i w_i f(x_i).
-      \end{equation}
-        一方で、高多重度の積分には、モンテカルロ法がよく用いられる。
-        以下では、多重度の小さな場合の数値積分について述べる。
-      </p>
+      <div class="container">
+	<div class="row">
+	  <h1>「数値積分法」</h1>
+	  <p>定積分を数値的に評価する方法を数値積分と呼ぶ。一般的に積分の多重度が低い場合（４以下）と高い場合では、精度を維持するにはまったく異なる手法を用いる必要がある。</p>
+	  <p>
+            低い多重度の定積分の場合、積分区間内の被積分関数値を組み合わせる事で定積分を近似的に計算する。例えば、一重定積分では、
+	    \begin{equation}
+	    I = \int_a^b f(x) dx \approx \sum_i w_i f(x_i).
+	    \end{equation}
+            一方で、高多重度の積分には、モンテカルロ法がよく用いられる。
+            以下では、多重度の小さな場合の数値積分について述べる。
+	  </p>
+	</div>
+      </div>
     </div>
     <div class="container">
       <div class="row">
@@ -164,34 +168,11 @@
       </div>
     </div>
 
-    <hr>
-    <div class="container">
-      <address>
-        <a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html">
-        <strong>原田健自</strong>
-        </a>
-        <span class="glyphicon glyphicon-transfer"></span>
-        <a href="http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index_en.html"><strong>Kenji Harada</strong></a><br>
-        <span class="glyphicon glyphicon-envelope">
-          <a href="mailto:harada@acs.i.kyoto-u.ac.jp">
-            harada@acs.i.kyoto-u.ac.jp
-          </a>
-        </span><br>
-        <span class="glyphicon glyphicon-user">
-          京都市左京区吉田本町　京都大学吉田キャンパス　総合研究8号館317号室
-          <a href="http://www.kyoto-u.ac.jp/ja/access/campus/map6r_y.htm" class="label label-info">Map (No.59)</a>
-        </span><br>
-        <span class="glyphicon glyphicon-tower">
-          <a href="http://www.i.kyoto-u.ac.jp/">
-            京都大学大学院情報学研究科
-          </a>助教</span>
-      </address>
-    </div>
-
+    <div id="footer"></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
-
+    <script src="../js/insert_html.js"></script>
   </body>
 </html>
