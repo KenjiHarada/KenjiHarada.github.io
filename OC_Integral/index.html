@@ -20,9 +20,7 @@
       MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
       MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } } });
     </script>
-    <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
-    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
     <script src="../js/analyticstracking.js"></script>
   </head>
   <body>
@@ -112,11 +110,13 @@
         <ol>
           <li>\(h^2\)に比例して、減少。</li>
           <li>\(f''\)が大きい時に、誤差が大きくなる。</li>
-          <li>有効桁数\(d\)の場合、各\(f_i\)に最大\(10^{-d}\times F\cdot h\cdot n\)程度の丸め誤差がある。これが\(n\)個あるので、全体で丸め誤差は、
+<!--
+          <li>有効桁数\(d\)の場合、各\(f_i\)に最大\(10^{-d}\times F\)程度の丸め誤差がある。これが\(n\)個あるので、全体で丸め誤差は、
             \begin{equation}
-            \frac{(b-a)^2\times F\times 10^{-d}}{h} \to O\left(\frac{1}{h}\right).
+            \frac{(b-a)\times F\times 10^{-d}}{h} \to O\left(\frac{1}{h}\right).
             \end{equation}
             従って、全体の丸め誤差は、\(h\)に反比例。</li>
+-->
         </ol>
       </div>
       <div class="row">
@@ -154,7 +154,7 @@
     <div class="container">
       <div class="row">
         <section id="sec:int:p0">
-          <h2>問題</h2>
+          <h2>問題 I1</h2>
           <p>(1) 以下の定積分の計算に、台形公式を適用し、結果を報告せよ。特に、誤差の主要項の理論的予想と比較せよ。ただし、分割数\(n=10, 10^2, 10^3, 10^4, 10^5\)とする。
 </p>
         <div id="II5">
