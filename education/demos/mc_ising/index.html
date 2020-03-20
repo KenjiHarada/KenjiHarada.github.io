@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72643447-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-72643447-1');
+  </script>
+  <!-- End of global site tag (gtag.js) - Google Analytics -->
+  <title>イジングモデルのモンテカルロシミュレーション
+</title>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Kenji Harada">
+  <meta name="author" content="Kenji Harada">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script>
+  MathJax = {
+  chtml: {
+    matchFontHeight: false
+  },
+  tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script type="text/javascript" src="https://kenjiharada.github.io/education/demos/mc_ising/Ising.js" charset="UTF-8"></script>
+  <!-- css -->
+  <style>
+    .link-muted a:link {
+	color:#000;
+    }
+    .link-muted a:hover {
+	color:#999;
+	text-decoration:underline;
+    }
+  </style>
+</head>
+
+<body onload="draw()">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="https://kenjiharada.github.io/index.html">Kenji Harada</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  <ul class="navbar-nav mr-auto">
+	    <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/index.html">Home</a>
+	    </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/study/index.html">Study</a>
+	    </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/education/index.html">Education</a>
+	    </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/archives.html">Archives</a>
+	    </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/index-en.html">[English]</a>
+	    </li>
+	  </ul>
+	</div>
+      </nav>
+    </header>
+
+    <main role="main">
+<div class="py-5 bg-light">
+  <div class="container">
+    <h1>イジングモデルのモンテカルロシミュレーション：メトロポリス(Metropolis), Swendsen-Wang, Wolff アルゴリズム</h1>
+
+    <canvas width="444px" height="444px" id="Ising" class="imag-fluid mx-auto" style="padding: 0px; margin: auto;"></canvas>
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h3 class="card-title">二次元正方格子のイジングモデル</h3>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+	  各格子点にある局所磁化の向きは黄と青の２色で表示されている。システムサイズは\(96 \times 96\)。１クリックで、メトロポリスやSwendsen-Wangの方法なら100MCS分、Wolffのアルゴリズムなら100ステップ分、システムの状態が更新される。また、クリック時のポインタの垂直座標でパラメータ\(z (\equiv \exp(2J/T)- 1)\)が、水平座標でアルゴリズムが再設定される。アルゴリズムは、ポインターが正方格子の左側ならメトロポリス、右側ならWolff、真ん中ならSwendsen-Wangの方法が選択される。
+        </p>
+      </div>
+    </div>
+
+    <p>温度などの環境が変わったとき、相互作用をする非常に多くの要素からなるシステムは、巨視的なレベルでみてミクロなレベルの法則を破るような状態に移行することがあります。</p>
+
+    <p>たとえば、熱い金属を冷やすと自発的に磁化が出現します。つまり、各原子のもつ小さな磁化が特定の方向にそろった状態になります。ミクロなレベルの法則では、各原子の持つ小さな磁化は特定の方向を好むわけではないので、このような状態の出現は巨視的な数の小さな金属原子があつまることでおこる現象です。</p>
+
+
+    <p>イジングモデルでは、各原子が格子点にあるとし、おのおのの原子の磁化が北や南のような正反対の二つの状態しかとらないとしたモデルです。また、温度（\(T\)）がさがると隣接する原子の磁化は同じ方向に向く傾向が強まるとします。しかし、特にどちらかの方向を好むわけではありません。</p>
+
+    <p>このような単純なモデルですが、ある温度で急に全体がそろいだすと言う現象が確認できます。これは最初にいった自発磁化の出現に対応しています。イジングモデルはこのような性質を表現する最も簡単なモデルであるであるため、多くの研究がなされ、新しいアルゴリズムを考えるときの基本的なモデルケースとしてもよく用いられます。</p>
+
+
+    <p>上記のデモンストレーションでは、二次元正方格子のイジングモデルの状態が温度を変えるとどのように変化するかをみることができます。パラメータ\(z\)が\(\sqrt{2}\)よりも大きな場合、同色の大きな塊が急激に出現します。これが自発磁化に対応します。</p>
+
+    <p>ある特定の温度での状態を生成するのに、ここでは<em>マルコフ連鎖モンテカルロ法</em>の３つのアルゴリズム（<em>メトロポリス(Metropolis)</em>、<em>Swendsen-Wang</em>、<em>Wolff</em>の方法）を用いました。Swendsen-WangやWolffのアルゴリズムは小さなステップで非常にさまざまな状態をサンプリングできることが確認できるとおもいます。このようなアルゴリズムが、最近のイジングモデルのモンテカルロシミュレーションでは使われています。マルコフ連鎖モンテカルロ法やメトロポリス(Metropolis)の方法については、<a href="https://kenjiharada.github.io/education/open_courses/mc/index.html"><strong>"オンラインで学ぶモンテカルロ法"</strong></a>をご覧下さい。</p>
+  </div>
+</div>
+
+    </main>
+
+    <footer>
+      <div class="container">
+	<p class="float-right">
+	  <a href="#">Back to top</a>
+	</p>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

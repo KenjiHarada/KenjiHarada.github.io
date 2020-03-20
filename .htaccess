@@ -1,15 +1,41 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule Monte-eg.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte_en.html [R=301,L]
-RewriteRule index-ja.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html [R=301,L]
-RewriteRule index-en.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index_en.html [R=301,L]
-RewriteRule monte-ja.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte.html [R=301,L]
-RewriteRule monte-en.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte_en.html [R=301,L]
+RewriteRule ^index-ja.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/index.html [L,R=301]
+RewriteRule ^index_en.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/index-en.html [L,R=301]
+RewriteRule ^monte-ja.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/demos/mc_ising/index.html  [L,R=301]
+RewriteRule ^monte-en.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/demos/mc_ising/index-en.html [L,R=301]
+RewriteRule ^Monte-eg.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/demos/mc_ising/index-en.html [L,R=301]
+RewriteRule ^OC_Integral/index.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/integral/index.html [L,R=301]
+RewriteRule ^OC_Number/index.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/number/index.html [L,R=301]
+RewriteRule ^misc/qmc.pdf https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/doc/qmc.pdf [L,R=301]
+RewriteRule ^misc/tn.pdf https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/doc/tn.pdf [L,R=301]
+RewriteRule ^OC/section_mc.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/mc/index.html [L,R=301]
+RewriteRule ^OC/section_percolation.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/mc/index.html [L,R=301]
+RewriteRule ^OC/section_mcmc.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/mc/index.html [L,R=301]
+RewriteRule ^monte.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/demos/mc_ising/index.html [L,R=301]
+RewriteRule ^monte_en.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/demos/mc_ising/index-en.html [L,R=301]
+RewriteRule ^OC/index.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/index.html [L,R=301]
+RewriteRule ^study.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/index.html [L,R=301]
+RewriteRule ^study_en.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/index-en.html [L,R=301]
+RewriteRule ^education.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/index.html [L,R=301]
 </IfModule>
-Redirect 301 Monte-eg.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte_en.html
-Redirect 301 index-ja.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index.html
-Redirect 301 index-en.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/index_en.html
-Redirect 301 monte-ja.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte.html
-Redirect 301 monte-en.html http://www-fcs.acs.i.kyoto-u.ac.jp/~harada/monte_en.html
+Redirect 301 ^index-ja.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/index.html
+Redirect 301 ^index_en.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/index-en.html
+Redirect 301 ^monte-ja.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/demos/mc_ising/index.html 
+Redirect 301 ^monte-en.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/demos/mc_ising/index-en.html
+Redirect 301 ^Monte-eg.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/demos/mc_ising/index-en.html
+Redirect 301 ^OC_Integral/index.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/integral/index.html
+Redirect 301 ^OC_Number/index.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/number/index.html
+Redirect 301 ^misc/qmc.pdf https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/doc/qmc.pdf
+Redirect 301 ^misc/tn.pdf https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/doc/tn.pdf
+Redirect 301 ^OC/section_mc.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/mc/index.html
+Redirect 301 ^OC/section_percolation.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/mc/index.html
+Redirect 301 ^OC/section_mcmc.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/mc/index.html
+Redirect 301 ^monte.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/demos/mc_ising/index.html
+Redirect 301 ^monte_en.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/demos/mc_ising/index-en.html
+Redirect 301 ^OC/index.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/index.html
+Redirect 301 ^study.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/index.html
+Redirect 301 ^study_en.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/index-en.html
+Redirect 301 ^education.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/index.html
 
 ErrorDocument 404 /~harada/not_found.html
