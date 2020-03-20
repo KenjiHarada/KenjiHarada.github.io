@@ -38,4 +38,4 @@ Redirect 301 ^study.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/index.
 Redirect 301 ^study_en.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/index-en.html
 Redirect 301 ^education.html https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/index.html
 
-ErrorDocument 404 /~harada/not_found.html
+ErrorDocument 404 /404.html
