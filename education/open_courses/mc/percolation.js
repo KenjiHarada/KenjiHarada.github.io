@@ -174,7 +174,7 @@ function draw_average(ctx, z, e){
     ctx.fillStyle="black";
     ctx.font = "14px 'Helvetica'";
     ctx.clearRect(base, width-8*wh, width-base, 4*wh);
-    ctx.fillText("z="+round(z,5) + ", E ~ " + round(e, 8), base, width-6*wh, width-base, 2*wh);
+    ctx.fillText("z="+round(z,5) + ", Prob(s_i == s_j) ~ " + round(e, 8), base, width-6*wh, width-base, 2*wh);
     ctx.stroke();
 }
 
