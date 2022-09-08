@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72643447-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-72643447-1');
+  </script>
+  <!-- End of global site tag (gtag.js) - Google Analytics -->
+  <title>More is different - NUMEXEC2020</title>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Kenji Harada">
+  <meta name="author" content="Kenji Harada">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script>
+  MathJax = {
+  chtml: {
+    matchFontHeight: false
+  },
+  tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  <!-- css -->
+  <style>
+    .link-muted a:link {
+      color: #000;
+    }
+
+    .link-muted a:hover {
+      color: #999;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index.html">Kenji Harada</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/index.html">Study</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/index.html">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/archives.html">Archives</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index-en.html">[English]</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+<div class="jumbotron">
+  <div class="container">
+    <h1>演習での京大スパコン利用に関する注意</h1>
+  </div>
+</div>
+<div class="container">
+  <h2>アカウント</h2>
+  <p>
+    本演習の履修届を出している人は、<font color="red">本演習のためだけに使用を許可された</font>特別アカウントを配布いたします。今年度は、新型コロナウイルス感染症のために、6月16日（火曜日）に各自の全学メールアドレスまで、直接、アカウント情報へのアクセスの方法が送信されます。もし、届いていなければ、<a href="mailto:harada.kenji.8e@kyoto-u.ac.jp?subject=演習スパコンアカウントについて">原田</a>まで連絡してください。
+  </p>
+  <h2>京大スパコン上の演習用資源</h2>
+  <ul>
+    <li>
+      本演習では、京大のスパコンの<a href="http://www.iimc.kyoto-u.ac.jp/ja/services/comp/supercomputer/">システムB</a>を使います。システムBは1CPUに18コアあり、1ノードに2CPUが配置されています。
+      1ノードのメモリーは128GBで、1ノードの最大演算性能は1.21 TFlops(倍精度演算を1秒間に\(1.21\times10^{12}回\))となっています。
+    </li>
+    <li>
+      演習で使用するコースでは、総ノード数は18ノードで総コア数は648（つまり、21.78 TFlops）です。
+      グループ名はgr10310で、バッチで投入できるキューはgr10310bを用意してあります。
+    </li>
+  </ul>
+  <h2>スパコンの使い方</h2>
+  <p>
+    京大スパコンはログイン、ファイル転送、コンパイル、ジョブ実行など全てについて充実した<a href="https://web.kudpc.kyoto-u.ac.jp/manual/ja">マニュアル</a>があります。
+    以下のその抜粋です。
+  </p>
+  <ul>
+    <li><a href="https://web.kudpc.kyoto-u.ac.jp/manual/ja/login">ログイン、ファイル転送</a></li>
+    <li><a href="https://web.kudpc.kyoto-u.ac.jp/manual/ja/compilers/intel#openmp">OpenMPを利用する場合のコンパイル</a></li>
+    <li><a href="https://web.kudpc.kyoto-u.ac.jp/manual/ja/run/interactive">会話型実行</a></li>
+    <li><a href="https://web.kudpc.kyoto-u.ac.jp/manual/ja/run/systembc">バッチ処理</a></li>
+  </ul>
+  <p>
+    本演習課題のための大まかな流れは以下の通りです。
+  </p>
+  <ol>
+    <li>ログイン</li>
+    <ol>
+      <li>SSHの公開鍵の作成（最初だけ）</li>
+      <li>利用者ポータルサイトへのSSH公開鍵の登録（最初だけ）</li>
+      <li>sshコマンドでのログイン（ホスト名：laurel.kudpc.kyoto-u.ac.jp）</li>
+    </ol>
+    <li>コンパイル</li>
+    インテルコンパイラーもしくはGNUコンパイラでOpenMPオプション(<code>-qopenmp</code>や<code>-fopenmp</code>)をつけてコンパイルする。
+    <p>
+      <code>
+	$ icc -qopenmp -O -o your_binary your_code.c
+      </code>
+    </p>
+    または、
+    <p>
+      <code>
+	$ gcc -fopenmp -O -o your_binary your_code.c
+      </code>
+    </p>
+    ここでは、コードの自動高速化を行う最適化オプション(<code>-O</code>)、実行バイナリー名の指定オプション(<code>-o</code>)もつけており、ソースコード名は<code>your_code.c</code>、バイナリー名は<code>your_binary</code>とした。
+    <li>実行</li>
+    <p>
+      本演習のグループ名は、gr10310。キュー名は、gr10310b。実行には、会話型とバッチ処理があります。
+      会話型はターミナルで実行結果が確認できます。バッチ処理は実行を自動的に行ってくれます。
+    </p>
+    <p>
+      会話型実行では、例えば、18スレッド並列でyour_binaryを実行させる場合は以下の通りです。
+    <p><code>
+	$ tssrun -q gr10310b -ug gr10310 -A t=18:c=18 ./your_binary
+    </code></p>
+    スレッド数を変える場合は、-Aオプションの<code>t=18, c=18</code>の数字を変えてください。</p>
+    <p>バッチ処理の場合は必ず次のバッチスクリプトをベースにして投入してください。ここでは、計算時間の上限を1時間。スレッド数を変える場合は、
+      会話型と同じく-Aオプションの後の<code>t=18, c=18</code>の数字を変えてください。</p>
+    <p>
+      <pre>
+	#!/bin/bash
+	#============ PBS Options ============
+	#QSUB -q gr10310b
+	#QSUB -ug gr10310
+	#QSUB -W 1:00
+	#QSUB -A t=18:c=18
+	#============ Shell Script ============
+	cd $QSUB_WORKDIR
+	set -x
+	./your_binary
+      </pre>
+    </p>
+    <p>
+      なお、課題M3(3)では、最速で<em>30秒以下</em>で計算は実行できるはずである。また、実行時の時間計測は<code>omp_get_wtime()</code>を最初と最後に読んでその差を用いて行うこと。
+    </p>
+  </ol>
+</div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+  </body>
+
+</html>

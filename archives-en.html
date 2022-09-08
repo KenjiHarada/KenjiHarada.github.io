@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72643447-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    
+
     gtag('config', 'UA-72643447-1');
   </script>
   <!-- End of global site tag (gtag.js) - Google Analytics -->
@@ -17,64 +18,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Home page of Kenji Harada">
   <meta name="author" content="Kenji Harada">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <style>
     .link-muted a:link {
-	color:#000;
+      color: #000;
     }
+
     .link-muted a:hover {
-	color:#999;
-	text-decoration:underline;
+      color: #999;
+      text-decoration: underline;
     }
   </style>
 </head>
 
-<body>
+
+  <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="https://kenjiharada.github.io/index-en.html">Kenji Harada</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	  <span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-	  <ul class="navbar-nav mr-auto">
-	    <li class="nav-item">
-              <a class="nav-link" href="https://kenjiharada.github.io/index-en.html">Home</a>
-	    </li>
-	    <li class="nav-item">
-              <a class="nav-link" href="https://kenjiharada.github.io/study/index-en.html">Study</a>
-	    </li>
-	    <li class="nav-item">
-              <a class="nav-link" href="https://kenjiharada.github.io/education/index-en.html">Education</a>
-	    </li>
-	    <li class="nav-item">
-              <a class="nav-link" href="https://kenjiharada.github.io/archives-en.html">Archives</a>
-	    </li>
-	    <li class="nav-item">
-              <a class="nav-link" href="https://kenjiharada.github.io/index.html">[Japanese]</a>
-	    </li>
-	  </ul>
-	</div>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index-en.html">Kenji Harada</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index-en.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/index-en.html">Study</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/index-en.html">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/archives-en.html">Archives</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index.html">[Japanese]</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
     <main role="main">
 <div class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center" style="padding:0 0 18px 0">ARCHIVES</h2>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">31 May 2021</div> &emsp;
-	  <a data-toggle="collapse" href="#article1">
-	    <strong>Talk in StatPhys seminar at University of Tokyo, Hongo</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article1" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>
+	<div class="container">
+		<h2 class="text-center" style="padding:0 0 18px 0">ARCHIVES</h2>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article1" aria-expanded="false"
+				aria-controls="collapse_article1">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">08 September 2022</div> &emsp;
+						<a data-toggle="collapse" href="#article1">
+							<strong>Paper "Automatic structural optimization of tree tensor networks" is submitted to arXiv.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article1" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<dl class="dl-horizontal">
+  <dt>Title</dt>
+  <dd>Automatic structural optimization of tree tensor networks</dd>
+  <dt>Author</dt>
+  <dd>Toshiya Hikihara, Hiroshi Ueda, Kouichi Okunishi, Kenji Harada, and Tomotoshi Nishino</dd>
+  <dt>Abstract</dt>
+  <dd>
+Tree tensor network (TTN) provides an essential theoretical framework for the
+practical simulation of quantum many-body systems, where the network structure
+defined by the connectivity of the isometry tensors plays a crucial role in
+improving its approximation accuracy. In this paper, we propose a TTN algorithm
+that enables us to automatically optimize the network structure by local
+reconnections of isometries to suppress the bipartite entanglement entropy on
+their legs. The algorithm can be seamlessly implemented to such a conventional
+TTN approach as density-matrix renormalization group. We apply the algorithm to
+the inhomogeneous antiferromagnetic Heisenberg spin chain having a hierarchical
+spatial distribution of the interactions. We then demonstrate that the
+entanglement structure embedded in the ground-state of the system can be
+efficiently visualized as a perfect binary tree in the optimized TTN. Possible
+improvements and applications of the algorithm are also discussed.
+  </dd>
+  <dt>Comments</dt>
+  <dd>11 pages, 10 figures, 2 tables</dd>
+  <dt>Preprint</dt>
+  <dd><a href="https://arxiv.org/abs/2209.03196">arXiv:2209.03196</a></dd>
+</dl>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article2" aria-expanded="false"
+				aria-controls="collapse_article2">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">07 September 2022</div> &emsp;
+						<a data-toggle="collapse" href="#article2">
+							<strong>Paper "Neural Network Approach to Scaling Analysis of Critical Phenomena" is submitted to arXiv.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article2" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<dl class="dl-horizontal">
+  <dt>Title</dt>
+  <dd>Neural Network Approach to Scaling Analysis of Critical Phenomena</dd>
+  <dt>Author</dt>
+  <dd>Ryosuke Yoneda and Kenji Harada</dd>
+  <dt>Abstract</dt>
+  <dd>
+Determining the universality class of a system exhibiting critical phenomena is one of the central problems in physics. As methods for determining this universality class from data, polynomial regression, which is less accurate, and Gaussian process regression, which provides high accuracy and flexibility but is computationally heavy, have been proposed. In this paper, we propose a method by a regression method using a neural network. The computational complexity is only linear in the number of data points. We demonstrate the proposed method for the finite-size scaling analysis of critical phenomena on the two-dimensional Ising model and bond percolation problem to confirm the performance. This method efficiently obtains the critical values with accuracy in both cases.
+  </dd>
+  <dt>Comments</dt>
+  <dd>10 pages, 9 figures</dd>
+  <dt>Preprint</dt>
+  <dd><a href="https://arxiv.org/abs/2209.01777">arXiv:2209.01777</a></dd>
+</dl>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article3" aria-expanded="false"
+				aria-controls="collapse_article3">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">26 August 2022</div> &emsp;
+						<a data-toggle="collapse" href="#article3">
+							<strong>Talk in The 15th Asia Pacific Physics Conference (APPC15), Korea (online)</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article3" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>
+
+</p>
+<dl class="dl-horizontal">
+  <dt>Date</dt>
+  <dd>Aug 26, 2022</dd>
+  <dt>Conference (invited talk)</dt>
+  <dd><a href="https://www.appc15.org">The 15th Asia Pacific Physics Conference (APPC15), Korea (online)</a></dd>
+  <dt>Title</dt>
+  <dd>Tensor renormalization group study of the non-equilibrium critical fixed point of the one-dimensional contact process</dd>
+  <dt>Abstract</dt>
+  <dd>
+The steady-state of many stochastic systems is non-equilibrium. We studied the phase of non-equilibrium systems and the transition similar to equilibrium systems. In particular, the critical phase transition is interesting because we can define the non-equilibrium universality class.
+To confirm the existence of a non-equilibrium critical fixed point, we study the time evolution operator of one-dimensional contact processes by using a tensor renormalization group technique. The time evolution operators converge to universal critical tensors in the tensor renormalization group flow. The spectrums of critical tensors are strongly anisotropic but share the intrinsic structure each for the universality class. The integer structure for the universality class of compact-directed percolation in the time direction is consistent with the exact spectrum structure of the diffusion-annihilation process.
+  </dd>
+</dl>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article4" aria-expanded="false"
+				aria-controls="collapse_article4">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">17 January 2022</div> &emsp;
+						<a data-toggle="collapse" href="#article4">
+							<strong>Tensor Network States: Algorithms and Applications (TNSAA) 2021-2022 Online Workshop</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article4" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>
+ We will hold the oneline workshop, Tensor Network States: Algorithms and Applications (TNSAA) 2021-2022, from Jan. 17 to Jan. 21, 2022. The series of workshop, TNSAA, has been organized for the purposes of exchanging new developments, having discussions toward future studies, and providing intruductory talks for new generation of researchers about tensor networks.
+</p>
+
+<ul>
+<a href="http://bussei.gs.niigata-u.ac.jp/~okunishi/tnsaa/">
+http://bussei.gs.niigata-u.ac.jp/~okunishi/tnsaa/
+</a>
+</ul>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article5" aria-expanded="false"
+				aria-controls="collapse_article5">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">31 May 2021</div> &emsp;
+						<a data-toggle="collapse" href="#article5">
+							<strong>Talk in StatPhys seminar at University of Tokyo, Hongo</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article5" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>
 
 </p>
 <dl class="dl-horizontal">
@@ -92,23 +248,27 @@ The Domany-Kinzel(DK) cellular automaton is a stochastic time-evolutional system
 [3] K. H., Universal spectrum structure at nonequilibrium critical points in the (1+1)-dimensional directed percolation, arXiv:2008.10807.<br>
   </dd>
 </dl>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">14 December 2020</div> &emsp;
-	  <a data-toggle="collapse" href="#article2">
-	    <strong>Paper "Critical exponents in coupled phase-oscillator models on small-world networks" is published in Physical Review E.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article2" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <dl class="dl-horizontal">
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article6" aria-expanded="false"
+				aria-controls="collapse_article6">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">14 December 2020</div> &emsp;
+						<a data-toggle="collapse" href="#article6">
+							<strong>Paper "Critical exponents in coupled phase-oscillator models on small-world networks" is published in Physical Review E.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article6" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<dl class="dl-horizontal">
   <dt>Title</dt>
   <dd>Critical exponents in coupled phase-oscillator models on small-world networks</dd>
   <dt>Reference</dt>
@@ -126,25 +286,29 @@ A coupled phase-oscillator model consists of phase oscillators, each of which ha
   <dt>Preprint</dt>
   <dd><a href="https://arxiv.org/abs/2007.04539">arXiv:2007.04539</a></dd>
 </dl>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="row no-gutters">
-	<div class="col-md-10">
-	  <div class="card-header">
-	    <p class="card-title">
-	      <h6 class="badge badge-primary">25 August 2020</h6> &emsp;
-	      <a data-toggle="collapse" href="#article3">
-		<strong>Paper "Universal spectrum structure at nonequilibrium critical points in the (1+1)-dimensional directed percolation" is submitted.</strong>
-	      </a>
-	    </p>
-	  </div>
-	  <div id="article3" class="card-collapse collapse">
-	    <div class="card-body">
-	      <p class="card-text">
-		<dl class="dl-horizontal">
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<div class="row no-gutters">
+				<div class="col-md-10">
+					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapse_article7" aria-expanded="false"
+						aria-controls="collapse_article7">
+						<div class="card-header text-start">
+							<p class="card-title">
+							<h6 class="badge bg-primary">25 August 2020</h6> &emsp;
+							<a data-toggle="collapse" href="#article7">
+								<strong>Paper "Universal spectrum structure at nonequilibrium critical points in the (1+1)-dimensional directed percolation" is submitted.</strong>
+							</a>
+							</p>
+						</div>
+					</button>
+					<div id="collapse_article7" class="collapse">
+						<div class="card-body">
+							<p class="card-text">
+								<dl class="dl-horizontal">
   <dt>Preprint</dt>
   <dd><a href="http://arxiv.org/abs/2008.10807">arXiv:2008.10807</a></dd>
   <dt>Author</dt>
@@ -156,28 +320,33 @@ Using a tensor renormalization group method with oblique projectors for an aniso
   <dt>Comments</dt>
   <dd>6 pages, 7 figures</dd>
 </dl>
-	      </p>
-	    </div>
-	  </div>
-	</div>
-	<div class="col-md-2">
-	  <img src="https://kenjiharada.github.io/posts/images/2020-08-25-Paper-Universal-spectrum-DP.jpg" alt="2020-08-25-Paper-Universal-spectrum-DP.jpg" class="card-img">
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">09 July 2020</div> &emsp;
-	  <a data-toggle="collapse" href="#article4">
-	    <strong>Paper "Critical exponents in coupled phase-oscillator models on small-world networks" is submitted.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article4" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <dl class="dl-horizontal">
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<img src="https://www-np.acs.i.kyoto-u.ac.jp/~harada/posts/images/2020-08-25-Paper-Universal-spectrum-DP.jpg" alt="2020-08-25-Paper-Universal-spectrum-DP.jpg"
+						class="card-img">
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article8" aria-expanded="false"
+				aria-controls="collapse_article8">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">09 July 2020</div> &emsp;
+						<a data-toggle="collapse" href="#article8">
+							<strong>Paper "Critical exponents in coupled phase-oscillator models on small-world networks" is submitted.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article8" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<dl class="dl-horizontal">
   <dt>Preprint</dt>
   <dd><a href="https://arxiv.org/abs/2007.04539">arXiv:2007.04539</a></dd>
   <dt>Title</dt>
@@ -191,23 +360,27 @@ Using a tensor renormalization group method with oblique projectors for an aniso
   <dt>Comments</dt>
   <dd>7 pages, 7 figures</dd>
 </dl>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">04 June 2020</div> &emsp;
-	  <a data-toggle="collapse" href="#article5">
-	    <strong>Paper "Finite-m scaling analysis of Berezinskii-Kosterlitz-Thouless phase transitions and entanglement spectrum for the six-state clock model" is published in Physical Review E.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article5" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <dl class="dl-horizontal">
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article9" aria-expanded="false"
+				aria-controls="collapse_article9">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">04 June 2020</div> &emsp;
+						<a data-toggle="collapse" href="#article9">
+							<strong>Paper "Finite-m scaling analysis of Berezinskii-Kosterlitz-Thouless phase transitions and entanglement spectrum for the six-state clock model" is published in Physical Review E.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article9" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<dl class="dl-horizontal">
   <dt>Title</dt>
   <dd>Finite-m scaling analysis of Berezinskii-Kosterlitz-Thouless phase transitions and entanglement spectrum for the six-state clock model</dd>
   <dt>Reference</dt>
@@ -225,23 +398,27 @@ Using a tensor renormalization group method with oblique projectors for an aniso
   <dt>Preprint</dt>
   <dd><a href="https://arxiv.org/abs/2001.10176">arXiv:2001.10176</a></dd>
 </dl>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">28 January 2020</div> &emsp;
-	  <a data-toggle="collapse" href="#article6">
-	    <strong>Paper "Finite-m scaling analysis of Berezinskii-Kosterlitz-Thouless phase transitions and entanglement spectrum for the six-state clock model" is submitted.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article6" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <dl class="dl-horizontal">
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article10" aria-expanded="false"
+				aria-controls="collapse_article10">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">28 January 2020</div> &emsp;
+						<a data-toggle="collapse" href="#article10">
+							<strong>Paper "Finite-m scaling analysis of Berezinskii-Kosterlitz-Thouless phase transitions and entanglement spectrum for the six-state clock model" is submitted.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article10" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<dl class="dl-horizontal">
   <dt>Preprint</dt>
   <dd><a href="https://arxiv.org/abs/2001.10176">arXiv:2001.10176</a></dd>
   <dt>Author</dt>
@@ -253,23 +430,27 @@ Using a tensor renormalization group method with oblique projectors for an aniso
   <dt>Comments</dt>
   <dd>7 pages, 7 figures</dd>
 </dl>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">04 December 2019</div> &emsp;
-	  <a data-toggle="collapse" href="#article7">
-	    <strong>Talk in Tensor Network States: Algorithms and Applications (TNSAA) 2019-2020 (NCCU, Taipei, TAIWAN)</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article7" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <ul>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article11" aria-expanded="false"
+				aria-controls="collapse_article11">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">04 December 2019</div> &emsp;
+						<a data-toggle="collapse" href="#article11">
+							<strong>Talk in Tensor Network States: Algorithms and Applications (TNSAA) 2019-2020 (NCCU, Taipei, TAIWAN)</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article11" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<ul>
 <li>Conference: Tensor Network States: Algorithms and Applications (TNSAA) 2019-2020</li>
 <li>Invited talk: "New numerical approaches for directed percolation"</li>
 <li>Date: Dec. 4, 2019
@@ -277,23 +458,27 @@ Using a tensor renormalization group method with oblique projectors for an aniso
 <li>Venue: NCCU, Taipei, TAIWAN</li>
 <li>URL：<a href="https://tnsaa7.github.io">https://tnsaa7.github.io</a>
 </ul>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">06 September 2019</div> &emsp;
-	  <a data-toggle="collapse" href="#article8">
-	    <strong>Upload videos of lectures and seminars in the international Workshop on Computational Approaches to Quantum Many-body Problems(CAQMP 2019)</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article8" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article12" aria-expanded="false"
+				aria-controls="collapse_article12">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">06 September 2019</div> &emsp;
+						<a data-toggle="collapse" href="#article12">
+							<strong>Upload videos of lectures and seminars in the international Workshop on Computational Approaches to Quantum Many-body Problems(CAQMP 2019)</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article12" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>
 We have uploaded videos of lectures and seminars onto YouTube as follows.
 </p>
 
@@ -302,25 +487,29 @@ We have uploaded videos of lectures and seminars onto YouTube as follows.
 https://www.youtube.com/watch?v=PDYyt9B6wNw&list=PLyL_XwLqTTm6roebw6MgIK0ljrN8cSQUX
 </a>
 </ul>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="row no-gutters">
-	<div class="col-md-10">
-	  <div class="card-header">
-	    <p class="card-title">
-	      <h6 class="badge badge-primary">27 August 2019</h6> &emsp;
-	      <a data-toggle="collapse" href="#article9">
-		<strong>Paper "Entropy Governed by the Absorbing State of Directed Percolation" is published in Physical Review Letters.</strong>
-	      </a>
-	    </p>
-	  </div>
-	  <div id="article9" class="card-collapse collapse">
-	    <div class="card-body">
-	      <p class="card-text">
-		<dl class="dl-horizontal">
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<div class="row no-gutters">
+				<div class="col-md-10">
+					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapse_article13" aria-expanded="false"
+						aria-controls="collapse_article13">
+						<div class="card-header text-start">
+							<p class="card-title">
+							<h6 class="badge bg-primary">27 August 2019</h6> &emsp;
+							<a data-toggle="collapse" href="#article13">
+								<strong>Paper "Entropy Governed by the Absorbing State of Directed Percolation" is published in Physical Review Letters.</strong>
+							</a>
+							</p>
+						</div>
+					</button>
+					<div id="collapse_article13" class="collapse">
+						<div class="card-body">
+							<p class="card-text">
+								<dl class="dl-horizontal">
   <dt>TITLE</dt>
   <dd>Entropy Governed by the Absorbing State of Directed Percolation</dd>
 <dt>REFERENCE</dt>
@@ -334,28 +523,33 @@ https://www.youtube.com/watch?v=PDYyt9B6wNw&list=PLyL_XwLqTTm6roebw6MgIK0ljrN8cS
 We investigate the informational aspect of (1+1)-dimensional directed percolation, a canonical model of a nonequilibrium continuous transition to a phase dominated by a single special state called the “absorbing” state. Using a tensor network scheme, we numerically calculate the time evolution of state probability distribution of directed percolation. We find a universal relaxation of Rényi entropy at the absorbing phase transition point as well as a new singularity in the active phase, slightly but distinctly away from the absorbing transition point. At the new singular point, the second-order Rényi entropy has a clear cusp. There we also detect a singular behavior of “entanglement entropy,” defined by regarding the probability distribution as a wave function. The entanglement entropy vanishes below the singular point and stays finite above. We confirm that the absorbing state, though its occurrence is exponentially rare in the active phase, is responsible for these phenomena. This interpretation provides us with a unified understanding of time evolution of the Rényi entropy at the critical point as well as in the active phase.
 </dd>
 </dl>
-	      </p>
-	    </div>
-	  </div>
-	</div>
-	<div class="col-md-2">
-	  <img src="https://kenjiharada.github.io/posts/images/2019-08-27-Paper-Renyi-DP.jpg" alt="2019-08-27-Paper-Renyi-DP.jpg" class="card-img">
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">17 July 2019</div> &emsp;
-	  <a data-toggle="collapse" href="#article10">
-	    <strong>Talks in the international Workshop on Computational Approaches to Quantum Many-body Problems(CAQMP 2019)</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article10" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <ul>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<img src="https://www-np.acs.i.kyoto-u.ac.jp/~harada/posts/images/2019-08-27-Paper-Renyi-DP.jpg" alt="2019-08-27-Paper-Renyi-DP.jpg"
+						class="card-img">
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article14" aria-expanded="false"
+				aria-controls="collapse_article14">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">17 July 2019</div> &emsp;
+						<a data-toggle="collapse" href="#article14">
+							<strong>Talks in the international Workshop on Computational Approaches to Quantum Many-body Problems(CAQMP 2019)</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article14" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<ul>
 <li>Title: Tensor network technique for stochastic process</li>
 <li>Date: July 17, 2019</li>
 <li>Title: Informational aspect of directed percolation problem</li>
@@ -363,23 +557,27 @@ We investigate the informational aspect of (1+1)-dimensional directed percolatio
 <li>Venue: The Institute for Solid State Physics, The University of Tokyo, JAPAN</li>
 <li>URL: <a href="http://www.issp.u-tokyo.ac.jp/public/caqmp2019/">http://www.issp.u-tokyo.ac.jp/public/caqmp2019/</a>
 </ul>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">27 February 2019</div> &emsp;
-	  <a data-toggle="collapse" href="#article11">
-	    <strong>Paper "Entropy governed by the absorbing state of directed percolation" is submitted.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article11" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <dl class="dl-horizontal">
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article15" aria-expanded="false"
+				aria-controls="collapse_article15">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">27 February 2019</div> &emsp;
+						<a data-toggle="collapse" href="#article15">
+							<strong>Paper "Entropy governed by the absorbing state of directed percolation" is submitted.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article15" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<dl class="dl-horizontal">
   <dt>Preprint</dt>
   <dd><a href="http://arxiv.org/abs/1902.10479">arXiv:1902.10479</a></dd>
   <dt>Author</dt>
@@ -391,109 +589,129 @@ We investigate the informational aspect of (1+1)-dimensional directed percolatio
   <dt>Comments</dt>
   <dd>6(=4+1.5) pages, 8(=5+3) figures</dd>
 </dl>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">03 December 2018</div> &emsp;
-	  <a data-toggle="collapse" href="#article12">
-	    <strong>Talk in Tensor Network States: Algorithms and Applications (TNSAA) 2018-2019 (R-CCS, Kobe, Japan)</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article12" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <ul>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article16" aria-expanded="false"
+				aria-controls="collapse_article16">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">03 December 2018</div> &emsp;
+						<a data-toggle="collapse" href="#article16">
+							<strong>Talk in Tensor Network States: Algorithms and Applications (TNSAA) 2018-2019 (R-CCS, Kobe, Japan)</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article16" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<ul>
 <li>Conference: Tensor Network States: Algorithms and Applications (TNSAA) 2018-2019</li>
 <li>Invited talk: "Entropy of the (1+1)-dimensional directed percolation"</li>
 <li>Conference dates: 3-6 December 2018</li>
 <li>Venue: R-CCS Kobe, JAPAN</li>
 <li>URL：<a href="http://quattro.phys.sci.kobe-u.ac.jp/kobe_2018/TNSAA2018-19.html">http://quattro.phys.sci.kobe-u.ac.jp/kobe_2018/TNSAA2018-19.html</a>
 </ul>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">12 November 2018</div> &emsp;
-	  <a data-toggle="collapse" href="#article13">
-	    <strong>Poster presentation on International Conference on Advances in Physics of Emergent orders in Fluctuations (APEF2018) (Tokyo, Japan)</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article13" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <ul>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article17" aria-expanded="false"
+				aria-controls="collapse_article17">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">12 November 2018</div> &emsp;
+						<a data-toggle="collapse" href="#article17">
+							<strong>Poster presentation on International Conference on Advances in Physics of Emergent orders in Fluctuations (APEF2018) (Tokyo, Japan)</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article17" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<ul>
 <li>Title: "Entropy of the (1+1)-dimensional directed percolation"</li>
 <li>Conference: International Conference on Advances in Physics of Emergent orders in Fluctuations (APEF2018)</li>
 <li>Conference dates: November 12-15, 2018</li>
 <li>Venue: The University of Tokyo, Tokyo, JAPAN</li>
 <li>URL：<a href="https://apef2018.org">https://apef2018.org</a>
 </ul>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">16 January 2018</div> &emsp;
-	  <a data-toggle="collapse" href="#article14">
-	    <strong>Paper "Entanglement branching operator" is published in Physical Review B.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article14" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 97 </strong> (2018) 045124<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article18" aria-expanded="false"
+				aria-controls="collapse_article18">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">16 January 2018</div> &emsp;
+						<a data-toggle="collapse" href="#article18">
+							<strong>Paper "Entanglement branching operator" is published in Physical Review B.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article18" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 97 </strong> (2018) 045124<br>
 <span class="badge badge-primary">DOI</span> <a href="https://doi.org/10.1103/PhysRevB.97.045124">10.1103/PhysRevB.97.045124</a><br>
 <span class="badge badge-primary">AUTHOR</span> Kenji Harada<br>
 <span class="badge badge-primary">ABSTRACT</span>
 We introduce an entanglement branching operator to split a composite entanglement flow in a tensor network which is a promising theoretical tool for many-body systems. We can optimize an entanglement branching operator by solving a minimization problem based on squeezing operators. The entanglement branching is a new useful operation to manipulate a tensor network. For example, finding a particular entanglement structure by an entanglement branching operator, we can improve a higher-order tensor renormalization group method to catch a proper renormalization flow in a tensor network space. This new method yields a new type of tensor network states. The second example is a many-body decomposition of a tensor by using an entanglement branching operator. We can use it for a perfect disentangling among tensors. Applying a many-body decomposition recursively, we conceptually derive projected entangled pair states from quantum states that satisfy the area law of entanglement entropy.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">04 January 2018</div> &emsp;
-	  <a data-toggle="collapse" href="#article15">
-	    <strong>Wei-Lin Tu visits our laboratory until Mar. 5, 2018.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article15" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article19" aria-expanded="false"
+				aria-controls="collapse_article19">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">04 January 2018</div> &emsp;
+						<a data-toggle="collapse" href="#article19">
+							<strong>Wei-Lin Tu visits our laboratory until Mar. 5, 2018.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article19" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>
 Wei-Lin is a student in a doctoral course of National Taiwan University. His stay is financially supported by Japan-Taiwan Exchange Association.
 </p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">20 November 2017</div> &emsp;
-	  <a data-toggle="collapse" href="#article16">
-	    <strong>Poster presentation on International Symposium on Fluctuation and Structure out of Equilibrium 2017 (SFS2017) (Sendai, Japan)</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article16" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <dl>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article20" aria-expanded="false"
+				aria-controls="collapse_article20">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">20 November 2017</div> &emsp;
+						<a data-toggle="collapse" href="#article20">
+							<strong>Poster presentation on International Symposium on Fluctuation and Structure out of Equilibrium 2017 (SFS2017) (Sendai, Japan)</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article20" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<dl>
   <dt>International Symposium on Fluctuation and Structure out of Equilibrium 2017 (SFS2017)</dt>
   <dd>
     <ul>
@@ -505,23 +723,27 @@ Wei-Lin is a student in a doctoral course of National Taiwan University. His sta
     </ul>
   </dd>
 </dl>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">06 November 2017</div> &emsp;
-	  <a data-toggle="collapse" href="#article17">
-	    <strong>Talk "Entanglement branching operator" in Novel Quantum States in Condensed Matter 2017 (YITP, Kyoto, Japan)</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article17" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <dl>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article21" aria-expanded="false"
+				aria-controls="collapse_article21">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">06 November 2017</div> &emsp;
+						<a data-toggle="collapse" href="#article21">
+							<strong>Talk "Entanglement branching operator" in Novel Quantum States in Condensed Matter 2017 (YITP, Kyoto, Japan)</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article21" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<dl>
   <dt>Title: "Entanglement branching operator" (invited)</dt>
   <dd>
     <ul>
@@ -553,23 +775,27 @@ Wei-Lin is a student in a doctoral course of National Taiwan University. His sta
     states that satisfy the area law of entanglement entropy.
   </dd>
 </dl>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">05 October 2017</div> &emsp;
-	  <a data-toggle="collapse" href="#article18">
-	    <strong>Paper "Entanglement branching operator" is submitted.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article18" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <dl class="dl-horizontal">
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article22" aria-expanded="false"
+				aria-controls="collapse_article22">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">05 October 2017</div> &emsp;
+						<a data-toggle="collapse" href="#article22">
+							<strong>Paper "Entanglement branching operator" is submitted.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article22" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<dl class="dl-horizontal">
   <dt>Preprint</dt>
   <dd><a href="http://arxiv.org/abs/1710.01830">arXiv:1710.01830</a></dd>
   <dt>Author</dt>
@@ -595,44 +821,52 @@ Wei-Lin is a student in a doctoral course of National Taiwan University. His sta
   <dt>Comments</dt>
   <dd>9 pages, 11 figures</dd>
 </dl>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">05 February 2017</div> &emsp;
-	  <a data-toggle="collapse" href="#article19">
-	    <strong>Workshop in the Centro de Ciencias de Benasque Pedro Pascual, Benasque, Spain : "Entanglement in Strongly Correlated Systems"</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article19" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>From 5 Feb. 2017 to 18 Feb. 2017,
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article23" aria-expanded="false"
+				aria-controls="collapse_article23">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">05 February 2017</div> &emsp;
+						<a data-toggle="collapse" href="#article23">
+							<strong>Workshop in the Centro de Ciencias de Benasque Pedro Pascual, Benasque, Spain : "Entanglement in Strongly Correlated Systems"</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article23" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>From 5 Feb. 2017 to 18 Feb. 2017,
 <a href="http://benasque.org/2017scs/">
 Workshop "Entanglement in Strongly Correlated Systems"
 </a>,
 the Centro de Ciencias de Benasque Pedro Pascual, Benasque, Spain.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">14 December 2016</div> &emsp;
-	  <a data-toggle="collapse" href="#article20">
-	    <strong>Talk "General Entanglement Branching in a Tensor Network" in Fourth Workshop on Tensor Network States: Algorithms and Applications (NCTS, Hsinchu, Taiwan)</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article20" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <ul>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article24" aria-expanded="false"
+				aria-controls="collapse_article24">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">14 December 2016</div> &emsp;
+						<a data-toggle="collapse" href="#article24">
+							<strong>Talk "General Entanglement Branching in a Tensor Network" in Fourth Workshop on Tensor Network States: Algorithms and Applications (NCTS, Hsinchu, Taiwan)</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article24" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<ul>
 <li>Title: "General Entanglement Branching in a Tensor Network" (invited)</li>
 <li>Date of presentation: 14th Dec. 2016.</li>
 <li>Conference: Fourth Workshop on Tensor Network States: Algorithms and Applications</li>
@@ -640,108 +874,128 @@ the Centro de Ciencias de Benasque Pedro Pascual, Benasque, Spain.</p>
 <li>Venue: National Center for Theoretical Sciences, Hsinchu, Taiwan</li>
 <li>URL：<a href="http://www.phys.cts.nthu.edu.tw/actnews/index.php?Sn=318">http://www.phys.cts.nthu.edu.tw/actnews/index.php?Sn=318</a>
 </ul>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">27 June 2016</div> &emsp;
-	  <a data-toggle="collapse" href="#article21">
-	    <strong>Talk "Branching and tensor network" in the international Workshop on Tensor Networks and Quantum Many-Body Problems (TNQMP2016)</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article21" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <ul>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article25" aria-expanded="false"
+				aria-controls="collapse_article25">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">27 June 2016</div> &emsp;
+						<a data-toggle="collapse" href="#article25">
+							<strong>Talk "Branching and tensor network" in the international Workshop on Tensor Networks and Quantum Many-Body Problems (TNQMP2016)</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article25" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<ul>
 <li>Title: "Branching and tensor network" (invited)</li>
 <li>Date: June 27, 2016</li>
 <li>Venue: The Institute for Solid State Physics, The University of Tokyo, JAPAN</li>
 <li>URL: <a href="http://www.issp.u-tokyo.ac.jp/public/tnqmp2016/">http://www.issp.u-tokyo.ac.jp/public/tnqmp2016/</a>
 </ul>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">05 October 2015</div> &emsp;
-	  <a data-toggle="collapse" href="#article22">
-	    <strong>Paper "SU(N) Heisenberg model with multicolumn representations" is published in Physical Review B.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article22" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 92 </strong> (2015) 134404<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article26" aria-expanded="false"
+				aria-controls="collapse_article26">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">05 October 2015</div> &emsp;
+						<a data-toggle="collapse" href="#article26">
+							<strong>Paper "SU(N) Heisenberg model with multicolumn representations" is published in Physical Review B.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article26" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 92 </strong> (2015) 134404<br>
 <span class="badge badge-primary">DOI</span> <a href="http://dx.doi.org/10.1103/PhysRevB.92.134404">10.1103/PhysRevB.92.134404</a><br>
 <span class="badge badge-primary">AUTHOR</span> Tsuyoshi Okubo, Kenji Harada, Jie Lou, and Naoki Kaishima<br>
 <span class="badge badge-primary">ABSTRACT</span>
 The SU(N) symmetric antiferromagnetic Heisenberg model with multicolumn representations on the two- dimensional square lattice is investigated by quantum Monte Carlo simulations. For the representation of a Young diagram with two columns, we confirm that a valence-bond solid (VBS) order appears as soon as the Néel order disappears at N = 10, indicating no intermediate phase. In the case of the representation with three columns, there is no evidence for either the Néel or the VBS ordering for N &gt;= 15. This is actually consistent with the large-N theory, which predicts that the VBS state immediately follows the Néel state, because the expected spontaneous order is too weak to be detected.<br></p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">06 July 2015</div> &emsp;
-	  <a data-toggle="collapse" href="#article23">
-	    <strong>Paper "Kernel methods for corrections to scaling" is published in Physical Review E.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article23" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">REFERENCE</span> Physical Review E <strong> 92 </strong> (2015) 012106<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article27" aria-expanded="false"
+				aria-controls="collapse_article27">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">06 July 2015</div> &emsp;
+						<a data-toggle="collapse" href="#article27">
+							<strong>Paper "Kernel methods for corrections to scaling" is published in Physical Review E.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article27" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">REFERENCE</span> Physical Review E <strong> 92 </strong> (2015) 012106<br>
 <span class="badge badge-primary">DOI</span> <a href="http://dx.doi.org/10.1103/PhysRevE.92.012106">10.1103/PhysRevE.92.012106</a><br>
 <span class="badge badge-primary">AUTHOR</span> Kenji Harada<br>
 <span class="badge badge-primary">ABSTRACT</span>
 Scaling analysis, in which one infers scaling exponents and a scaling function in a scaling law from given data, is a powerful tool for determining universal properties of critical phenomena in many fields of science. However, there are corrections to scaling in many cases, and then the inference problem becomes ill-posed by an uncontrollable irrelevant scaling variable. We propose a new kernel method based on Gaussian process regression to fix this problem generally. We test the performance of the new kernel method for some example cases. In all cases, when the precision of the example data increases, inference results of the new kernel method correctly converge. Because there is no limitation in the new kernel method for the scaling function even with corrections to scaling, unlike in the conventional method, the new kernel method can be widely applied to real data in critical phenomena.<br>
 <span class="badge badge-primary">NOTE</span>
 The reference code of this new method is prepared at <a href="http://kenjiharada.github.io/BSA/">http://kenjiharada.github.io/BSA/</a></p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">22 April 2015</div> &emsp;
-	  <a data-toggle="collapse" href="#article24">
-	    <strong>Fixed a bug in Bayesian Scaling Analysis (BSA) toolkit.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article24" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><a href="http://kenjiharada.github.io/BSA/">BSA toolkit</a> is a reference code of a new method for scaling analysis
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article28" aria-expanded="false"
+				aria-controls="collapse_article28">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">22 April 2015</div> &emsp;
+						<a data-toggle="collapse" href="#article28">
+							<strong>Fixed a bug in Bayesian Scaling Analysis (BSA) toolkit.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article28" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><a href="http://kenjiharada.github.io/BSA/">BSA toolkit</a> is a reference code of a new method for scaling analysis
 of critical phenomena. Using Bayesian inference, we automatically estimate critical point and indices.
 We fixed a bug for the output of scaling function with the option "-f 1". This bug does not affect the inference result of parameters.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">21 April 2015</div> &emsp;
-	  <a data-toggle="collapse" href="#article25">
-	    <strong>Paper "SU(N) Heisenberg model with multi-column representations" is submitted.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article25" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1504.05332">arXiv:1504.05332</a><br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article29" aria-expanded="false"
+				aria-controls="collapse_article29">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">21 April 2015</div> &emsp;
+						<a data-toggle="collapse" href="#article29">
+							<strong>Paper "SU(N) Heisenberg model with multi-column representations" is submitted.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article29" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1504.05332">arXiv:1504.05332</a><br>
 <span class="badge badge-primary">AUTHOR</span> Tsuyoshi Okubo, Kenji Harada, Jie Lou, Naoki Kaishima<br>
 <span class="badge badge-primary">ABSTRACT</span>
 The SU(N) symmetric antiferromagnetic Heisenberg model with
@@ -754,505 +1008,598 @@ is no evidence for both of the N'eel and the valence-bond solid ordering for
 N &gt;= 15. This is actually consistent with the large-N theory, which
 predicts that the VBS state immediately follows the N'eel state, because the
 expected spontaneous order is too weak to be detected.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">16 March 2015</div> &emsp;
-	  <a data-toggle="collapse" href="#article26">
-	    <strong>Paper "Thermal phase transition of generalized Heisenberg models for SU(N) spins on square and honeycomb lattices" is published in Physical Review B.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article26" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 91 </strong> (2015) 094414<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article30" aria-expanded="false"
+				aria-controls="collapse_article30">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">16 March 2015</div> &emsp;
+						<a data-toggle="collapse" href="#article30">
+							<strong>Paper "Thermal phase transition of generalized Heisenberg models for SU(N) spins on square and honeycomb lattices" is published in Physical Review B.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article30" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 91 </strong> (2015) 094414<br>
 <span class="badge badge-primary">DOI</span> <a href="http://dx.doi.org/10.1103/PhysRevB.91.094414">10.1103/PhysRevB.91.094414</a><br>
 <span class="badge badge-primary">AUTHOR</span> Takafumi Suzuki, Kenji Harada, Haruhiko Matsuo, Synge Todo, and Naoki Kaishima<br>
 <span class="badge badge-primary">ABSTRACT</span>
 We investigate thermal phase transitions to a valence-bond solid phase in SU(N) Heisenberg models with four- or six-body interactions on a square or honeycomb lattice, respectively. In both cases, a thermal phase transition occurs that is accompanied by rotational symmetry breaking of the lattice. We perform quantum Monte Carlo calculations in order to clarify the critical properties of the models. The estimated critical exponents indicate that the universality classes of the square- and honeycomb-lattice cases are identical to those of the classical XY model with a Z4 symmetry-breaking field and the three-state Potts model, respectively. In the square-lattice case, the thermal exponent, ν, monotonically increases as the system approaches the quantum critical point, while the values of the critical exponents, η and γ/ν, remain constant. From a finite-size scaling analysis, we find that the system exhibits weak universality, because the Z4 symmetry-breaking field is always marginal. In contrast, ν in the honeycomb-lattice case exhibits a constant value, even in the vicinity of the quantum critical point, because the Z3 field remains relevant in the SU(3) and SU(4) cases.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">18 February 2015</div> &emsp;
-	  <a data-toggle="collapse" href="#article27">
-	    <strong>Talk "Quantum Monte Carlo Study of Quantum Criticality on SO(N) Bilinear-biquadratic Chains" in the International Workshop on New Frontier of Numerical Methods for Many-Body Correlations ― Methodologies and Algorithms for Fermion Many-Body Problems.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article27" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>Title: ''Quantum Monte Carlo study of Quantum Criticality on SO(N) Bilinear-biquadratic Chains''</br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article31" aria-expanded="false"
+				aria-controls="collapse_article31">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">18 February 2015</div> &emsp;
+						<a data-toggle="collapse" href="#article31">
+							<strong>Talk "Quantum Monte Carlo Study of Quantum Criticality on SO(N) Bilinear-biquadratic Chains" in the International Workshop on New Frontier of Numerical Methods for Many-Body Correlations ― Methodologies and Algorithms for Fermion Many-Body Problems.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article31" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>Title: ''Quantum Monte Carlo study of Quantum Criticality on SO(N) Bilinear-biquadratic Chains''</br>
 Date: Feb. 18, 2015</br>
 Conference: From Feb. 18, 2015 to Feb. 21, 2015, 
 <a href="http://www.cms-initiative.jp/ja/events/cmsi-international-workshop-on-computational-methods-for-quantum-many-body-systems-1">
 International Workshop on New Frontier of Numerical Methods for Many-Body Correlations ― Methodologies and Algorithms for Fermion Many-Body Problems
 </a>, Hongo Campus, The University of Tokyo, Japan.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">07 January 2015</div> &emsp;
-	  <a data-toggle="collapse" href="#article28">
-	    <strong>Invited talk "Quantum Monte Carlo study of Quantum Criticality on SO(N) Bilinear Biquadratic Chains" in the 9th International Conference on Computational Physics (ICCP9).</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article28" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>Title: ''Quantum Monte Carlo study of Quantum Criticality on SO(N) Bilinear Biquadratic Chains''</br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article32" aria-expanded="false"
+				aria-controls="collapse_article32">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">07 January 2015</div> &emsp;
+						<a data-toggle="collapse" href="#article32">
+							<strong>Invited talk "Quantum Monte Carlo study of Quantum Criticality on SO(N) Bilinear Biquadratic Chains" in the 9th International Conference on Computational Physics (ICCP9).</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article32" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>Title: ''Quantum Monte Carlo study of Quantum Criticality on SO(N) Bilinear Biquadratic Chains''</br>
 Date: Jan. 9, 2015</br>
 Conference: From Jan. 7, 2015 to Jan. 11, 2015, 
 <a href="http://www.physics.nus.edu.sg/iccp9/">
 the 9th International Conference on Computational Physics (ICCP9)
 </a>, National University of Singapore, Singapore.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">25 November 2014</div> &emsp;
-	  <a data-toggle="collapse" href="#article29">
-	    <strong>Talk "MERA tensor network and its application on quantum frustrated magnets" in the 10sor network workshop --- Field 2x5 joint workshop on new algorithms for quantum manybody problems ---.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article29" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>Conference: <a href="http://www.cms-initiative.jp/ja/events/20141125_10sor">
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article33" aria-expanded="false"
+				aria-controls="collapse_article33">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">25 November 2014</div> &emsp;
+						<a data-toggle="collapse" href="#article33">
+							<strong>Talk "MERA tensor network and its application on quantum frustrated magnets" in the 10sor network workshop --- Field 2x5 joint workshop on new algorithms for quantum manybody problems ---.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article33" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>Conference: <a href="http://www.cms-initiative.jp/ja/events/20141125_10sor">
 10sor network workshop --- Field 2x5 joint workshop on new algorithms for quantum manybody problems ---
 </a><br>
 Date: November 25, 2014, Tuedsay<br>
 Venue: Kashiwa Future Center, Kashiwa, Chiba, Japan<br>
 Title: "MERA tensor network and its application on quantum frustrated magnets"</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">17 November 2014</div> &emsp;
-	  <a data-toggle="collapse" href="#article30">
-	    <strong>Talk "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N" in the YITP long-term Workshop "Novel Quantum States in Condensed Matter 2014" (NQS2014).</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article30" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>From Nov. 4, 2014 to Dec. 2, 2014, 
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article34" aria-expanded="false"
+				aria-controls="collapse_article34">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">17 November 2014</div> &emsp;
+						<a data-toggle="collapse" href="#article34">
+							<strong>Talk "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N" in the YITP long-term Workshop "Novel Quantum States in Condensed Matter 2014" (NQS2014).</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article34" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>From Nov. 4, 2014 to Dec. 2, 2014, 
 <a href="http://www2.yukawa.kyoto-u.ac.jp/~nqs2014.ws/index.html">
 the YITP long-term Workshop "Novel Quantum States in Condensed Matter 2014" (NQS2014)
 </a>, YITP, Kyoto university, Kyoto, Japan.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">20 October 2014</div> &emsp;
-	  <a data-toggle="collapse" href="#article31">
-	    <strong>Poster "Tensor network calculation on large-scale parallel computer" in the CMSI International Workshop 2014: Tensor Network Algorithms in Materials Science.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article31" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>From 20 Oct. 2014 to 22 Oct. 2014,
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article35" aria-expanded="false"
+				aria-controls="collapse_article35">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">20 October 2014</div> &emsp;
+						<a data-toggle="collapse" href="#article35">
+							<strong>Poster "Tensor network calculation on large-scale parallel computer" in the CMSI International Workshop 2014: Tensor Network Algorithms in Materials Science.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article35" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>From 20 Oct. 2014 to 22 Oct. 2014,
 <a href="http://www.cms-initiative.jp/ja/events/20141020-kobe-ws">
 the CMSI International Workshop 2014: Tensor Network Algorithms in Materials
 Science </a>, RIKEN Advanced
 Institute for Computational Science 6F auditorium 7-1-26, Port Island
 South, Kobe, 650-0047, Japan.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">15 October 2014</div> &emsp;
-	  <a data-toggle="collapse" href="#article32">
-	    <strong>Added a new application in toolkit BSA for the finite-size scaling analysis.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article32" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>The reference code of the new kernel method is added in <a href="http://kenjiharada.github.io/BSA/">the toolkit BSA</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article36" aria-expanded="false"
+				aria-controls="collapse_article36">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">15 October 2014</div> &emsp;
+						<a data-toggle="collapse" href="#article36">
+							<strong>Added a new application in toolkit BSA for the finite-size scaling analysis.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article36" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>The reference code of the new kernel method is added in <a href="http://kenjiharada.github.io/BSA/">the toolkit BSA</a>.
 The new code can easily do the finite-size scaling analysis with or without corrections to scaling.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">14 October 2014</div> &emsp;
-	  <a data-toggle="collapse" href="#article33">
-	    <strong>Paper "Kernel Methods for Corrections to Scaling" is submitted.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article33" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1410.3622">arXiv:1410.3622</a><br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article37" aria-expanded="false"
+				aria-controls="collapse_article37">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">14 October 2014</div> &emsp;
+						<a data-toggle="collapse" href="#article37">
+							<strong>Paper "Kernel Methods for Corrections to Scaling" is submitted.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article37" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1410.3622">arXiv:1410.3622</a><br>
 <span class="badge badge-primary">AUTHOR</span> Kenji Harada<br>
 <span class="badge badge-primary">ABSTRACT</span>
 Scaling analysis, in which one infers scaling exponents and a scaling function in a scaling law from given data, is a powerful tool for determining universal properties of critical phenomena in many fields of science. However, there are corrections to scaling in many cases, and then the inference problem becomes ill-posed by an uncontrollable irrelevant scaling variable. We propose a new kernel method based on Gaussian process regression to fix this problem generally. We test the performance of the new kernel method for some example cases. In all cases, when the precision of the example data increases, inference results of the new kernel method correctly converge. Because there is no limitation in the new kernel method for the scaling function even with corrections to scaling, unlike in the conventional method, the new kernel method can be widely applied to real data in critical phenomena.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">27 June 2014</div> &emsp;
-	  <a data-toggle="collapse" href="#article34">
-	    <strong>Paper "Tensor Network Studies of Quantum Frustrated Magnets" is published in Proceedings of the International Conference on Strongly Correlated Electron Systems (SCES2013).</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article34" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">REFERENCE</span> JPS Conf. Proc. <strong> 3 </strong>, 014031 (2014) [7 pages]<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article38" aria-expanded="false"
+				aria-controls="collapse_article38">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">27 June 2014</div> &emsp;
+						<a data-toggle="collapse" href="#article38">
+							<strong>Paper "Tensor Network Studies of Quantum Frustrated Magnets" is published in Proceedings of the International Conference on Strongly Correlated Electron Systems (SCES2013).</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article38" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">REFERENCE</span> JPS Conf. Proc. <strong> 3 </strong>, 014031 (2014) [7 pages]<br>
 Proceedings of the International Conference on Strongly Correlated Electron Systems (SCES2013)<br>
 <span class="badge badge-primary">DOI</span> <a href="http://journals.jps.jp/doi/abs/10.7566/JPSCP.3.014031">10.7566/JPSCP.3.014031</a><br>
 <span class="badge badge-primary">AUTHOR</span>Kenji Harada<br>
 <span class="badge badge-primary">ABSTRACT</span>
 We will introduce tensor network states in the variational calculation of ground states for quantum frustrated magnets. In particular, we will report the performance of MERA tensor network for an S = 1/2 antiferromagnetic Heisenberg model on a spatially anisotropic triangular lattice, which is an effective model of Mott insulators on a triangular layer of organic charge transfer salts.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">24 April 2014</div> &emsp;
-	  <a data-toggle="collapse" href="#article35">
-	    <strong>Paper "Symmetry-protected topological order and negative-sign problem for SO(N) bilinear-biquadratic chains" is published in Physical Review B.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article35" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 89 </strong> (2014) 134422<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article39" aria-expanded="false"
+				aria-controls="collapse_article39">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">24 April 2014</div> &emsp;
+						<a data-toggle="collapse" href="#article39">
+							<strong>Paper "Symmetry-protected topological order and negative-sign problem for SO(N) bilinear-biquadratic chains" is published in Physical Review B.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article39" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 89 </strong> (2014) 134422<br>
 <span class="badge badge-primary">DOI</span> <a href="http://dx.doi.org/10.1103/PhysRevB.89.134422">10.1103/PhysRevB.89.134422</a><br>
 <span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1312.2643">arXiv:1312.2643</a><br>
 <span class="badge badge-primary">AUTHOR</span> Kouichi Okunishi and Kenji Harada<br>
 <span class="badge badge-primary">ABSTRACT</span>
 Using a generalized Jordan-Wigner transformation combined with the defining representation of the SO(N) spin, we map the SO(N) bilinear-biquadratic(BLBQ) spin chain into the N-color bosonic particle model. We find that, when the Jordan-Wigner transformation disentangles the symmetry-protected topological entanglement, this bosonic model becomes negative-sign free in the context of quantum Monte-Carlo simulation. For the SO(3) case, moreover, Kennedy-Tasaki's transformation for the S=1 BLBQ chain, which is also a topological disentangler, derives the same bosonic model through the dimer-R bases. We present temperature dependence of energy, entropy and string order parameter for the SO(N=3, 4, 5) BLBQ chains by the world-line Monte-Carlo simulation for the N-color bosonic particle model.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">10 April 2014</div> &emsp;
-	  <a data-toggle="collapse" href="#article36">
-	    <strong>Paper "Parallelized quantum Monte Carlo algorithm with non-local worm updates" is published in Physical Review Letters.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article36" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">REFERENCE</span> Physical Review Letters <strong> 112 </strong> (2014) 140603<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article40" aria-expanded="false"
+				aria-controls="collapse_article40">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">10 April 2014</div> &emsp;
+						<a data-toggle="collapse" href="#article40">
+							<strong>Paper "Parallelized quantum Monte Carlo algorithm with non-local worm updates" is published in Physical Review Letters.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article40" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">REFERENCE</span> Physical Review Letters <strong> 112 </strong> (2014) 140603<br>
 <span class="badge badge-primary">DOI</span> <a href="http://dx.doi.org/10.1103/PhysRevLett.112.140603">10.1103/PhysRevLett.112.140603</a><br>
 <span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1307.0328">arXiv:1307.0328</a><br>
 <span class="badge badge-primary">AUTHOR</span> Akiko Masaki-Kato, Takafumi Suzuki, Kenji Harada, Synge Todo, Naoki Kaishima<br>
 <span class="badge badge-primary">ABSTRACT</span>
 Based on the worm algorithm in the path-integral representation, we propose a general quantum Monte Carlo algorithm suitable for parallelizing on a distributed-memory computer by domain decomposition.  Of particular importance is its application to large lattice systems of bosons and spins.  A large number of worms are introduced and its population is controlled by a fictitious transverse field.  For a benchmark, we study the size-dependence of the Bose-condensation order parameter of the hardcore Bose-Hubbard model with $L\times L\times \beta t = 10240\times 10240\times 16$, using 3200 computing cores, which shows good parallelization efficiency.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">06 March 2014</div> &emsp;
-	  <a data-toggle="collapse" href="#article37">
-	    <strong>Talk "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N" S27.00013 in APS March Meeting 2014, Denver, Colorado, USA.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article37" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>From 3 March 2014 to 7 March 2014,</p>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article41" aria-expanded="false"
+				aria-controls="collapse_article41">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">06 March 2014</div> &emsp;
+						<a data-toggle="collapse" href="#article41">
+							<strong>Talk "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N" S27.00013 in APS March Meeting 2014, Denver, Colorado, USA.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article41" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>From 3 March 2014 to 7 March 2014,</p>
 <ul>
 <li>Talk (Collaborator) "Parallelized Multi-Worm Algorithm for Large Scale Quantum Monte-Carlo simulations" C1.00284</li>
 <li>Talk (Collaborator) "Thermal phase transitions to valence-bond-solid states in the two dimensional SU(N) Heisenberg models" F7.00010</li>
 <li>Talk (Representative) "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N" S27.00013</li>
 </ul>
 <p><a href="http://www.aps.org/meetings/march/"> APS March Meeting 2014</a>, Denver, Colorado, USA.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">13 February 2014</div> &emsp;
-	  <a data-toggle="collapse" href="#article38">
-	    <strong>Toolkit BSA is announced in the MateriApps site.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article38" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><a href="http://kenjiharada.github.io/BSA/">Toolkit BSA</a> is a reference code of a new method for scaling analysis
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article42" aria-expanded="false"
+				aria-controls="collapse_article42">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">13 February 2014</div> &emsp;
+						<a data-toggle="collapse" href="#article42">
+							<strong>Toolkit BSA is announced in the MateriApps site.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article42" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><a href="http://kenjiharada.github.io/BSA/">Toolkit BSA</a> is a reference code of a new method for scaling analysis
 of critical phenomena. Using Bayesian inference, we automatically
 estimate critical point and indices. This toolkit is announced in
 the <a href="http://ma.cms-initiative.jp/en/application-list/bsa-1?set_language=en">MateriApps</a> site.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">13 December 2013</div> &emsp;
-	  <a data-toggle="collapse" href="#article39">
-	    <strong>Paper "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N" is published in Physical Review B: Rapid Communications.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article39" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 88 </strong> (2013) 220408(R)<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article43" aria-expanded="false"
+				aria-controls="collapse_article43">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">13 December 2013</div> &emsp;
+						<a data-toggle="collapse" href="#article43">
+							<strong>Paper "Possibility of Deconfined Criticality in SU(N) Heisenberg Models at Small N" is published in Physical Review B: Rapid Communications.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article43" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 88 </strong> (2013) 220408(R)<br>
 <span class="badge badge-primary">DOI</span> <a href="http://hdl.handle.net/10.1103/PhysRevB.88.220408">10.1103/PhysRevB.88.220408</a><br>
 <span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1307.0501">arXiv:1307.0501v2</a><br>
 <span class="badge badge-primary">AUTHOR</span>
 Kenji Harada, Takafumi Suzuki, Tsuyoshi Okubo, Haruhiko Matsuo, Jie Lou, Hiroshi Watanabe, Synge Todo, and Naoki Kaishima<br>
 <span class="badge badge-primary">ABSTRACT</span>
 To examine the validity of the scenario of the deconfined critical phenomena, we carry out a quantum Monte Carlo simulation for the SU($N$) generalization of the Heisenberg model with four-body and six-body interactions. The quantum phase transition between the SU($N$) N\'eel and valence-bond solid phases is characterized for $N=2,3,$ and $4$ on the square and honeycomb lattices. While finite-size scaling analysis works well up to the maximum lattice size ($L=256$) and indicates the continuous nature of the phase transition, a clear systematic change towards the first-order transition is observed in the estimates of the critical exponent $y \equiv 1/\nu$ as the system size increases. We also confirm the relevance of a squared valence-bond solid field $\Psi^2$ for the SU(3) model.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">10 December 2013</div> &emsp;
-	  <a data-toggle="collapse" href="#article40">
-	    <strong>Paper "Symmetry-protected topological order and negative-sign problem for SO(N) bilinear-biquadratic chains" is submitted.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article40" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1312.2643">arXiv:1312.2643</a><br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article44" aria-expanded="false"
+				aria-controls="collapse_article44">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">10 December 2013</div> &emsp;
+						<a data-toggle="collapse" href="#article44">
+							<strong>Paper "Symmetry-protected topological order and negative-sign problem for SO(N) bilinear-biquadratic chains" is submitted.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article44" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1312.2643">arXiv:1312.2643</a><br>
 <span class="badge badge-primary">AUTHOR</span> Kouichi Okunishi and Kenji Harada<br>
 <span class="badge badge-primary">ABSTRACT</span>
 Using a generalized Jordan-Wigner transformation combined with the defining representation of the SO(N) spin, we map the SO(N) bilinear-biquadratic(BLBQ) spin chain into the N-color bosonic particle model. We find that, when the Jordan-Wigner transformation disentangles the symmetry-protected topological entanglement, this bosonic model becomes negative-sign free in the context of quantum Monte-Carlo simulation. For the SO(3) case, moreover, Kennedy-Tasaki's transformation for the S=1 BLBQ chain, which is also a topological disentangler, derives the same bosonic model through the dimer-R bases. We present temperature dependence of energy, entropy and string order parameter for the SO(N=3, 4, 5) BLBQ chains by the world-line Monte-Carlo simulation for the N-color bosonic particle model.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">04 December 2013</div> &emsp;
-	  <a data-toggle="collapse" href="#article41">
-	    <strong>Talk "Deconfined quantum criticality in SU(N) Heisenberg models: Finite size scaling analysis based on Bayesian inference" in Taipei Tensor Network Workshop 2013.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article41" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>From 2 Dec. 2013 to 5 Dec. 2013,
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article45" aria-expanded="false"
+				aria-controls="collapse_article45">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">04 December 2013</div> &emsp;
+						<a data-toggle="collapse" href="#article45">
+							<strong>Talk "Deconfined quantum criticality in SU(N) Heisenberg models: Finite size scaling analysis based on Bayesian inference" in Taipei Tensor Network Workshop 2013.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article45" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>From 2 Dec. 2013 to 5 Dec. 2013,
 <a href ="http://phys.cts.ntu.edu.tw/workshop/2013/1202TTNW/">
 Taipei Tensor Network Workshop 2013
 </a>, National Taiwan University, Taipei, Taiwan.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">21 October 2013</div> &emsp;
-	  <a data-toggle="collapse" href="#article42">
-	    <strong>CMSI International Symposium 2013: "Extending the power of computational materials sciences with K-computer".</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article42" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>From 21 Oct. 2013 to 22 Oct. 2013,<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article46" aria-expanded="false"
+				aria-controls="collapse_article46">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">21 October 2013</div> &emsp;
+						<a data-toggle="collapse" href="#article46">
+							<strong>CMSI International Symposium 2013: "Extending the power of computational materials sciences with K-computer".</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article46" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>From 21 Oct. 2013 to 22 Oct. 2013,<br>
 <a href="http://www.cms-initiative.jp/ja/events/cmsi_host/cmsi-20131021e">
 CMSI International Symposium 2013:
 "Extending the power of computational materials sciences with K-computer"
 </a>,
 Ito International Research Center in the University of Tokyo, Hongo Campus in Tokyo, Japan.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">16 October 2013</div> &emsp;
-	  <a data-toggle="collapse" href="#article43">
-	    <strong>Satellite Meeting 2013 in Kobe: "CMSI Kobe International Workshop 2013: Recent Progress in Tensor Network Algorithms".</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article43" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>From 16 Oct. 2013 to 18 Oct. 2013,
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article47" aria-expanded="false"
+				aria-controls="collapse_article47">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">16 October 2013</div> &emsp;
+						<a data-toggle="collapse" href="#article47">
+							<strong>Satellite Meeting 2013 in Kobe: "CMSI Kobe International Workshop 2013: Recent Progress in Tensor Network Algorithms".</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article47" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>From 16 Oct. 2013 to 18 Oct. 2013,
 <a href="http://www.cms-initiative.jp/ja/events/cmsi_host/201310-kobe-workshop">
    Satellite Meeting 2013 in Kobe: "CMSI Kobe International Workshop 2013: Recent Progress in Tensor Network Algorithms"
 </a>,
 RIKEN Advanced Institute for Computational Science, Kobe, Japan.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">28 July 2013</div> &emsp;
-	  <a data-toggle="collapse" href="#article44">
-	    <strong>Talk "Tensor network studies of quantum frustrated magnets" in Statistical Physics of Quantum Matter.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article44" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>From 28 July 2013 to 31 July 2013,
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article48" aria-expanded="false"
+				aria-controls="collapse_article48">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">28 July 2013</div> &emsp;
+						<a data-toggle="collapse" href="#article48">
+							<strong>Talk "Tensor network studies of quantum frustrated magnets" in Statistical Physics of Quantum Matter.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article48" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>From 28 July 2013 to 31 July 2013,
 <a href="http://www.iphys.nccu.edu.tw/QMworkshop2013/">"Statistical Physics of Quantum Matter"</a>, National Taiwan University, Taipei, Taiwan.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">01 July 2013</div> &emsp;
-	  <a data-toggle="collapse" href="#article45">
-	    <strong>Paper "Parallelized Quantum Monte Carlo Algorithm with Non-local Worm Update" is submitted.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article45" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1307.0328">arXiv:1307.0328</a><br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article49" aria-expanded="false"
+				aria-controls="collapse_article49">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">01 July 2013</div> &emsp;
+						<a data-toggle="collapse" href="#article49">
+							<strong>Paper "Parallelized Quantum Monte Carlo Algorithm with Non-local Worm Update" is submitted.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article49" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1307.0328">arXiv:1307.0328</a><br>
 <span class="badge badge-primary">AUTHOR</span> Akiko Masaki-Kato, Takafumi Suzuki, Kenji Harada, Synge Todo, Naoki Kaishima<br>
 <span class="badge badge-primary">ABSTRACT</span>
 Based on the worm algorithm in the path-integral representation, we propose a general quantum Monte Carlo algorithm suitable for parallelizing on a distributed-memory computer by domain decomposition. Of particular importance is its application to large lattice systems of bosons and spins. A large number of worms are introduced and its population is controlled by a fictitious transverse field. For a benchmark, we study the size-dependence of the Bose-condensation order parameter of the hardcore Bose-Hubbard model with $L \times L \times \beta t =10240 \times 10240 \times 16$, using 3200 computing cores, which shows good parallelization efficiency.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">22 March 2013</div> &emsp;
-	  <a data-toggle="collapse" href="#article46">
-	    <strong>Talk "Valence bond solid order and phase transition of honeycomb lattice models" Z24.03 in APS March Meeting 2013, Baltimore, Maryland, USA.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article46" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p>From 18 March 2013 to 22 March 2013,
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article50" aria-expanded="false"
+				aria-controls="collapse_article50">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">22 March 2013</div> &emsp;
+						<a data-toggle="collapse" href="#article50">
+							<strong>Talk "Valence bond solid order and phase transition of honeycomb lattice models" Z24.03 in APS March Meeting 2013, Baltimore, Maryland, USA.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article50" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p>From 18 March 2013 to 22 March 2013,
 <a href="http://www.aps.org/meetings/march/"> APS March Meeting 2013</a>, Baltimore, Maryland, USA.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">10 December 2012</div> &emsp;
-	  <a data-toggle="collapse" href="#article47">
-	    <strong>Paper "Study of the Shastry Sutherland Model Using Multi-scale Entanglement Renormalization Ansatz" is submitted.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article47" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1212.1999">arXiv:1212.1999</a><br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article51" aria-expanded="false"
+				aria-controls="collapse_article51">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">10 December 2012</div> &emsp;
+						<a data-toggle="collapse" href="#article51">
+							<strong>Paper "Study of the Shastry Sutherland Model Using Multi-scale Entanglement Renormalization Ansatz" is submitted.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article51" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1212.1999">arXiv:1212.1999</a><br>
 <span class="badge badge-primary">AUTHOR</span> Jie Lou, Takafumi Suzuki, Kenji Harada, and Naoki Kaishima<br>
 <span class="badge badge-primary">ABSTRACT</span>
 We performed variational calculation based on the multi-scale entanglemnt renormalization ansatz, for the antiferromagnetic Heisenberg model on a Shastry Sutherland lattice (SSL). Our results show that at coupling ratio J'/J= 0.687(3), the system undergoes a quantum phase transition from the orthogonal dimer order to the plaquette valence bond solid phase, which then transits into the antiferromagnetic order above J'/J=0.75. In the presence of an external magnetic field, our calculations show clear evidences of various magnetic plateaux in systems with different coupling ratios range from 0.5 to 0.69. Our calculations are not limited to the small coupling ratio region, and we are able to show strong evidence of the presence of several supersolid phases, including ones above 1/2 and 1/3 plateaux. Such supersolid phases, which feature the coexistence of compressible superfluidity and crystalline long range order in triplet excitations, emerge at relatively large coupling ratio (J'/J&gt;0.5). A schematic phase diagram of the SSL model in the presence of magnetic field is provided.</p>
-	  </p>
-	</div>
-      </div>
-    </div>
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-	<h6 class="card-title">
-	  <div class="badge badge-primary">16 November 2012</div> &emsp;
-	  <a data-toggle="collapse" href="#article48">
-	    <strong>Paper "Numerical study of incommensurability of the spiral state on spin-1/2 spatially anisotropic triangular antiferromagnets using entanglement renormalization" is published in Physical Review B.</strong>
-	  </a>
-	</h6>
-      </div>
-      <div id="article48" class="card-collapse collapse">
-	<div class="card-body">
-	  <p class="card-text">
-	    <p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 86 </strong> (2012) 184421<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapse_article52" aria-expanded="false"
+				aria-controls="collapse_article52">
+				<div class="card-header text-start">
+					<h6 class="card-title">
+						<div class="badge bg-primary">16 November 2012</div> &emsp;
+						<a data-toggle="collapse" href="#article52">
+							<strong>Paper "Numerical study of incommensurability of the spiral state on spin-1/2 spatially anisotropic triangular antiferromagnets using entanglement renormalization" is published in Physical Review B.</strong>
+						</a>
+					</h6>
+				</div>
+			</button>
+			<div id="collapse_article52" class="collapse">
+				<div class="card-body">
+					<p class="card-text">
+						<p><span class="badge badge-primary">REFERENCE</span> Physical Review B <strong> 86 </strong> (2012) 184421<br>
 <span class="badge badge-primary">DOI</span> <a href="http://link.aps.org/doi/10.1103/PhysRevB.86.184421">10.1103/PhysRevB.86.184421</a><br>
 <span class="badge badge-primary">PREPRINT</span> <a href="http://arxiv.org/abs/1208.4306">arXiv:1208.4306</a><br>
 <span class="badge badge-primary">AUTHOR</span>
 Kenji Harada<br>
 <span class="badge badge-primary">ABSTRACT</span>
 The ground state of an $S=1/2$ antiferromagnetic Heisenberg model on a spatially anisotropic triangular lattice, which is an effective model of Mott insulators on a triangular layer of organic charge transfer salts or Cs2CuCl4, is numerically studied. We apply a numerical variational method by using a tensor network with entanglement renormalization, which improves the capability of describing a quantum state. Magnetic ground states are identified for 0.7 &lt;= J2 / J1 &lt;= 1 in the thermodynamic limit, where J1 and J2 denote the innerchain and interchain coupling constants, respectively. Except for the isotropic case (J1 = J2), the magnetic structure is spiral with an incommensurate wave vector that is different from the classical one. The quantum fluctuation weakens the effective coupling between chains, but the magnetic order remains in the thermodynamic limit. In addition, the incommensurate wave number is in good agreement with that of the series expansion method.</p>
-	  </p>
+					</p>
+				</div>
+			</div>
+		</div>
 	</div>
-      </div>
-    </div>
-  </div>
 </div>
     </main>
 
     <footer>
       <div class="container">
-	<p class="float-right">
-	  <a href="#">Back to top</a>
-	</p>
+        <p class="float-end">
+          <a href="#">Back to top</a>
+        </p>
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+  </body>
+
 </html>

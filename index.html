@@ -1,14 +1,15 @@
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72643447-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    
+
     gtag('config', 'UA-72643447-1');
   </script>
   <!-- End of global site tag (gtag.js) - Google Analytics -->
@@ -19,45 +20,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Kenji Harada">
   <meta name="author" content="Kenji Harada">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- css -->
   <style>
     .link-muted a:link {
-	color:#000;
+      color: #000;
     }
+
     .link-muted a:hover {
-	color:#999;
-	text-decoration:underline;
+      color: #999;
+      text-decoration: underline;
     }
   </style>
 </head>
 
+
 <body onload="draw()">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="https://kenjiharada.github.io/index.html">Kenji Harada</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	  <span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-	  <ul class="navbar-nav mr-auto">
-	    <li class="nav-item">
-              <a class="nav-link" href="https://kenjiharada.github.io/index.html">Home</a>
-	    </li>
-	    <li class="nav-item">
-              <a class="nav-link" href="https://kenjiharada.github.io/study/index.html">Study</a>
-	    </li>
-	    <li class="nav-item">
-              <a class="nav-link" href="https://kenjiharada.github.io/education/index.html">Education</a>
-	    </li>
-	    <li class="nav-item">
-              <a class="nav-link" href="https://kenjiharada.github.io/archives.html">Archives</a>
-	    </li>
-	    <li class="nav-item">
-              <a class="nav-link" href="https://kenjiharada.github.io/index-en.html">[English]</a>
-	    </li>
-	  </ul>
-	</div>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index.html">Kenji Harada</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/index.html">Study</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/index.html">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/archives.html">Archives</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index-en.html">[English]</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -66,8 +74,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <canvas width="936" height="450"  id="ising" class="img-fluid mx-auto" style="width: 100%; padding: 0px; margin: auto;"></canvas>
-        <div style="position: absolute; top: 50%; left: 50%; -webkit-transform : translate(-50%,-50%); transform : translate(-50%,-50%); max-width: 100%; max-height: 100%; padding: 0px; text-align: center; margin: auto;">
+        <canvas width="936" height="450" id="ising" class="img-fluid mx-auto"
+          style="width: 100%; padding: 0px; margin: auto;"></canvas>
+        <div
+          style="position: absolute; top: 20%; left: 50%; -webkit-transform : translate(-50%,-50%); transform : translate(-50%,-50%); max-width: 100%; max-height: 100%; padding: 0px; text-align: center; margin: auto;">
           <p><strong class="h1">More is different.</strong><br>
             God is in the details.
           </p>
@@ -75,348 +85,384 @@
       </div>
     </div>
   </div>
+</div>
 
-  <h2 class="text-center" style="padding:18px 0 18px 0">NEWS</h2>
+<h2 class="text-center" style="padding:18px 0 18px 0">NEWS</h2>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-header link-muted">
-            <h6><span class="badge badge-secondary">2021年 9月 20日</span></h6>
-            <a data-toggle="collapse" href="#article1">
-              <p class="card-title">
-                <strong>日本物理学会　2021年秋季大会にて研究発表（オンライン開催）。</strong>
-              </p>
-            </a>
-          </div>
-          <div id="article1" class="collapse">
-            <div class="card-body">
-              <div class="card-text"> <p>
-<a href="http://www.jps.or.jp/activities/meetings/index.php">日本物理学会　2021年秋季大会</a>
+<div class="container">
+  <div class="row">
+ <div class="col-md-4">
+      <div class="card">
+        <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse_article1" aria-expanded="false"
+          aria-controls="collapse_article1">
+          <h6 class="card-header">2022年 9月 12日</h6>
+          <p class="card-title">
+            <strong>日本物理学会　2022年秋季大会（東京工業大学）にて研究発表。</strong>
+          </p>
+        </button>
+        <div class="collapse" id="collapse_article1">
+          <div class="card-body">
+            <p class="card-text"> <p>
+<a href="http://www.jps.or.jp/activities/meetings/index.php">日本物理学会　2022年秋季大会（東京工業大学）</a>
 </p>
 <p>
-日程: 2020年9月20日から9月23日（オンライン開催）
+日程: 2020年9月12日から9月15日
 </p>
 <ul>
-<li>講演(21aL3-3) "吸収状態相転移の非平衡臨界点における普遍的スペクトラム構造のテンソル繰り込み群による研究" </li>
-<li>講演(22pL4-9) "行列積表現を用いたニューラルネットワークのエンタングルメント解析" (共同研究者) 阿蘇品 侑雅（発表）</li>
-<li>講演(23pA1-1) "テンソルネットワークを用いた量子回路学習" (共同研究者) 真鍋 秀隆（発表）</li>
-</ul> </div>
-            </div>
+<li>講演(13pH113-5) "ネットワーク構造最適化を含んだツリーテンソルネットワーク法の開発" （共同研究者：引原俊哉, 上田宏, 奥西巧一, 西野友年）</li>
+<li>講演(13pH113-6) "テンソルネットワーク状態を用いた教師なし生成モデルのネットワーク構造の最適化" （共同研究者：大久保毅, 川島直輝）</li>
+<li>講演(13pH113-8) "GPUによる2次元MERAの変分最適化の加速" （共同研究者：真鍋秀隆）</li>
+<li>講演(14pH112-1) "行列積状態を用いたテンソル化深層学習における最適ランクの推定" （共同研究者：阿蘇品侑雅）</li>
+</ul> </p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-header link-muted">
-            <h6><span class="badge badge-secondary">2021年 5月 31日</span></h6>
-            <a data-toggle="collapse" href="#article2">
-              <p class="card-title">
-                <strong>Talk in StatPhys seminar at University of Tokyo, Hongo</strong>
-              </p>
-            </a>
+  </div>
+ <div class="col-md-4">
+      <div class="card">
+        <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse_article2" aria-expanded="false"
+          aria-controls="collapse_article2">
+          <h6 class="card-header">2022年 9月 8日</h6>
+          <p class="card-title">
+            <strong>Paper "Automatic structural optimization of tree tensor networks" is submitted to arXiv.</strong>
+          </p>
+        </button>
+        <div class="collapse" id="collapse_article2">
+          <div class="card-body">
+            <p class="card-text"> <dl class="dl-horizontal">
+  <dt>Title</dt>
+  <dd>Automatic structural optimization of tree tensor networks</dd>
+  <dt>Author</dt>
+  <dd>Toshiya Hikihara, Hiroshi Ueda, Kouichi Okunishi, Kenji Harada, and Tomotoshi Nishino</dd>
+  <dt>Abstract</dt>
+  <dd>
+Tree tensor network (TTN) provides an essential theoretical framework for the
+practical simulation of quantum many-body systems, where the network structure
+defined by the connectivity of the isometry tensors plays a crucial role in
+improving its approximation accuracy. In this paper, we propose a TTN algorithm
+that enables us to automatically optimize the network structure by local
+reconnections of isometries to suppress the bipartite entanglement entropy on
+their legs. The algorithm can be seamlessly implemented to such a conventional
+TTN approach as density-matrix renormalization group. We apply the algorithm to
+the inhomogeneous antiferromagnetic Heisenberg spin chain having a hierarchical
+spatial distribution of the interactions. We then demonstrate that the
+entanglement structure embedded in the ground-state of the system can be
+efficiently visualized as a perfect binary tree in the optimized TTN. Possible
+improvements and applications of the algorithm are also discussed.
+  </dd>
+  <dt>Comments</dt>
+  <dd>11 pages, 10 figures, 2 tables</dd>
+  <dt>Preprint</dt>
+  <dd><a href="https://arxiv.org/abs/2209.03196">arXiv:2209.03196</a></dd>
+</dl> </p>
           </div>
-          <div id="article2" class="collapse">
-            <div class="card-body">
-              <div class="card-text"> <p>
+        </div>
+      </div>
+  </div>
+ <div class="col-md-4">
+      <div class="card">
+        <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse_article3" aria-expanded="false"
+          aria-controls="collapse_article3">
+          <h6 class="card-header">2022年 9月 7日</h6>
+          <p class="card-title">
+            <strong>Paper "Neural Network Approach to Scaling Analysis of Critical Phenomena" is submitted to arXiv.</strong>
+          </p>
+        </button>
+        <div class="collapse" id="collapse_article3">
+          <div class="card-body">
+            <p class="card-text"> <dl class="dl-horizontal">
+  <dt>Title</dt>
+  <dd>Neural Network Approach to Scaling Analysis of Critical Phenomena</dd>
+  <dt>Author</dt>
+  <dd>Ryosuke Yoneda and Kenji Harada</dd>
+  <dt>Abstract</dt>
+  <dd>
+Determining the universality class of a system exhibiting critical phenomena is one of the central problems in physics. As methods for determining this universality class from data, polynomial regression, which is less accurate, and Gaussian process regression, which provides high accuracy and flexibility but is computationally heavy, have been proposed. In this paper, we propose a method by a regression method using a neural network. The computational complexity is only linear in the number of data points. We demonstrate the proposed method for the finite-size scaling analysis of critical phenomena on the two-dimensional Ising model and bond percolation problem to confirm the performance. This method efficiently obtains the critical values with accuracy in both cases.
+  </dd>
+  <dt>Comments</dt>
+  <dd>10 pages, 9 figures</dd>
+  <dt>Preprint</dt>
+  <dd><a href="https://arxiv.org/abs/2209.01777">arXiv:2209.01777</a></dd>
+</dl> </p>
+          </div>
+        </div>
+      </div>
+  </div>
+ <div class="col-md-4">
+      <div class="card">
+        <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse_article4" aria-expanded="false"
+          aria-controls="collapse_article4">
+          <h6 class="card-header">2022年 8月 26日</h6>
+          <p class="card-title">
+            <strong>Talk in The 15th Asia Pacific Physics Conference (APPC15), Korea (online)</strong>
+          </p>
+        </button>
+        <div class="collapse" id="collapse_article4">
+          <div class="card-body">
+            <p class="card-text"> <p>
 
 </p>
 <dl class="dl-horizontal">
   <dt>Date</dt>
-  <dd>May 31, 2021</dd>
-  <dt>Seminar</dt>
-  <dd><a href="https://sites.google.com/view/statphys-seminar">StatPhys seminar at University of Tokyo, Hongo, Japan</a></dd>
+  <dd>Aug 26, 2022</dd>
+  <dt>Conference (invited talk)</dt>
+  <dd><a href="https://www.appc15.org">The 15th Asia Pacific Physics Conference (APPC15), Korea (online)</a></dd>
   <dt>Title</dt>
-  <dd>Universal spectrum structure on the nonequilibrium critical line of the one-dimensional Domany-Kinzel cellular automaton</dd>
+  <dd>Tensor renormalization group study of the non-equilibrium critical fixed point of the one-dimensional contact process</dd>
   <dt>Abstract</dt>
   <dd>
-The Domany-Kinzel(DK) cellular automaton is a stochastic time-evolutional system with an absorbing state from which the system cannot escape and a canonical model for nonequilibrium critical phenomena[1]. We introduce the tensor network method as a new tool to study it. Estimating the entropy of the DK automaton with a matrix product state representation of distribution, we reported a new cusp of the Renyi entropy in the active phase of the DK cellular automaton[2]. We recently applied a tensor renormalization group method to transfer matrices at the nonequilibrium critical point of the DK cellular automaton, confirming a universal spectrum structure[3]. In this talk, we will report our results with a brief review of models and methods.<br><br>
-[1] M. Henkel, H. Hinrichsen, and S.  Lübeck, Non-Equilibrium Phase Transitions. Volume 1: Absorbing Phase Transitions, Vol. 1 (Springer, 2008).<br>
-[2] K. H. and N. Kawashima, Entropy Governed by the Absorbing State of Directed Percolation, Physical Review Letters 123, 090601 (2019).<br>
-[3] K. H., Universal spectrum structure at nonequilibrium critical points in the (1+1)-dimensional directed percolation, arXiv:2008.10807.<br>
+The steady-state of many stochastic systems is non-equilibrium. We studied the phase of non-equilibrium systems and the transition similar to equilibrium systems. In particular, the critical phase transition is interesting because we can define the non-equilibrium universality class.
+To confirm the existence of a non-equilibrium critical fixed point, we study the time evolution operator of one-dimensional contact processes by using a tensor renormalization group technique. The time evolution operators converge to universal critical tensors in the tensor renormalization group flow. The spectrums of critical tensors are strongly anisotropic but share the intrinsic structure each for the universality class. The integer structure for the universality class of compact-directed percolation in the time direction is consistent with the exact spectrum structure of the diffusion-annihilation process.
   </dd>
-</dl> </div>
-            </div>
+</dl> </p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-header link-muted">
-            <h6><span class="badge badge-secondary">2021年 3月 14日</span></h6>
-            <a data-toggle="collapse" href="#article3">
-              <p class="card-title">
-                <strong>日本物理学会　2021年年次大会にて研究発表（オンライン開催）。</strong>
-              </p>
-            </a>
-          </div>
-          <div id="article3" class="collapse">
-            <div class="card-body">
-              <div class="card-text"> <p>
-<a href="http://www.jps.or.jp/activities/meetings/index.php">日本物理学会　2021年年次大会</a>
+  </div>
+ <div class="col-md-4">
+      <div class="card">
+        <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse_article5" aria-expanded="false"
+          aria-controls="collapse_article5">
+          <h6 class="card-header">2022年 3月 15日</h6>
+          <p class="card-title">
+            <strong>日本物理学会　2022年年次大会にて研究発表（オンライン開催）。</strong>
+          </p>
+        </button>
+        <div class="collapse" id="collapse_article5">
+          <div class="card-body">
+            <p class="card-text"> <p>
+<a href="http://www.jps.or.jp/activities/meetings/index.php">日本物理学会　2022年年次大会</a>
 </p>
 <p>
-日程: 2020年3月12日から3月15日（オンライン開催）
+日程: 2020年3月15日から3月19日（オンライン開催）
 </p>
 <ul>
-<li>講演(14pL2-3) "テンソルネットワーク状態の幾何学的変換" </li>
+<li>講演(16aE11-4) "テンソルネットワーク近似を用いたランダム量子回路サンプリングの古典シミュレーション" （共同研究者：真鍋秀隆）</li>
+<li>講演(15aB12-9) "ニューラルネットワークを用いたスケーリング解析手法" （共同研究者：米田亮介，発表は原田）</li>
 </ul>
 <p><small>
 新型コロナウイルス感染症への対応として、年次大会はオンライン開催になりました。
 </small>
-</p> </div>
-            </div>
+</p> </p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-header link-muted">
-            <h6><span class="badge badge-secondary">2020年 12月 14日</span></h6>
-            <a data-toggle="collapse" href="#article4">
-              <p class="card-title">
-                <strong>Paper "Critical exponents in coupled phase-oscillator models on small-world networks" is published in Physical Review E.</strong>
-              </p>
-            </a>
-          </div>
-          <div id="article4" class="collapse">
-            <div class="card-body">
-              <div class="card-text"> <dl class="dl-horizontal">
-  <dt>Title</dt>
-  <dd>Critical exponents in coupled phase-oscillator models on small-world networks</dd>
-  <dt>Reference</dt>
-  <dd>Physical Review E <strong>102</strong>, 062212 (2020)</dd>
-  <dt>DOI</dt>
-  <dd><a href="https://doi.org/10.1103/PhysRevE.102.062212">10.1103/PhysRevE.102.062212</a></dd>
-  <dt>Author</dt>
-  <dd>Ryosuke Yoneda, Kenji Harada, and Yoshiyuki Y. Yamaguchi</dd>
-  <dt>Abstract</dt>
-  <dd>
-A coupled phase-oscillator model consists of phase oscillators, each of which has the natural frequency obeying a probability distribution and couples with other oscillators through a given periodic coupling function. This type of model is widely studied since it describes the synchronization transition, which emerges between the nonsynchronized state and partially synchronized states. The synchronization transition is characterized by several critical exponents, and we focus on the critical exponent defined by coupling strength dependence of the order parameter for revealing universality classes. In a typical interaction represented by the perfect graph, an infinite number of universality classes is yielded by dependency on the natural frequency distribution and the coupling function. Since the synchronization transition is also observed in a model on a small-world network, whose number of links is proportional to the number of oscillators, a natural question is whether the infinite number of universality classes remains in small-world networks irrespective of the order of links. Our numerical results suggest that the number of universality classes is reduced to one and the critical exponent is shared in the considered models having coupling functions up to second harmonics with unimodal and symmetric natural frequency distributions.
-  </dd>
-  <dt>Comments</dt>
-  <dd>8 pages, 8 figures</dd>
-  <dt>Preprint</dt>
-  <dd><a href="https://arxiv.org/abs/2007.04539">arXiv:2007.04539</a></dd>
-</dl> </div>
-            </div>
+  </div>
+ <div class="col-md-4">
+      <div class="card">
+        <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse_article6" aria-expanded="false"
+          aria-controls="collapse_article6">
+          <h6 class="card-header">2022年 1月 20日</h6>
+          <p class="card-title">
+            <strong>数理科学2022年2月号に解説記事「テンソルネットワーク入門」を寄稿。</strong>
+          </p>
+        </button>
+        <div class="collapse" id="collapse_article6">
+          <div class="card-body">
+            <p class="card-text"> <p><a href="https://www.saiensu.co.jp/search/?isbn=4910054690224&y=2022">数理科学</a>2022年2月号No.704：テンソルネットワークの進展（多彩な表現形式が物理をつなぐ）に解説記事「テンソルネットワーク入門」を寄稿。</p> </p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-header link-muted">
-            <h6><span class="badge badge-secondary">2020年 9月 8日</span></h6>
-            <a data-toggle="collapse" href="#article5">
-              <p class="card-title">
-                <strong>日本物理学会　2020年秋季大会にて研究発表（オンライン開催）。</strong>
-              </p>
-            </a>
-          </div>
-          <div id="article5" class="collapse">
-            <div class="card-body">
-              <div class="card-text"> <p>
-<a href="http://www.jps.or.jp/activities/meetings/index.php">日本物理学会　2020年秋季大会</a>
-</p>
-<p>
-日程: 2020年9月8日から9月11日（オンライン開催）
-</p>
-<ul>
-<li>講演(9pL1-9) "スモールワールドネットワーク上の結合位相振動子系における同期転移の臨界指数"
-（共同研究者）米田亮介(発表者), 山口義幸</li>
-<li>講演(10pL2-7) "同時有向浸透現象の相転移"（共同研究者）星野佑樹(発表者)</li>
-<li>講演(10pL2-8) "臨界有向浸透現象のスペクトラムを用いた新しい普遍性の提案" </li>
-</ul>
-<p><small>
-新型コロナウイルス感染症への対応として、秋季大会はオンライン開催になりました。
-</small>
-</p> </div>
-            </div>
-          </div>
+  </div>
+</div>
+</div>
+
+<h2 class="h2 text-center" style="padding:0 0 18px 0">TOPICS</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h5 class="card-title">
+            <strong>ベイズ推定を用いたスケーリング解析ツール</strong>
+          </h5>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <img src="https://kenjiharada.github.io/posts/images/2020-08-25-Paper-Universal-spectrum-DP.jpg" alt="2020-08-25-Paper-Universal-spectrum-DP.jpg" class="card-img-top">
-          <div class="card-header link-muted">
-            <h6><span class="badge badge-secondary">2020年 8月 25日</span></h6>
-            <a data-toggle="collapse" href="#article6">
-              <p class="card-title">
-                <strong>Paper "Universal spectrum structure at nonequilibrium critical points in the (1+1)-dimensional directed percolation" is submitted.</strong>
-              </p>
-            </a>
-          </div>
-          <div id="article6" class="collapse">
-            <div class="card-body">
-              <div class="card-text"> <dl class="dl-horizontal">
-  <dt>Preprint</dt>
-  <dd><a href="http://arxiv.org/abs/2008.10807">arXiv:2008.10807</a></dd>
-  <dt>Author</dt>
-  <dd>Kenji Harada</dd>
-  <dt>Abstract</dt>
-  <dd>
-Using a tensor renormalization group method with oblique projectors for an anisotropic tensor network, we confirm that the rescaled spectrum of transfer matrices at nonequilibrium critical points in the (1+1)-dimensional directed percolation, a canonical model of nonequilibrium critical phenomena, is scale-invariant and its structure is universal.
-</dd>
-  <dt>Comments</dt>
-  <dd>6 pages, 7 figures</dd>
-</dl> </div>
-            </div>
+        <div class="card-body">
+          <div class="card-text">
+            <p></p> 臨界現象のスケーリング解析にベイズ推定の手法を導入した新しいアルゴリズムの実装。</p>
+            <a href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/BSA/demo.html"><span class="badge bg-info">デモページへ</span></a>
+            <a href="https://kenjiharada.github.io/BSA/"><span class="badge bg-primary">解説ページへ</span></a>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <h2 class="h2 text-center" style="padding:0 0 18px 0">TOPICS</h2>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-header">
-            <h5 class="card-title">
-              <strong>ベイズ推定を用いたスケーリング解析ツール</strong>
-            </h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">
-              臨界現象のスケーリング解析にベイズ推定の手法を導入した新しいアルゴリズムの実装。
-            </p>
-            <a href="https://kenjiharada.github.io/study/BSA/demo.html" class="badge badge-info">デモページへ</a>
-            <a href="https://kenjiharada.github.io/BSA/" class="badge badge-primary">解説ページへ</a>
-          </div>
+    <div class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h5 class="card-title">
+            <strong>オンラインで学ぶモンテカルロ法</strong>
+          </h5>
         </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-header">
-            <h5 class="card-title">
-              <strong>オンラインで学ぶモンテカルロ法</strong>
-            </h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">
-              モンテカルロ法（マルコフ過程を用いた手法も含む）の基本的な事柄についての解説。
-            </p>
-            <a href="https://kenjiharada.github.io/education/open_courses/mc/index.html" class="badge badge-primary">解説ページへ</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-header">
-            <h5 class="card-title">
-              <strong>「物質の中に宇宙が見えてくる」（計算科学の世界）</strong>
-            </h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">
-              量子臨界現象研究の面白さを説明しています。
-            </p>
-            <p class="text-muted"><small>理化学研究所 計算科学研究機構 広報誌</small><a href="https://www.r-ccs.riken.jp/newsletter/backnumber.html" >「計算科学の世界」</a>
-              <a href="https://www.r-ccs.riken.jp/newsletter/pdf/no11_201510.pdf" class="badge badge-primary">インタビュー記事へ</a>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-header">
-            <h5 class="card-title">
-              <strong>テンソルネットワークと量子多体系</strong>
-            </h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">
-              多体系の有望な計算手法であるテンソルネットワークについて解説しています。
-            </p>
-            <p>
-              <a href="https://kenjiharada.github.io/study/doc/tn.pdf" class="badge badge-primary">解説記事PDFへ</a>
-            </p>
-            <p class="text-muted">雑誌<a href="https://pub.maruzen.co.jp/parity.html">「パリティ」</a>2017年12月号
-              <a href="https://pub.maruzen.co.jp/book_magazine/magazine/parity-back/parity2017/2017_12/1712_cont.html" class="badge badge-primary">解説記事へ</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <h2 class="h2 text-center" style="padding:0 0 18px 0">ABOUT</h2>
-
-  <div class="container">
-    <div class="card mb-4 shadow-sm">
-      <div class="card-body">
-        <div class="row no-gutters">
-          <div class="col-md-2" >
-            <img src="https://kenjiharada.github.io/theme/images/KH.jpg" alt="Kenji Harada" class="card-img pr-4 pb-4">
-          </div>
-          <div class="col-md-10">
-            <p class="card-title">
-              <a name="about" href="https://kenjiharada.github.io/index.html">
-                <strong>原田健自</strong>
-              </a>
-              (<a href="https://kenjiharada.github.io/index-en.html">
-                <strong>Kenji Harada</strong>
-              </a>)<br>
-              <a href="http://www.i.kyoto-u.ac.jp/">
-                京都大学大学院情報学研究科
-              </a>助教<br>
-              <a href="mailto:harada@acs.i.kyoto-u.ac.jp">
-                harada@acs.i.kyoto-u.ac.jp
-              </a><br>
-              京都市左京区吉田本町　京都大学吉田キャンパス　総合研究8号館203号室
-              <a href="https://www.kyoto-u.ac.jp/ja/access/campus/yoshida/map6r_y/" class="label label-info">Map (No.59)</a>
-            </p>
-          </div>
+        <div class="card-body">
           <p class="card-text">
-            統計物理学と情報論的視点を融合した最先端の計算手法と
-            世界トップレベルのスーパーコンピュータのパワーを組み合わせて、
-            相互作用する多体系などの大自由度系の未解決問題に先端的に取り組んでいます。
+            モンテカルロ法（マルコフ過程を用いた手法も含む）の基本的な事柄についての解説。
+          </p>
+          <a href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/education/open_courses/mc/index.html" class="badge bg-primary">解説ページへ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h5 class="card-title">
+            <strong>「物質の中に宇宙が見えてくる」（計算科学の世界）</strong>
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            量子臨界現象研究の面白さを説明しています。
+          </p>
+          <p class="text-muted"><small>理化学研究所 計算科学研究機構 広報誌</small><a
+              href="https://www.r-ccs.riken.jp/newsletter/">「計算科学の世界」</a>
+            <a href="https://www.r-ccs.riken.jp/newsletter/201510/interview.html" class="badge bg-primary">インタビュー記事へ</a>
           </p>
         </div>
       </div>
     </div>
-  </div>
 
-  <h2 class="h2 text-center" style="padding:0 0 18px 0">LINKS</h2>
-
-  <div class="container">
-    <div class="row">
-      <ul>
-	<li>
-          <a href="https://www.researcherid.com/rid/D-5192-2014">ResearcherID: D-5192-2014</a>
-	</li>
-	<li>
-          <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0003-0231-7880" href="https://orcid.org/0000-0003-0231-7880" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"> orcid.org/0000-0003-0231-7880</a></div>
-	</li>
-	<li>
-          <a href="https://scholar.google.com/citations?user=WL02S9oAAAAJ&hl=en">Google Scholar Citations</a>
-	</li>
-	<li>
-          <a href="https://kyouindb.iimc.kyoto-u.ac.jp/j/jL4uK">京都大学 教育研究活動データベース</a>
-	</li>
-      </ul>
+    <div class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h5 class="card-title">
+            <strong>テンソルネットワークと量子多体系</strong>
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            多体系の有望な計算手法であるテンソルネットワークについて解説しています。
+          </p>
+          <p>
+            <a href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/doc/tn.pdf" class="badge bg-primary">解説記事PDFへ</a>
+          </p>
+          <p class="text-muted"><a href="https://www.saiensu.co.jp/search/?isbn=4910054690224&y=2022">数理科学</a>
+            2022年2月号 No.704：テンソルネットワークの進展（多彩な表現形式が物理をつなぐ）.</p>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
+<h2 class="h2 text-center" style="padding:0 0 18px 0">ACTIVITY</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h5 class="card-title">
+            <strong>産学連携プロジェクト「モビリティ基盤数理」</strong>
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <p><a href="https://mobility.amp.i.kyoto-u.ac.jp/research/team06/">統計物理学テンソルデータ解析チーム</a></p>
+            <a href="https://mobility.amp.i.kyoto-u.ac.jp/interview/190/" class="badge bg-primary">インタビュー記事へ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h5 class="card-title">
+            <strong>学術変革領域（A）極限宇宙の物理法則を創る－量子情報で拓く時空と物質の新しいパラダイム</strong>
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <a href="https://www2.yukawa.kyoto-u.ac.jp/~extremeuniverse/d02/"> D02班（量子情報を用いた量子多体系の制御とテンソルネットワーク）</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="h2 text-center" style="padding:0 0 18px 0">ABOUT</h2>
+
+<div class="container">
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <div class="row no-gutters">
+        <div class="col-md-2">
+          <img src="https://www-np.acs.i.kyoto-u.ac.jp/~harada/theme/images/KH.jpg" alt="Kenji Harada" class="card-img pr-4 pb-4">
+        </div>
+        <div class="col-md-10">
+          <p class="card-title">
+            <a name="about" href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index.html">
+              <strong>原田健自</strong>
+            </a>
+            (<a href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/index-en.html">
+              <strong>Kenji Harada</strong>
+            </a>)<br>
+            <a href="http://www.i.kyoto-u.ac.jp/">
+              京都大学大学院情報学研究科
+            </a>助教<br>
+            <a href="mailto:harada@acs.i.kyoto-u.ac.jp">
+              harada@acs.i.kyoto-u.ac.jp
+            </a><br>
+            京都市左京区吉田本町　京都大学吉田キャンパス　総合研究8号館203号室
+            <a href="https://www.kyoto-u.ac.jp/ja/access/campus/yoshida/map6r_y/" class="label label-info">Map
+              (No.59)</a>
+          </p>
+        </div>
+        <p class="card-text">
+          統計物理学と情報論的視点を融合した最先端の計算手法と
+          世界トップレベルのスーパーコンピュータのパワーを組み合わせて、
+          相互作用する多体系などの大自由度系の未解決問題に先端的に取り組んでいます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="h2 text-center" style="padding:0 0 18px 0">LINKS</h2>
+
+<div class="container">
+  <div class="row">
+    <ul>
+      <li>
+        <a href="https://www.researcherid.com/rid/D-5192-2014">ResearcherID: D-5192-2014</a>
+      </li>
+      <li>
+        <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs"
+            content="https://orcid.org/0000-0003-0231-7880" href="https://orcid.org/0000-0003-0231-7880"
+            target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img
+              src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;"
+              alt="ORCID iD icon"> orcid.org/0000-0003-0231-7880</a></div>
+      </li>
+      <li>
+        <a href="https://scholar.google.com/citations?user=WL02S9oAAAAJ&hl=en">Google Scholar Citations</a>
+      </li>
+      <li>
+        <a href="https://kyouindb.iimc.kyoto-u.ac.jp/j/jL4uK">京都大学 教育研究活動データベース</a>
+      </li>
+    </ul>
+  </div>
+</div>
 </div>
     </main>
 
     <footer>
       <div class="container">
-	<p class="float-right">
-	  <a href="#">Back to top</a>
-	</p>
+        <p class="float-end">
+          <a href="#">Back to top</a>
+        </p>
       </div>
     </footer>
 
-<script type="text/javascript" src="https://kenjiharada.github.io/theme/js/Ising_home.js" charset="UTF-8"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
+<script type="text/javascript" src="https://www-np.acs.i.kyoto-u.ac.jp/~harada/theme/js/Ising_home.js" charset="UTF-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+  </body>
+
 </html>
