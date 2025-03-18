@@ -91,38 +91,36 @@
 					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
 						data-bs-target="#collapse_article1" aria-expanded="false"
 						aria-controls="collapse_article1">
-						<h6 class="card-header">08 September 2022</h6>
+						<h6 class="card-header">13 December 2024</h6>
 						<p class="card-title">
-							<strong>Paper "Automatic structural optimization of tree tensor networks" is submitted to arXiv.</strong>
+							<strong>Talk "Tensor tree learns hidden relational structures in data to construct generative models" in theory seminar at ISSP, Univ. of Tokyo</strong>
 						</p>
 					</button>
 					<div class="collapse" id="collapse_article1">
 						<div class="card-body">
 							<p class="card-text"> <dl class="dl-horizontal">
+  <dt>Date</dt>
+  <dd>December 13th, 2024</dd>
+  <dt>Seminar</dt>
+  <dd><a href="https://www.issp.u-tokyo.ac.jp/maincontents/seminar/all2_en.html?pid=25319">Theory seminar at ISSP, Univ. of Tokyo</a></dd>
   <dt>Title</dt>
-  <dd>Automatic structural optimization of tree tensor networks</dd>
-  <dt>Author</dt>
-  <dd>Toshiya Hikihara, Hiroshi Ueda, Kouichi Okunishi, Kenji Harada, and Tomotoshi Nishino</dd>
+  <dd>Tensor tree learns hidden relational structure in data to construct
+   generative models</dd>
   <dt>Abstract</dt>
   <dd>
-Tree tensor network (TTN) provides an essential theoretical framework for the
-practical simulation of quantum many-body systems, where the network structure
-defined by the connectivity of the isometry tensors plays a crucial role in
-improving its approximation accuracy. In this paper, we propose a TTN algorithm
-that enables us to automatically optimize the network structure by local
-reconnections of isometries to suppress the bipartite entanglement entropy on
-their legs. The algorithm can be seamlessly implemented to such a conventional
-TTN approach as density-matrix renormalization group. We apply the algorithm to
-the inhomogeneous antiferromagnetic Heisenberg spin chain having a hierarchical
-spatial distribution of the interactions. We then demonstrate that the
-entanglement structure embedded in the ground-state of the system can be
-efficiently visualized as a perfect binary tree in the optimized TTN. Possible
-improvements and applications of the algorithm are also discussed.
+  <p>Generative modeling is a significant machine learning technique that constructs the probability distribution of a dataset, owing to its wide range of applications across various problems. Recently, there has been extensive research into generative modeling on quantum computers, referred to as Born machines. This approach utilizes the output of projective measurement of quantum states for　stochastic samplings.</p>
+<p>
+We propose a general method for constructing a generative model based on the tree tensor network within the Born machine framework. The core idea is to optimize the tree structure dynamically to minimize the bond mutual information. We demonstrate potential applications with four examples: (1) Random bit sequences with long-range correlation, (2) Images of handwritten digits from the QMNIST dataset, (3) Bayesian networks, (4) Stock price fluctuations in the S&P 500.</p>
+<p>
+Our method significantly enhances performance and reveals hidden relational structures in the target data, paving the way for future improvements and advancements.
+</p>
   </dd>
-  <dt>Comments</dt>
-  <dd>11 pages, 10 figures, 2 tables</dd>
-  <dt>Preprint</dt>
-  <dd><a href="https://arxiv.org/abs/2209.03196">arXiv:2209.03196</a></dd>
+  <dt>Reference</dt>
+    <dd><a href="https://arxiv.org/abs/2408.10669">arXiv:2408.10669</a></dd>
+      <dt>Code</dt>
+  <dd>
+    <a href="https://github.com/KenjiHarada/adaptive-tensor-tree-generative-modeling">Adaptive Tensor Tree Generative Modeling</a>
+  </dd>
 </dl> </p>
 						</div>
 					</div>
@@ -133,26 +131,30 @@ improvements and applications of the algorithm are also discussed.
 					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
 						data-bs-target="#collapse_article2" aria-expanded="false"
 						aria-controls="collapse_article2">
-						<h6 class="card-header">07 September 2022</h6>
+						<h6 class="card-header">20 August 2024</h6>
 						<p class="card-title">
-							<strong>Paper "Neural Network Approach to Scaling Analysis of Critical Phenomena" is submitted to arXiv.</strong>
+							<strong>Paper "Tensor tree learns hidden relational structures in data to construct generative models" is submitted to arXiv.</strong>
 						</p>
 					</button>
 					<div class="collapse" id="collapse_article2">
 						<div class="card-body">
 							<p class="card-text"> <dl class="dl-horizontal">
   <dt>Title</dt>
-  <dd>Neural Network Approach to Scaling Analysis of Critical Phenomena</dd>
+  <dd>Tensor tree learns hidden relational structures in data to construct generative models</dd>
   <dt>Author</dt>
-  <dd>Ryosuke Yoneda and Kenji Harada</dd>
+  <dd>Kenji Harada, Tsuyoshi Okubo, Naoki Kawashima</dd>
   <dt>Abstract</dt>
   <dd>
-Determining the universality class of a system exhibiting critical phenomena is one of the central problems in physics. As methods for determining this universality class from data, polynomial regression, which is less accurate, and Gaussian process regression, which provides high accuracy and flexibility but is computationally heavy, have been proposed. In this paper, we propose a method by a regression method using a neural network. The computational complexity is only linear in the number of data points. We demonstrate the proposed method for the finite-size scaling analysis of critical phenomena on the two-dimensional Ising model and bond percolation problem to confirm the performance. This method efficiently obtains the critical values with accuracy in both cases.
+Based on the tensor tree network with the Born machine framework, we propose a general method for constructing a generative model by expressing the target distribution function as the quantum wave function amplitude represented by a tensor tree. The key idea is dynamically optimizing the tree structure that minimizes the bond mutual information. The proposed method offers enhanced performance and uncovers hidden relational structures in the target data. We illustrate potential practical applications with four examples: (i) random patterns, (ii) QMNIST hand-written digits, (iii) Bayesian networks, and (iv) the stock price fluctuation pattern in S&P500. In (i) and (ii), strongly correlated variables were concentrated near the center of the network; in (iii), the causality pattern was identified; and, in (iv), a structure corresponding to the eleven sectors emerged.
   </dd>
   <dt>Comments</dt>
-  <dd>10 pages, 9 figures</dd>
+  <dd>9 pages, 3 figures</dd>
   <dt>Preprint</dt>
-  <dd><a href="https://arxiv.org/abs/2209.01777">arXiv:2209.01777</a></dd>
+  <dd><a href="https://arxiv.org/abs/2408.10669">arXiv:2408.10669</a></dd>
+  <dt>Code</dt>
+  <dd>
+    <a href="https://github.com/KenjiHarada/adaptive-tensor-tree-generative-modeling">Adaptive Tensor Tree Generative Modeling</a>
+  </dd>
 </dl> </p>
 						</div>
 					</div>
@@ -163,29 +165,23 @@ Determining the universality class of a system exhibiting critical phenomena is 
 					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
 						data-bs-target="#collapse_article3" aria-expanded="false"
 						aria-controls="collapse_article3">
-						<h6 class="card-header">26 August 2022</h6>
+						<h6 class="card-header">27 March 2024</h6>
 						<p class="card-title">
-							<strong>Talk in The 15th Asia Pacific Physics Conference (APPC15), Korea (online)</strong>
+							<strong>Talk in the SQAI-NCTS Workshop on Tensor Network and Quantum Embedding (Hongo Campus, The University of Tokyo)</strong>
 						</p>
 					</button>
 					<div class="collapse" id="collapse_article3">
 						<div class="card-body">
-							<p class="card-text"> <p>
-
-</p>
-<dl class="dl-horizontal">
-  <dt>Date</dt>
-  <dd>Aug 26, 2022</dd>
-  <dt>Conference (invited talk)</dt>
-  <dd><a href="https://www.appc15.org">The 15th Asia Pacific Physics Conference (APPC15), Korea (online)</a></dd>
+							<p class="card-text"> <dl class="dl-horizontal">
+  <dt>Dates</dt>
+  <dd>March 25-29, 2024</dd>
+  <dt>Conference</dt>
+  <dd><a href="https://coi-sqai.github.io/SQAI_NCTS_workshop/">SQAI-NCTS Workshop on Tensor Network and Quantum Embedding (Hongo Campus, The University of Tokyo)</a></dd>
   <dt>Title</dt>
-  <dd>Tensor renormalization group study of the non-equilibrium critical fixed point of the one-dimensional contact process</dd>
+  <dd>Optimizing the structure of tree tensor network for quantum generative modeling using mutual information-based approach</dd>
   <dt>Abstract</dt>
-  <dd>
-The steady-state of many stochastic systems is non-equilibrium. We studied the phase of non-equilibrium systems and the transition similar to equilibrium systems. In particular, the critical phase transition is interesting because we can define the non-equilibrium universality class.
-To confirm the existence of a non-equilibrium critical fixed point, we study the time evolution operator of one-dimensional contact processes by using a tensor renormalization group technique. The time evolution operators converge to universal critical tensors in the tensor renormalization group flow. The spectrums of critical tensors are strongly anisotropic but share the intrinsic structure each for the universality class. The integer structure for the universality class of compact-directed percolation in the time direction is consistent with the exact spectrum structure of the diffusion-annihilation process.
-  </dd>
-</dl> </p>
+  <dd>Generative modeling is a crucial task in the field of machine learning. Recently, there have been several proposals for generative models on quantum devices. We can efficiently optimize generative models defined by tensor network states, but their performance largely depends on the geometrical structure of the tensor network. To tackle this issue, we have proposed an optimization method for the network structure in the tree tensor network class, based on the least mutual information principle. Generative modeling with an optimized network structure has better performance than a fixed network structure. Moreover, by embedding data dependencies into the tree structure based on the least mutual information principle, we can geometrically represent the correlations in the data.</dd>
+  </dl> </p>
 						</div>
 					</div>
 				</div>
@@ -195,22 +191,29 @@ To confirm the existence of a non-equilibrium critical fixed point, we study the
 					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
 						data-bs-target="#collapse_article4" aria-expanded="false"
 						aria-controls="collapse_article4">
-						<h6 class="card-header">17 January 2022</h6>
+						<h6 class="card-header">14 March 2024</h6>
 						<p class="card-title">
-							<strong>Tensor Network States: Algorithms and Applications (TNSAA) 2021-2022 Online Workshop</strong>
+							<strong>Book "Advanced Mathematical Science for Mobility Society" Chap.5 is published from Springer.</strong>
 						</p>
 					</button>
 					<div class="collapse" id="collapse_article4">
 						<div class="card-body">
-							<p class="card-text"> <p>
- We will hold the oneline workshop, Tensor Network States: Algorithms and Applications (TNSAA) 2021-2022, from Jan. 17 to Jan. 21, 2022. The series of workshop, TNSAA, has been organized for the purposes of exchanging new developments, having discussions toward future studies, and providing intruductory talks for new generation of researchers about tensor networks.
-</p>
-
-<ul>
-<a href="http://bussei.gs.niigata-u.ac.jp/~okunishi/tnsaa/">
-http://bussei.gs.niigata-u.ac.jp/~okunishi/tnsaa/
-</a>
-</ul> </p>
+							<p class="card-text"> <dl class="dl-horizontal">
+  <dt>Book title</dt>
+  <dd>Advanced Mathematical Science for Mobility Society</dd>
+  <dt>Editors</dt>
+  <dd>Kazushi Ikeda, Yoshiumi Kawamura, Kazuhisa Makino, Satoshi Tsujimoto, Nobuo Yamashita, Shintaro Yoshizawa, Hanna Sumita</dd>
+  <dt>Publisher</dt>
+  <dd>Springer Singapore</dd>
+  <dt>Reference<dt>
+  <dd><a href="https://doi.org/10.1007/978-981-99-9772-5">ISBN 978-981-99-9771-8 ISBN 978-981-99-9772-5 (eBook)</a></dd>
+  <dt>Title</dt>
+  <dd>Chapter 5 "Application of Tensor Network Formalism for Processing Tensor Data"</dd>
+  <dt>Authors</dt>
+  <dd>Kenji Harada, Hiroaki Matsueda, and Tsuyoshi Okubo</dd>
+  <dt>Web page</dt>
+  <dd><a href="https://link.springer.com/book/10.1007/978-981-99-9772-5">Open access</a></dd>
+</dl> </p>
 						</div>
 					</div>
 				</div>
@@ -220,31 +223,21 @@ http://bussei.gs.niigata-u.ac.jp/~okunishi/tnsaa/
 					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
 						data-bs-target="#collapse_article5" aria-expanded="false"
 						aria-controls="collapse_article5">
-						<h6 class="card-header">31 May 2021</h6>
+						<h6 class="card-header">26 January 2024</h6>
 						<p class="card-title">
-							<strong>Talk in StatPhys seminar at University of Tokyo, Hongo</strong>
+							<strong>Invited talk in 2024 Annual Meeting of the Physical Society of Taiwan</strong>
 						</p>
 					</button>
 					<div class="collapse" id="collapse_article5">
 						<div class="card-body">
-							<p class="card-text"> <p>
-
-</p>
-<dl class="dl-horizontal">
+							<p class="card-text"> <dl class="dl-horizontal">
   <dt>Date</dt>
-  <dd>May 31, 2021</dd>
-  <dt>Seminar</dt>
-  <dd><a href="https://sites.google.com/view/statphys-seminar">StatPhys seminar at University of Tokyo, Hongo, Japan</a></dd>
+  <dd>Jan 26, 2024</dd>
+  <dt>Conference</dt>
+  <dd><a href="https://tps2024.conf.tw/site/page.aspx?pid=901&sid=1538&lang=en">2024 Annual Meeting of the Physical Society of Taiwan</a>, Topical Symposia:Many-body systems and advanced numerical methods</dd>
   <dt>Title</dt>
-  <dd>Universal spectrum structure on the nonequilibrium critical line of the one-dimensional Domany-Kinzel cellular automaton</dd>
-  <dt>Abstract</dt>
-  <dd>
-The Domany-Kinzel(DK) cellular automaton is a stochastic time-evolutional system with an absorbing state from which the system cannot escape and a canonical model for nonequilibrium critical phenomena[1]. We introduce the tensor network method as a new tool to study it. Estimating the entropy of the DK automaton with a matrix product state representation of distribution, we reported a new cusp of the Renyi entropy in the active phase of the DK cellular automaton[2]. We recently applied a tensor renormalization group method to transfer matrices at the nonequilibrium critical point of the DK cellular automaton, confirming a universal spectrum structure[3]. In this talk, we will report our results with a brief review of models and methods.<br><br>
-[1] M. Henkel, H. Hinrichsen, and S.  Lübeck, Non-Equilibrium Phase Transitions. Volume 1: Absorbing Phase Transitions, Vol. 1 (Springer, 2008).<br>
-[2] K. H. and N. Kawashima, Entropy Governed by the Absorbing State of Directed Percolation, Physical Review Letters 123, 090601 (2019).<br>
-[3] K. H., Universal spectrum structure at nonequilibrium critical points in the (1+1)-dimensional directed percolation, arXiv:2008.10807.<br>
-  </dd>
-</dl> </p>
+  <dd>Optimizing tensor network structure</dd>
+  </dl> </p>
 						</div>
 					</div>
 				</div>
@@ -254,31 +247,21 @@ The Domany-Kinzel(DK) cellular automaton is a stochastic time-evolutional system
 					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
 						data-bs-target="#collapse_article6" aria-expanded="false"
 						aria-controls="collapse_article6">
-						<h6 class="card-header">14 December 2020</h6>
+						<h6 class="card-header">22 January 2024</h6>
 						<p class="card-title">
-							<strong>Paper "Critical exponents in coupled phase-oscillator models on small-world networks" is published in Physical Review E.</strong>
+							<strong>Talk in the mini-workshop: Tensor Network algorithms and applications 2024</strong>
 						</p>
 					</button>
 					<div class="collapse" id="collapse_article6">
 						<div class="card-body">
 							<p class="card-text"> <dl class="dl-horizontal">
+  <dt>Date</dt>
+  <dd>Jan 22, 2024</dd>
+  <dt>Conference</dt>
+  <dd><a href="https://phys.ncts.ntu.edu.tw/en/act/actnews/Mini-80339184/home">Mini-workshop: Tensor Network algorithms and applications 2024 (Taipei, Taiwan)</a></dd>
   <dt>Title</dt>
-  <dd>Critical exponents in coupled phase-oscillator models on small-world networks</dd>
-  <dt>Reference</dt>
-  <dd>Physical Review E <strong>102</strong>, 062212 (2020)</dd>
-  <dt>DOI</dt>
-  <dd><a href="https://doi.org/10.1103/PhysRevE.102.062212">10.1103/PhysRevE.102.062212</a></dd>
-  <dt>Author</dt>
-  <dd>Ryosuke Yoneda, Kenji Harada, and Yoshiyuki Y. Yamaguchi</dd>
-  <dt>Abstract</dt>
-  <dd>
-A coupled phase-oscillator model consists of phase oscillators, each of which has the natural frequency obeying a probability distribution and couples with other oscillators through a given periodic coupling function. This type of model is widely studied since it describes the synchronization transition, which emerges between the nonsynchronized state and partially synchronized states. The synchronization transition is characterized by several critical exponents, and we focus on the critical exponent defined by coupling strength dependence of the order parameter for revealing universality classes. In a typical interaction represented by the perfect graph, an infinite number of universality classes is yielded by dependency on the natural frequency distribution and the coupling function. Since the synchronization transition is also observed in a model on a small-world network, whose number of links is proportional to the number of oscillators, a natural question is whether the infinite number of universality classes remains in small-world networks irrespective of the order of links. Our numerical results suggest that the number of universality classes is reduced to one and the critical exponent is shared in the considered models having coupling functions up to second harmonics with unimodal and symmetric natural frequency distributions.
-  </dd>
-  <dt>Comments</dt>
-  <dd>8 pages, 8 figures</dd>
-  <dt>Preprint</dt>
-  <dd><a href="https://arxiv.org/abs/2007.04539">arXiv:2007.04539</a></dd>
-</dl> </p>
+  <dd>Optimizing tensor network structure</dd>
+  </dl> </p>
 						</div>
 					</div>
 				</div>
@@ -304,6 +287,21 @@ A coupled phase-oscillator model consists of phase oscillators, each of which ha
 					</p>
 					<a href="https://www-np.acs.i.kyoto-u.ac.jp/~harada/study/BSA/demo.html" class="badge bg-info">To demo</a>
 					<a href="https://kenjiharada.github.io/BSA/" class="badge bg-primary">To details</a>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<h5 class="card-title">
+						<strong>Toolkit of Adaptive Tensor Tree Generative Modeling</strong>
+					</h5>
+				</div>
+				<div class="card-body">
+					<p>
+						Reference application software of adaptive tensor tree generative modeling.
+					</p>
+					<a href="https://github.com/KenjiHarada/adaptive-tensor-tree-generative-modeling"
+						class="badge bg-primary">To
+						GitHub</a>
 				</div>
 			</div>
 		</div>
@@ -348,8 +346,8 @@ A coupled phase-oscillator model consists of phase oscillators, each of which ha
 						<a href="http://www.i.kyoto-u.ac.jp/">
 							Graduate School of Informatics, Kyoto University, Japan.
 						</a><br>
-						<a href="mailto:harada@acs.i.kyoto-u.ac.jp">
-							harada@acs.i.kyoto-u.ac.jp
+						<a href="mailto:harada.kenji.8e@kyoto-u.ac.jp">
+							harada.kenji.8e@kyoto-u.ac.jp
 						</a><br>
 						Room 203, Research Bldg. No.8, Yoshida Campus, Kyoto Univ., Kyoto, 606-8501, Japan.
 						<a href="https://www.kyoto-u.ac.jp/ja/access/campus/yoshida/map6r_y/"
@@ -383,7 +381,8 @@ A coupled phase-oscillator model consists of phase oscillators, each of which ha
 				<a href="https://scholar.google.com/citations?user=WL02S9oAAAAJ&hl=en">Google Scholar Citations</a>
 			</li>
 			<li>
-				<a href="https://kyouindb.iimc.kyoto-u.ac.jp/e/jL4uK">Acitivity Database on Education and Research,
+				<a href="https://kdb.iimc.kyoto-u.ac.jp/profile_private/en.d0dc8b7b08a9f363.html">Activity Database on
+					Education and Research,
 					Kyoto University</a>
 			</li>
 		</ul>
