@@ -58,11 +58,11 @@
   }
 
   .entry-content h3:before {
-    content: counter(h2) "."counter(h3) ".  ";
+    content: counter(h2) "." counter(h3) ".  ";
   }
 
   .entry-content h4:before {
-    content: counter(h2) "."counter(h3) "."counter(h4) ".  ";
+    content: counter(h2) "." counter(h3) "." counter(h4) ".  ";
   }
 </style>
   <!-- css -->
@@ -78,41 +78,39 @@
   </style>
 </head>
 
-
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="https://kenjiharada.github.io/index.html">Kenji Harada</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="https://kenjiharada.github.io/index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://kenjiharada.github.io/study/index.html">Study</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://kenjiharada.github.io/education/index.html">Education</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://kenjiharada.github.io/archives.html">Archives</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://kenjiharada.github.io/index-en.html">[English]</a>
-              </li>
-            </ul>
-          </div>
+<body id="top">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://kenjiharada.github.io/index.html">Kenji Harada</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/study/index.html">Study</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/education/index.html">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/archives.html">Archives</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/index-en.html">[English]</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <main role="main">
+  <main role="main">
 <div class="bg-light p-3 p-sm-5 mb-4 border-top">
   <div class="container entry-title">
     <h1 class="display-4">「モンテカルロ法」</h1>
@@ -327,7 +325,7 @@
     <dt>手順2.</dt>
     <dd>現状態\(X(t)=(x_1, x_2,
       \cdots)\)を構成する状態変数から１つをランダムに選ぶ。例えば、\(x_i\)を選んだとすると、この\(i\)番目の状態変数だけを更新する（それ以外はそのまま）。その際、更新後の値\(x_i^\prime\)を以下の確率にしたがって決定する<a
-        href=#IIIfn2 id="IIIr2">[5]</a>。
+        href=#IIIfn2 id="IIIr2a">[5]</a>。
       \begin{equation}
       P(x_i^\prime) = \frac{W(x_1, \cdots, x_i^\prime, \cdots)}{\sum_{x_i}W(x_1, \cdots, x_i, \cdots)}
       \end{equation}
@@ -509,10 +507,12 @@
   <ol>
     <li id="ref"> <a href="https://www.iwanami.co.jp/book/b260367.html">伊庭 幸人, 種村 正美,
         大森 裕浩, 和合 肇, 佐藤 整尚, 高橋 明彦：計算統計II <small>マルコフ連鎖モンテカルロ法とその周辺 </small>(統計科学のフロンティア 12), 岩波書店 (2005年).</a>
+    </li>
     <li id="ref_H"> <a
         href="https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/235551/1/bussei_el_072214.pdf">福島 孝治,
         モンテカルロ法の基礎と応用 計算物理学からデータ駆動科学へ, 物性研究・電子版, Vol.7, No.2. 072214 (2018年).</a>
-    <li id="ref_H"> <small>一般書籍</small><a href="https://www.nippyo.co.jp/shop/book/8153.html">「数理工学の世界」</a>
+    </li>
+    <li id="ref_H2"> <small>一般書籍</small><a href="https://www.nippyo.co.jp/shop/book/8153.html">「数理工学の世界」</a>
       第3章「沢山からできている世界」, 日本評論社,
       2019年10月25日第1刷発行, ISBN 978-4-535-78883-1.
     </li>
@@ -524,19 +524,21 @@
   draw_ising()
   draw_pi()
 </script>
-    </main>
+  </main>
 
-    <footer>
-      <div class="container">
-        <p class="float-end">
-          <a href="#">Back to top</a>
-        </p>
-      </div>
-    </footer>
+  <footer>
+    <div class="container">
+      <p class="float-end">
+        <a href="#top">Back to top</a>
+      </p>
+    </div>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"></script>
-  </body>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</body>
 
 </html>

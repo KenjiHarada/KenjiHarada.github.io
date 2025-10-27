@@ -33,57 +33,51 @@
   </style>
 </head>
 
-
-<body onload="draw()">
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="https://kenjiharada.github.io/index-en.html">Kenji Harada</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="https://kenjiharada.github.io/index-en.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://kenjiharada.github.io/study/index-en.html">Study</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://kenjiharada.github.io/education/index-en.html">Education</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://kenjiharada.github.io/archives-en.html">Archives</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://kenjiharada.github.io/index.html">[Japanese]</a>
-              </li>
-            </ul>
-          </div>
+<body id="top">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://kenjiharada.github.io/index-en.html">Kenji Harada</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/index-en.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/study/index-en.html">Study</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/education/index-en.html">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/archives-en.html">Archives</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://kenjiharada.github.io/index.html">[Japanese]</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <main role="main">
-<div class="py-5 bg-light">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<canvas width="936" height="450" id="ising" class="imag-fluid mx-auto"
-					style="width: 100%; padding: 0px; margin: auto;"></canvas>
-				<div
-					style="position: absolute; top: 20%; left: 50%; -webkit-transform : translate(-50%,-50%); transform : translate(-50%,-50%); max-width: 100%; max-height: 100%; padding: 0px; text-align: center; margin: auto;">
-					<p><strong class="h1">More is different.</strong><br>
-						God is in the details.
-					</p>
-				</div>
+  <main role="main">
+
+<div class="container">
+	<div class="d-flex justify-content-center align-items-center">
+		<div class="position-relative d-inline-block">
+			<canvas id="ising" width="936" height="200" class="img-fluid mx-auto"></canvas>
+			<div class="position-absolute top-50 start-50 translate-middle">
+				<strong class="h2">More is different.</strong>
 			</div>
 		</div>
 	</div>
 
-	<h2 class="text-center" style="padding:18px 0 18px 0">NEWS</h2>
+	<h3 class="text-center" style="padding:18px 0 18px 0">NEWS</h3>
 	<div class="container">
 		<div class="row">
  <div class="col-md-4">
@@ -91,12 +85,85 @@
 					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
 						data-bs-target="#collapse_article1" aria-expanded="false"
 						aria-controls="collapse_article1">
+						<h6 class="card-header">26 October 2025</h6>
+						<p class="card-title">
+							<strong>Paper "Improving the accuracy of the tree-tensor network approach by optimization of network structure" is published in Physical Review B.</strong>
+						</p>
+					</button>
+					<div class="collapse" id="collapse_article1">
+						<div class="card-body">
+							<p class="card-text"> <dl class="dl-horizontal">
+  <dt>Title</dt>
+  <dd>Improving the accuracy of the tree-tensor network approach by optimization of network structure</dd>
+  <dt>Author</dt>
+  <dd>Toshiya Hikihara, Hiroshi Ueda, Kouichi Okunishi, Kenji Harada, and Tomotoshi Nishino</dd>
+  <dt>Abstract</dt>
+  <dd>
+ Numerical methods based on tensor networks have been extensively explored in the research of quantum many-body systems in recent years. It has been recognized that the ability of tensor networks to describe a quantum many-body state crucially depends on the spatial structure of the network. In the previous work [T. Hikihara et al., Phys. Rev. Res. 5, 013031 (2023)], we proposed an algorithm based on tree-tensor networks (TTNs) that automatically optimizes the structure of a TTN according to the spatial profile of entanglement in the state of interest. In this paper, we apply the algorithm to the random 𝑋𝑌
+-exchange model under random magnetic fields and the Richardson model in order to analyze how the performance of the algorithm depends on the detailed updating schemes of the structural optimization. We then find that for the random 𝑋𝑌
+model, on the one hand, the algorithm achieves improved accuracy, and the stochastic algorithm, which selects the local network structure probabilistically, is notably effective. For the Richardson model, on the other hand, the resulting numerical accuracy subtly depends on the initial TTN and the updating schemes. In particular, the algorithm without the stochastic updating scheme certainly improves the accuracy, while the one with the stochastic updates results in poor accuracy due to the effect of randomizing the network structure at the early stage of the calculation. These results indicate that the algorithm successfully improves the accuracy of the numerical calculations for quantum many-body states, while it is essential to appropriately choose the updating scheme as well as the initial TTN structure, depending on the systems treated.
+  </dd>
+  <dt>Comments</dt>
+  <dd>19 pages, 17 figures, 2 tables</dd>
+  <dt>Citation</dt>
+  <dd>Toshiya Hikihara, Hiroshi Ueda, Kouichi Okunishi, Kenji Harada, Tomotoshi Nishino, ``Improving the accuracy of the tree-tensor network approach by optimization of network structure'', Phys. Rev. B <em>112</em>, 134427 (2025)</dd>
+  <dt>DOI</dt>
+  <dd><a href="https://doi.org/10.1103/ljj8-tkpc">10.1103/ljj8-tkpc</a></dd>
+  <dt>Code</dt>
+  <dd>
+    <a href="https://github.com/thikihara/TTNdemo.git">Demo code</a>
+  </dd>
+</dl> </p>
+						</div>
+					</div>
+				</div>
+		</div>
+ <div class="col-md-4">
+				<div class="card">
+					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapse_article2" aria-expanded="false"
+						aria-controls="collapse_article2">
+						<h6 class="card-header">27 August 2025</h6>
+						<p class="card-title">
+							<strong>Talk in the SQAI-NCTS Workshop on Tensor Network and Quantum Embedding (Hongo Campus, The University of Tokyo)</strong>
+						</p>
+					</button>
+					<div class="collapse" id="collapse_article2">
+						<div class="card-body">
+							<p class="card-text"> <dl class="dl-horizontal">
+  <dt>Dates</dt>
+  <dd>August 25-29, 2025</dd>
+  <dt>Conference</dt>
+  <dd><a href="https://nctstg41.github.io/SQAI-NCTS-2025/">SQAI-NCTS Workshop on Quantum Technologies and Machine Learning (National Taiwan University, Taipei, Taiwan)</a></dd>
+  <dt>Title</dt>
+  <dd>Adaptive Tensor Tree Method with Annealing of Mini-batch Samples for Generative Modeling on Quantum Devices</dd>
+  <dt>Abstract</dt>
+  <dd>
+We proposed the Adaptive Tensor Tree (ATT) method, which uses the tensor tree network within
+the Born machine framework to construct a generative model. This method expresses the target
+distribution function as the squared amplitude of a quantum wave function represented by a tensor
+tree. The core concept of the ATT method involves dynamically optimizing the tree structure to
+minimize the bond mutual information.
+In this presentation, we introduce a new technique that utilizes an annealing process on mini-batch
+samples to enhance the performance of the ATT method. We will demonstrate the effectiveness
+of this new ATT approach using various datasets.
+  </dd>
+</dl> </p>
+						</div>
+					</div>
+				</div>
+		</div>
+ <div class="col-md-4">
+				<div class="card">
+					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapse_article3" aria-expanded="false"
+						aria-controls="collapse_article3">
 						<h6 class="card-header">01 April 2025</h6>
 						<p class="card-title">
 							<strong>Paper "Tensor tree learns hidden relational structures in data to construct generative models" is published in Machine Learning: Science and Technology.</strong>
 						</p>
 					</button>
-					<div class="collapse" id="collapse_article1">
+					<div class="collapse" id="collapse_article3">
 						<div class="card-body">
 							<p class="card-text"> <dl class="dl-horizontal">
   <dt>Title</dt>
@@ -129,14 +196,14 @@
  <div class="col-md-4">
 				<div class="card">
 					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
-						data-bs-target="#collapse_article2" aria-expanded="false"
-						aria-controls="collapse_article2">
+						data-bs-target="#collapse_article4" aria-expanded="false"
+						aria-controls="collapse_article4">
 						<h6 class="card-header">13 December 2024</h6>
 						<p class="card-title">
 							<strong>Talk "Tensor tree learns hidden relational structures in data to construct generative models" in theory seminar at ISSP, Univ. of Tokyo</strong>
 						</p>
 					</button>
-					<div class="collapse" id="collapse_article2">
+					<div class="collapse" id="collapse_article4">
 						<div class="card-body">
 							<p class="card-text"> <dl class="dl-horizontal">
   <dt>Date</dt>
@@ -169,48 +236,14 @@ Our method significantly enhances performance and reveals hidden relational stru
  <div class="col-md-4">
 				<div class="card">
 					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
-						data-bs-target="#collapse_article3" aria-expanded="false"
-						aria-controls="collapse_article3">
-						<h6 class="card-header">20 August 2024</h6>
-						<p class="card-title">
-							<strong>Paper "Tensor tree learns hidden relational structures in data to construct generative models" is submitted to arXiv.</strong>
-						</p>
-					</button>
-					<div class="collapse" id="collapse_article3">
-						<div class="card-body">
-							<p class="card-text"> <dl class="dl-horizontal">
-  <dt>Title</dt>
-  <dd>Tensor tree learns hidden relational structures in data to construct generative models</dd>
-  <dt>Author</dt>
-  <dd>Kenji Harada, Tsuyoshi Okubo, Naoki Kawashima</dd>
-  <dt>Abstract</dt>
-  <dd>
-Based on the tensor tree network with the Born machine framework, we propose a general method for constructing a generative model by expressing the target distribution function as the quantum wave function amplitude represented by a tensor tree. The key idea is dynamically optimizing the tree structure that minimizes the bond mutual information. The proposed method offers enhanced performance and uncovers hidden relational structures in the target data. We illustrate potential practical applications with four examples: (i) random patterns, (ii) QMNIST hand-written digits, (iii) Bayesian networks, and (iv) the stock price fluctuation pattern in S&P500. In (i) and (ii), strongly correlated variables were concentrated near the center of the network; in (iii), the causality pattern was identified; and, in (iv), a structure corresponding to the eleven sectors emerged.
-  </dd>
-  <dt>Comments</dt>
-  <dd>9 pages, 3 figures</dd>
-  <dt>Preprint</dt>
-  <dd><a href="https://arxiv.org/abs/2408.10669">arXiv:2408.10669</a></dd>
-  <dt>Code</dt>
-  <dd>
-    <a href="https://github.com/KenjiHarada/adaptive-tensor-tree-generative-modeling">Adaptive Tensor Tree Generative Modeling</a>
-  </dd>
-</dl> </p>
-						</div>
-					</div>
-				</div>
-		</div>
- <div class="col-md-4">
-				<div class="card">
-					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
-						data-bs-target="#collapse_article4" aria-expanded="false"
-						aria-controls="collapse_article4">
+						data-bs-target="#collapse_article5" aria-expanded="false"
+						aria-controls="collapse_article5">
 						<h6 class="card-header">27 March 2024</h6>
 						<p class="card-title">
 							<strong>Talk in the SQAI-NCTS Workshop on Tensor Network and Quantum Embedding (Hongo Campus, The University of Tokyo)</strong>
 						</p>
 					</button>
-					<div class="collapse" id="collapse_article4">
+					<div class="collapse" id="collapse_article5">
 						<div class="card-body">
 							<p class="card-text"> <dl class="dl-horizontal">
   <dt>Dates</dt>
@@ -229,14 +262,14 @@ Based on the tensor tree network with the Born machine framework, we propose a g
  <div class="col-md-4">
 				<div class="card">
 					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
-						data-bs-target="#collapse_article5" aria-expanded="false"
-						aria-controls="collapse_article5">
+						data-bs-target="#collapse_article6" aria-expanded="false"
+						aria-controls="collapse_article6">
 						<h6 class="card-header">14 March 2024</h6>
 						<p class="card-title">
 							<strong>Book "Advanced Mathematical Science for Mobility Society" Chap.5 is published from Springer.</strong>
 						</p>
 					</button>
-					<div class="collapse" id="collapse_article5">
+					<div class="collapse" id="collapse_article6">
 						<div class="card-body">
 							<p class="card-text"> <dl class="dl-horizontal">
   <dt>Book title</dt>
@@ -258,167 +291,153 @@ Based on the tensor tree network with the Born machine framework, we propose a g
 					</div>
 				</div>
 		</div>
- <div class="col-md-4">
-				<div class="card">
-					<button class="btn btn-light" type="button" data-bs-toggle="collapse"
-						data-bs-target="#collapse_article6" aria-expanded="false"
-						aria-controls="collapse_article6">
-						<h6 class="card-header">26 January 2024</h6>
-						<p class="card-title">
-							<strong>Invited talk in 2024 Annual Meeting of the Physical Society of Taiwan</strong>
+	</div>
+
+	<h3 class="text-center" style="padding:18px 0 18px 0">TOPICS</h3>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card mb-4 shadow-sm">
+					<div class="card-header">
+						<h5 class="card-title">
+							<strong>Toolkit of Bayesian Scaling Analysis</strong>
+						</h5>
+					</div>
+					<div class="card-body">
+						<p>
+							Reference application software of a new scaling analysis method of critical phenomena based
+							on
+							Bayesian inference.
 						</p>
-					</button>
-					<div class="collapse" id="collapse_article6">
-						<div class="card-body">
-							<p class="card-text"> <dl class="dl-horizontal">
-  <dt>Date</dt>
-  <dd>Jan 26, 2024</dd>
-  <dt>Conference</dt>
-  <dd><a href="https://tps2024.conf.tw/site/page.aspx?pid=901&sid=1538&lang=en">2024 Annual Meeting of the Physical Society of Taiwan</a>, Topical Symposia:Many-body systems and advanced numerical methods</dd>
-  <dt>Title</dt>
-  <dd>Optimizing tensor network structure</dd>
-  </dl> </p>
-						</div>
+						<a href="https://kenjiharada.github.io/study/BSA/demo.html" class="badge bg-info">To demo</a>
+						<a href="https://kenjiharada.github.io/BSA/" class="badge bg-primary">To details</a>
 					</div>
 				</div>
-		</div>
-	</div>
-</div>
-
-<h2 class="text-center" style="padding:0 0 18px 0">TOPICS</h2>
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-6">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h5 class="card-title">
-						<strong>Toolkit of Bayesian Scaling Analysis</strong>
-					</h5>
-				</div>
-				<div class="card-body">
-					<p>
-						Reference application software of a new scaling analysis method of critical phenomena based on
-						Bayesian inference.
-					</p>
-					<a href="https://kenjiharada.github.io/study/BSA/demo.html" class="badge bg-info">To demo</a>
-					<a href="https://kenjiharada.github.io/BSA/" class="badge bg-primary">To details</a>
+				<div class="card mb-4 shadow-sm">
+					<div class="card-header">
+						<h5 class="card-title">
+							<strong>Toolkit of Adaptive Tensor Tree Generative Modeling</strong>
+						</h5>
+					</div>
+					<div class="card-body">
+						<p>
+							Reference application software of adaptive tensor tree generative modeling.
+						</p>
+						<a href="https://github.com/KenjiHarada/adaptive-tensor-tree-generative-modeling"
+							class="badge bg-primary">To
+							GitHub</a>
+					</div>
 				</div>
 			</div>
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h5 class="card-title">
-						<strong>Toolkit of Adaptive Tensor Tree Generative Modeling</strong>
-					</h5>
-				</div>
-				<div class="card-body">
-					<p>
-						Reference application software of adaptive tensor tree generative modeling.
-					</p>
-					<a href="https://github.com/KenjiHarada/adaptive-tensor-tree-generative-modeling"
-						class="badge bg-primary">To
-						GitHub</a>
-				</div>
-			</div>
-		</div>
 
-		<div class="col-md-6">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h5 class="card-title">
-						<strong>Monte Carlo simulations</strong>
-					</h5>
-				</div>
-				<div class="card-body">
-					<p>
-						This demonstration shows a Monte Carlo simulation of the two-dimensional Ising model by three
-						algorithms: Metropolis, Swendsen-Wang, and Wolff algorithms.
-					</p>
-					<a href="https://kenjiharada.github.io/education/demos/mc_ising/index-en.html" class="badge bg-primary">To demo</a>
+			<div class="col-md-6">
+				<div class="card mb-4 shadow-sm">
+					<div class="card-header">
+						<h5 class="card-title">
+							<strong>Monte Carlo simulations</strong>
+						</h5>
+					</div>
+					<div class="card-body">
+						<p>
+							This demonstration shows a Monte Carlo simulation of the two-dimensional Ising model by
+							three
+							algorithms: Metropolis, Swendsen-Wang, and Wolff algorithms.
+						</p>
+						<a href="https://kenjiharada.github.io/education/demos/mc_ising/index-en.html" class="badge bg-primary">To
+							demo</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<h2 class="h2 text-center" style="padding:0 0 18px 0">ABOUT</h2>
+	<h3 class="h3 text-center" style="padding:18px 0 18px 0">ABOUT</h3>
 
-<div class="container">
-	<div class="card mb-4 shadow-sm">
-		<div class="card-body">
-			<div class="row no-gutters">
-				<div class="col-md-2">
-					<img src="https://kenjiharada.github.io/theme/images/KH.jpg" alt="Kenji Harada" class="card-img pr-4 pb-4">
-				</div>
-				<div class="col-md-10">
-					<p class="card-title">
-						<a href="https://kenjiharada.github.io/index-en.html">
-							<strong>Kenji Harada</strong>
-						</a>
-						(<a name="about" href="https://kenjiharada.github.io/index.html">
-							<strong>原田健自</strong>
-						</a>)<br>
-						Assistant Professor,
-						<a href="http://www.i.kyoto-u.ac.jp/">
-							Graduate School of Informatics, Kyoto University, Japan.
-						</a><br>
-						<a href="mailto:harada.kenji.8e@kyoto-u.ac.jp">
-							harada.kenji.8e@kyoto-u.ac.jp
-						</a><br>
-						Room 203, Research Bldg. No.8, Yoshida Campus, Kyoto Univ., Kyoto, 606-8501, Japan.
-						<a href="https://www.kyoto-u.ac.jp/ja/access/campus/yoshida/map6r_y/"
-							class="label label-info">Map (No.59)</a>
+	<div class="container">
+		<div class="card mb-4 shadow-sm">
+			<div class="card-body">
+				<div class="row no-gutters">
+					<div class="col-md-2">
+						<img src="https://kenjiharada.github.io/theme/images/KH.jpg" alt="Kenji Harada" class="card-img pe-4 pb-4">
+					</div>
+					<div class="col-md-10">
+						<p class="card-title">
+							<a href="https://kenjiharada.github.io/index-en.html">
+								<strong>Kenji Harada</strong>
+							</a>
+							(<a name="about" href="https://kenjiharada.github.io/index.html">
+								<strong>原田健自</strong>
+							</a>)<br>
+							Assistant Professor,
+							<a href="http://www.i.kyoto-u.ac.jp/">
+								Graduate School of Informatics, Kyoto University, Japan.
+							</a><br>
+							<a href="mailto:harada.kenji.8e@kyoto-u.ac.jp">
+								harada.kenji.8e@kyoto-u.ac.jp
+							</a><br>
+							Room 203, Research Bldg. No.8, Yoshida Campus, Kyoto Univ., Kyoto, 606-8501, Japan.
+							<a href="https://www.kyoto-u.ac.jp/ja/access/campus/yoshida/map6r_y/"
+								class="label label-info">Map (No.59)</a>
+						</p>
+					</div>
+					<p class="card-text">
 					</p>
 				</div>
-				<p class="card-text">
-				</p>
 			</div>
 		</div>
 	</div>
-</div>
 
-<h2 class="h2 text-center" style="padding:0 0 18px 0">LINKS</h2>
+	<h3 class="h3 text-center" style="padding:18px 0 18px 0">LINKS</h3>
 
-<div class="container">
-	<div class="row">
-		<ul>
-			<li>
-				<a href="https://www.researcherid.com/rid/D-5192-2014">ResearcherID: D-5192-2014</a>
-			</li>
-			<li>
-				<div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs"
-						content="https://orcid.org/0000-0003-0231-7880" href="https://orcid.org/0000-0003-0231-7880"
-						target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img
-							src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-							style="width:1em;margin-right:.5em;" alt="ORCID iD icon"> orcid.org/0000-0003-0231-7880</a>
-				</div>
-			</li>
-			<li>
-				<a href="https://scholar.google.com/citations?user=WL02S9oAAAAJ&hl=en">Google Scholar Citations</a>
-			</li>
-			<li>
-				<a href="https://kdb.iimc.kyoto-u.ac.jp/profile_private/en.d0dc8b7b08a9f363.html">Activity Database on
-					Education and Research,
-					Kyoto University</a>
-			</li>
-		</ul>
+	<div class="container">
+		<div class="row">
+			<ul>
+				<li>
+					<a href="https://www.researcherid.com/rid/D-5192-2014">ResearcherID: D-5192-2014</a>
+				</li>
+				<li>
+					<div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs"
+							content="https://orcid.org/0000-0003-0231-7880" href="https://orcid.org/0000-0003-0231-7880"
+							target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img
+								src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
+								style="width:1em;margin-right:.5em;" alt="ORCID iD icon">
+							orcid.org/0000-0003-0231-7880</a>
+					</div>
+				</li>
+				<li>
+					<a href="https://scholar.google.com/citations?user=WL02S9oAAAAJ&hl=en">Google Scholar Citations</a>
+				</li>
+				<li>
+					<a href="https://kdb.iimc.kyoto-u.ac.jp/profile_private/en.d0dc8b7b08a9f363.html">Activity Database
+						on
+						Education and Research,
+						Kyoto University</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
 </div>
-    </main>
+  </main>
 
-    <footer>
-      <div class="container">
-        <p class="float-end">
-          <a href="#">Back to top</a>
-        </p>
-      </div>
-    </footer>
+  <footer>
+    <div class="container">
+      <p class="float-end">
+        <a href="#top">Back to top</a>
+      </p>
+    </div>
+  </footer>
 
 <script type="text/javascript" src="https://kenjiharada.github.io/theme/js/Ising_home.js" charset="UTF-8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-  </body>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script>
+    window.addEventListener('load', draw);
+  </script>
+</body>
 
 </html>
